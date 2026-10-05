@@ -24,6 +24,24 @@ npx hyperframes render --fps 60 --quality delivery -o renders/hotstream-promo-10
 
 成片：[`docs/media/hotstream-promo.mp4`](../../docs/media/hotstream-promo.mp4)。
 
+## GitHub 内嵌播放版本
+
+GitHub 的原生附件播放器不保留 README 自定义 `poster` 属性。交付视频使用仓库已有的 `docs/media/hotstream-promo-poster.jpg` 替换第 0 帧，不在视频前追加时长；首帧单独保留画质，音频直接复制。后处理后的 1080p60 成片约 8.46 MB，低于 10 MB 附件限制。
+
+在本目录渲染完成后，可用以下命令更新同一个交付文件：
+
+```sh
+ffmpeg -i renders/hotstream-promo-1080p60.mp4 \
+  -i ../../docs/media/hotstream-promo-poster.jpg \
+  -filter_complex "[1:v]scale=1920:1080:flags=lanczos,format=yuv420p[cover];[0:v][cover]overlay=enable='eq(n,0)'[v]" \
+  -map '[v]' -map 0:a -c:v libx264 -preset medium \
+  -b:v 1700k -maxrate 2200k -bufsize 8000k \
+  -x264-params 'zones=0,0,q=16' -pix_fmt yuv420p \
+  -c:a copy -movflags +faststart -y ../../docs/media/hotstream-promo.mp4
+```
+
+上传前检查实际文件大小和首帧。上传到 GitHub 附件后，将获得的 `github.com/user-attachments/assets/…` 地址单独放在主 README 中；不再在播放器上方重复展示封面图。
+
 ## 素材
 
 `assets/` 下的文件都不入库，由 `scripts/prepare-assets.sh` 重新生成：

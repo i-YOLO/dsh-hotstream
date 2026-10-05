@@ -14,9 +14,7 @@
 
 ## 宣传视频
 
-![Hotstream 宣传视频封面](docs/media/hotstream-promo-poster.jpg)
-
-https://github.com/user-attachments/assets/ea0584ff-f523-44ff-8489-ca9bec86d07c
+https://github.com/user-attachments/assets/491e5263-e490-4bf4-a090-8d9daede4bcb
 
 36 秒介绍：处理流水线、精选、阅读、日报 / 周报 / 月报、模型榜与本地数据边界。画面使用下方的原生截图，视频与 BGM 均由代码生成，源码见 [videos/hotstream-promo](videos/hotstream-promo/README.md)。
 
