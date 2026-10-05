@@ -16,3 +16,12 @@ coverage/
 *.log
 *.tgz
 scripts/diagnostics/
+
+# promo video build outputs
+videos/*/renders/
+videos/*/snapshots/
+videos/*/assets/fonts/
+videos/*/assets/audio/
+videos/*/assets/sfx/
+videos/*/assets/shots/
+videos/*/.hyperframes/

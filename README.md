@@ -12,6 +12,12 @@
 
 [安装](#安装) · [功能](#功能) · [界面截图](#界面截图) · [开发](#开发) · [反馈问题](https://github.com/i-YOLO/dsh-hotstream/issues)
 
+## 宣传视频
+
+[![Hotstream 宣传视频（36 秒，点击播放）](docs/media/hotstream-promo-poster.jpg)](docs/media/hotstream-promo.mp4)
+
+36 秒介绍：处理流水线、精选、阅读、日报 / 周报 / 月报、模型榜与本地数据边界。画面使用下方的原生截图，视频与 BGM 均由代码生成，源码见 [videos/hotstream-promo](videos/hotstream-promo/README.md)。
+
 ## 功能
 
 | 页面 / 模块 | 可以做什么 |

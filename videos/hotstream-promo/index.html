@@ -1,0 +1,1580 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Hotstream Promo</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "HS Heavy";
+        src: url("assets/fonts/hs-heavy.woff") format("woff");
+        font-weight: 900;
+      }
+      @font-face {
+        font-family: "HS Sans";
+        src: url("assets/fonts/hs-regular.woff") format("woff");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "HS Sans";
+        src: url("assets/fonts/hs-semibold.woff") format("woff");
+        font-weight: 600;
+      }
+      :root {
+        --bg: #0c1013;
+        --panel: #151c20;
+        --panel2: #1b2428;
+        --line: rgba(243, 238, 230, 0.12);
+        --fg: #f3eee6;
+        --muted: #9fabae;
+        --ember: #ff6b2c;
+        --gold: #ffb547;
+        --teal: #4fc0c9;
+        --ink: #1a0c04;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--bg);
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: "HS Sans", sans-serif;
+        font-weight: 400;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+      }
+      .inner {
+        position: absolute;
+        inset: 0;
+      }
+      .zh-h {
+        font-family: "HS Heavy", "HS Sans", sans-serif;
+        font-weight: 900;
+      }
+      .mono {
+        font-family: "JetBrains Mono", "HS Sans", monospace;
+      }
+      .em {
+        color: var(--ember);
+      }
+      .w {
+        display: inline-block;
+      }
+
+      /* ---------- shared background ---------- */
+      .glow {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      #glow-a {
+        width: 1500px;
+        height: 1500px;
+        left: 980px;
+        top: 280px;
+        background: radial-gradient(circle, rgba(255, 107, 44, 0.3) 0%, rgba(255, 107, 44, 0.08) 40%, rgba(255, 107, 44, 0) 68%);
+      }
+      #glow-b {
+        width: 1300px;
+        height: 1300px;
+        left: -520px;
+        top: -560px;
+        background: radial-gradient(circle, rgba(79, 192, 201, 0.2) 0%, rgba(79, 192, 201, 0.05) 45%, rgba(79, 192, 201, 0) 70%);
+      }
+      #pulse {
+        width: 2200px;
+        height: 1100px;
+        left: -140px;
+        top: 620px;
+        opacity: 0;
+        background: radial-gradient(ellipse at 50% 50%, rgba(255, 107, 44, 0.32) 0%, rgba(255, 107, 44, 0) 62%);
+      }
+      #grid {
+        position: absolute;
+        inset: -120px;
+        background-image: linear-gradient(rgba(243, 238, 230, 0.05) 2px, transparent 2px),
+          linear-gradient(90deg, rgba(243, 238, 230, 0.05) 2px, transparent 2px);
+        background-size: 120px 120px;
+        -webkit-mask-image: radial-gradient(ellipse at 50% 55%, #000 0%, rgba(0, 0, 0, 0.5) 45%, transparent 78%);
+        mask-image: radial-gradient(ellipse at 50% 55%, #000 0%, rgba(0, 0, 0, 0.5) 45%, transparent 78%);
+      }
+      #grain {
+        position: absolute;
+        inset: 0;
+        opacity: 0.11;
+        mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='7' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.2 0'/></filter><rect width='400' height='400' filter='url(%23n)'/></svg>");
+      }
+      .ghost {
+        position: absolute;
+        pointer-events: none;
+        overflow: visible;
+      }
+      .ghost text {
+        font-family: "HS Heavy", sans-serif;
+        font-weight: 900;
+        fill: none;
+        stroke: rgba(243, 238, 230, 0.1);
+        stroke-width: 2.5;
+      }
+
+      /* ---------- HUD ---------- */
+      .hud-brand {
+        position: absolute;
+        left: 64px;
+        top: 46px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-family: "Archivo Black", "HS Heavy", sans-serif;
+        font-size: 26px;
+        letter-spacing: 0.06em;
+        color: var(--fg);
+      }
+      .hud-brand svg {
+        width: 34px;
+        height: 34px;
+      }
+      .hud-track {
+        position: absolute;
+        left: 64px;
+        right: 64px;
+        bottom: 46px;
+        height: 4px;
+        background: rgba(243, 238, 230, 0.12);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      #hud-fill {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, var(--ember), var(--gold));
+        transform-origin: 0 50%;
+      }
+      .hud-r {
+        position: absolute;
+        right: 64px;
+        top: 50px;
+        font-family: "JetBrains Mono", "HS Sans", monospace;
+        font-size: 24px;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+      .hud-r b {
+        color: var(--ember);
+        font-weight: 700;
+      }
+
+      /* ---------- shared text blocks ---------- */
+      .kicker {
+        font-family: "JetBrains Mono", "HS Sans", monospace;
+        font-size: 26px;
+        letter-spacing: 0.14em;
+        color: var(--teal);
+        margin-bottom: 26px;
+      }
+      .title {
+        font-family: "HS Heavy", sans-serif;
+        font-weight: 900;
+        font-size: 84px;
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+      }
+      .pts {
+        list-style: none;
+        margin-top: 46px;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+      }
+      .pts li {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 1.35;
+        color: var(--fg);
+      }
+      .pts li i {
+        flex: 0 0 auto;
+        width: 16px;
+        height: 16px;
+        margin-top: 16px;
+        border-radius: 4px;
+        background: var(--ember);
+        display: block;
+      }
+      .pts li span {
+        display: block;
+      }
+      .pts li small {
+        display: block;
+        font-size: 28px;
+        font-weight: 400;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      /* ---------- app window ---------- */
+      .win {
+        position: absolute;
+        border-radius: 22px;
+        overflow: hidden;
+        background: #f7f6f2;
+        box-shadow: 0 50px 140px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(243, 238, 230, 0.14);
+      }
+      .win-bar {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 44px;
+        background: #e8e6e0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-left: 20px;
+      }
+      .win-bar i {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #ff5f57;
+        display: block;
+      }
+      .win-bar i:nth-child(2) {
+        background: #febc2e;
+      }
+      .win-bar i:nth-child(3) {
+        background: #28c840;
+      }
+      .win-bar span {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        color: #4a4f52;
+      }
+      .vp {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 44px;
+        overflow: hidden;
+      }
+      .layer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2560px;
+        height: 1440px;
+        transform-origin: 0 0;
+      }
+      .layer img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2560px;
+        height: 1440px;
+        display: block;
+      }
+      .hl {
+        position: absolute;
+        border: 6px solid var(--ember);
+        border-radius: 14px;
+        box-shadow: 0 0 0 4000px rgba(12, 16, 19, 0.38), 0 0 46px rgba(255, 107, 44, 0.75);
+        opacity: 0;
+      }
+      .hl.soft {
+        box-shadow: 0 0 46px rgba(255, 107, 44, 0.75);
+      }
+      .lbl {
+        position: absolute;
+        white-space: nowrap;
+        background: var(--ember);
+        color: var(--ink);
+        font-weight: 600;
+        font-size: 42px;
+        padding: 10px 24px;
+        border-radius: 12px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+        opacity: 0;
+      }
+
+      /* ---------- S1 hook ---------- */
+      .ncard {
+        position: absolute;
+        width: 500px;
+        padding: 22px 26px;
+        border-radius: 16px;
+        background: rgba(24, 31, 35, 0.94);
+        border: 2px solid rgba(243, 238, 230, 0.1);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      }
+      .ncard .src {
+        font-family: "JetBrains Mono", "HS Sans", monospace;
+        font-size: 22px;
+        color: var(--gold);
+        margin-bottom: 8px;
+      }
+      .ncard .ttl {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1.32;
+        color: var(--fg);
+      }
+      #s1-vig {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        background: radial-gradient(ellipse 70% 62% at 38% 50%, rgba(12, 16, 19, 0.96) 0%, rgba(12, 16, 19, 0.82) 48%, rgba(12, 16, 19, 0) 100%);
+      }
+      .s1-text {
+        position: absolute;
+        left: 150px;
+        top: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .s1-text .row {
+        font-family: "HS Heavy", sans-serif;
+        font-weight: 900;
+        font-size: 196px;
+        line-height: 1.05;
+        white-space: nowrap;
+      }
+      #s1-dot {
+        position: absolute;
+        left: 948px;
+        top: 528px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 30px 10px rgba(255, 107, 44, 0.9), 0 0 120px 40px rgba(255, 107, 44, 0.45);
+      }
+
+      /* ---------- brand lockup (S2, S9) ---------- */
+      .lockup-wrap {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .lockup {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+      .flame-box {
+        position: relative;
+        width: 210px;
+        height: 210px;
+      }
+      .flame-box svg.flame {
+        position: absolute;
+        inset: 0;
+        width: 210px;
+        height: 210px;
+        overflow: visible;
+      }
+      .ring {
+        position: absolute;
+        left: 55px;
+        top: 55px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 5px solid var(--gold);
+        opacity: 0;
+      }
+      .sparks {
+        position: absolute;
+        left: 105px;
+        top: 120px;
+        width: 0;
+        height: 0;
+      }
+      .spark {
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 14px 4px rgba(255, 107, 44, 0.85);
+        opacity: 0;
+      }
+      .wordmark {
+        font-family: "Archivo Black", "HS Heavy", sans-serif;
+        font-size: 176px;
+        letter-spacing: 0.01em;
+        line-height: 1;
+        white-space: nowrap;
+      }
+      .wordmark .ch {
+        display: inline-block;
+      }
+      .lock-sub {
+        margin-top: 46px;
+        display: flex;
+        align-items: center;
+        gap: 34px;
+      }
+      .lock-sub .zh {
+        font-family: "HS Heavy", sans-serif;
+        font-weight: 900;
+        font-size: 64px;
+        color: var(--ember);
+      }
+      .lock-sub .rule {
+        width: 120px;
+        height: 4px;
+        background: rgba(243, 238, 230, 0.5);
+        display: block;
+        transform-origin: 0 50%;
+      }
+      .lock-sub .tag {
+        font-size: 56px;
+        font-weight: 600;
+      }
+      .chip {
+        margin-top: 50px;
+        padding: 14px 30px;
+        border-radius: 999px;
+        border: 2px solid rgba(243, 238, 230, 0.32);
+        font-family: "JetBrains Mono", "HS Sans", monospace;
+        font-size: 28px;
+        letter-spacing: 0.04em;
+        color: var(--fg);
+        background: rgba(21, 28, 32, 0.7);
+      }
+
+      /* ---------- S3 pipeline ---------- */
+      .s3-head {
+        position: absolute;
+        left: 140px;
+        top: 150px;
+      }
+      .srcs {
+        display: flex;
+        gap: 18px;
+        margin-top: 40px;
+      }
+      .src-chip {
+        padding: 12px 26px;
+        border-radius: 12px;
+        background: var(--panel2);
+        border: 2px solid rgba(79, 192, 201, 0.45);
+        font-family: "JetBrains Mono", "HS Sans", monospace;
+        font-size: 28px;
+        color: var(--fg);
+        display: block;
+      }
+      .src-chip.zh {
+        font-family: "HS Sans", sans-serif;
+        font-weight: 600;
+      }
+      .pipe {
+        position: absolute;
+        left: 140px;
+        right: 140px;
+        top: 560px;
+        height: 300px;
+      }
+      .pipe-line {
+        position: absolute;
+        left: 115px;
+        right: 115px;
+        top: 46px;
+        height: 6px;
+        border-radius: 3px;
+        background: rgba(243, 238, 230, 0.12);
+      }
+      #s3-fill {
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--ember), var(--gold));
+        transform-origin: 0 50%;
+      }
+      #s3-packet {
+        position: absolute;
+        left: 115px;
+        top: 37px;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-radius: 50%;
+        background: #fff4e0;
+        box-shadow: 0 0 24px 10px rgba(255, 181, 71, 0.8);
+      }
+      .nodes {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .node {
+        width: 230px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .node .dot {
+        width: 98px;
+        height: 98px;
+        border-radius: 50%;
+        background: var(--panel2);
+        border: 3px solid rgba(243, 238, 230, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "JetBrains Mono", "HS Sans", monospace;
+        font-weight: 700;
+        font-size: 30px;
+        color: var(--muted);
+      }
+      .node .nt {
+        margin-top: 30px;
+        font-family: "HS Heavy", sans-serif;
+        font-weight: 900;
+        font-size: 44px;
+        white-space: nowrap;
+      }
+      .node .nd {
+        margin-top: 12px;
+        font-size: 28px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .s3-foot {
+        position: absolute;
+        left: 140px;
+        right: 140px;
+        bottom: 110px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 32px;
+        font-weight: 600;
+        color: var(--teal);
+      }
+      .s3-foot i {
+        width: 44px;
+        height: 4px;
+        background: var(--teal);
+        display: block;
+      }
+
+      /* ---------- S6 reports ---------- */
+      .card {
+        position: absolute;
+        left: 820px;
+        top: 200px;
+        width: 1000px;
+        height: 676px;
+        border-radius: 22px;
+        overflow: hidden;
+        background: #f7f6f2;
+        box-shadow: 0 50px 140px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(243, 238, 230, 0.14);
+      }
+      .card .vp {
+        height: 632px;
+      }
+      .card .vp img {
+        position: absolute;
+        left: -737px;
+        top: -53px;
+        width: 2105px;
+        height: 1184px;
+        display: block;
+      }
+      .s6-left {
+        position: absolute;
+        left: 130px;
+        top: 250px;
+        width: 620px;
+      }
+      .roll {
+        position: relative;
+        height: 270px;
+        overflow: hidden;
+      }
+      .roll .big {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-family: "HS Heavy", sans-serif;
+        font-weight: 900;
+        font-size: 236px;
+        line-height: 1.12;
+        white-space: nowrap;
+      }
+      .roll2 {
+        position: relative;
+        height: 60px;
+        overflow: hidden;
+        margin-top: 24px;
+      }
+      .roll2 .sub {
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-family: "JetBrains Mono", "HS Sans", monospace;
+        font-size: 34px;
+        line-height: 1.5;
+        color: var(--teal);
+        white-space: nowrap;
+      }
+      .s6-note {
+        margin-top: 40px;
+        font-size: 32px;
+        line-height: 1.5;
+        color: var(--muted);
+      }
+      #s6-head {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 150px;
+        text-align: center;
+      }
+      .tri-lbl {
+        position: absolute;
+        top: 830px;
+        width: 560px;
+        text-align: center;
+        font-family: "HS Heavy", sans-serif;
+        font-weight: 900;
+        font-size: 48px;
+      }
+
+      /* ---------- S7 leaderboard ---------- */
+      .bignum {
+        display: flex;
+        align-items: baseline;
+        gap: 18px;
+        margin-top: 40px;
+      }
+      .bignum b {
+        font-family: "Archivo Black", "HS Heavy", sans-serif;
+        font-weight: 400;
+        font-size: 170px;
+        line-height: 1;
+        color: var(--ember);
+      }
+      .bignum span {
+        font-family: "HS Heavy", sans-serif;
+        font-weight: 900;
+        font-size: 52px;
+      }
+      .s7-note {
+        margin-top: 34px;
+        font-size: 30px;
+        line-height: 1.5;
+        color: var(--muted);
+      }
+      .tabs-line {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .tabs-line span {
+        display: block;
+        padding: 6px 16px;
+        border-radius: 8px;
+        background: var(--panel2);
+        border: 2px solid rgba(243, 238, 230, 0.16);
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--fg);
+      }
+
+      /* ---------- S8 trust ---------- */
+      .s8-head {
+        position: absolute;
+        left: 130px;
+        top: 300px;
+        width: 560px;
+      }
+      .s8-head .title {
+        font-size: 104px;
+      }
+      .tiles {
+        position: absolute;
+        left: 760px;
+        top: 200px;
+        width: 1040px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .tile {
+        height: 300px;
+        border-radius: 24px;
+        padding: 40px 42px;
+        background: var(--panel);
+        border: 2px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+      .tile svg {
+        width: 70px;
+        height: 70px;
+        stroke: var(--ember);
+        stroke-width: 1.8;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .tile h3 {
+        margin-top: 26px;
+        font-family: "HS Heavy", sans-serif;
+        font-weight: 900;
+        font-size: 44px;
+        line-height: 1.2;
+      }
+      .tile p {
+        margin-top: 14px;
+        font-size: 30px;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+      .s8-foot {
+        position: absolute;
+        left: 760px;
+        top: 900px;
+        font-size: 34px;
+        font-weight: 600;
+        color: var(--teal);
+        white-space: nowrap;
+      }
+
+      /* ---------- S9 CTA ---------- */
+      #s9-rays {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 2800px;
+        height: 2800px;
+        margin-left: -1400px;
+        margin-top: -1400px;
+        background: repeating-conic-gradient(from 0deg, rgba(255, 107, 44, 0.13) 0deg 6deg, rgba(255, 107, 44, 0) 6deg 18deg);
+        -webkit-mask-image: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0.6) 25%, transparent 55%);
+        mask-image: radial-gradient(circle, #000 0%, rgba(0, 0, 0, 0.6) 25%, transparent 55%);
+      }
+      .pill {
+        margin-top: 54px;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        padding: 24px 46px;
+        border-radius: 999px;
+        background: var(--ember);
+        color: var(--ink);
+        font-family: "JetBrains Mono", "HS Sans", monospace;
+        font-weight: 700;
+        font-size: 42px;
+        box-shadow: 0 24px 80px rgba(255, 107, 44, 0.45);
+      }
+      .pill em {
+        font-style: normal;
+        font-family: "HS Sans", sans-serif;
+        font-weight: 600;
+      }
+      .tags {
+        margin-top: 40px;
+        display: flex;
+        gap: 22px;
+      }
+      .tags span {
+        display: block;
+        padding: 10px 24px;
+        border-radius: 10px;
+        border: 2px solid rgba(243, 238, 230, 0.26);
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--fg);
+      }
+
+      /* ---------- transitions ---------- */
+      .wipe {
+        position: absolute;
+        top: -40px;
+        bottom: -40px;
+        left: -2900px;
+        width: 2520px;
+      }
+      #wipe-a {
+        background: var(--ember);
+      }
+      #wipe-b {
+        background: var(--fg);
+      }
+      #flash {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        background: radial-gradient(circle at 50% 50%, #fff6e8 0%, rgba(255, 181, 71, 0.85) 35%, rgba(255, 107, 44, 0.4) 70%, rgba(255, 107, 44, 0.1) 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="36"
+      data-width="1920"
+      data-height="1080"
+    >
+      <!-- ======================= shared background ======================= -->
+      <div id="bg" class="clip" data-start="0" data-duration="36" data-track-index="0">
+        <div id="grid"></div>
+        <div id="glow-b" class="glow"></div>
+        <div id="glow-a" class="glow"></div>
+        <div id="pulse" class="glow"></div>
+        <div id="grain"></div>
+      </div>
+
+      <!-- ======================= S1 · hook (0–4) ======================= -->
+      <section id="s1" class="clip" data-start="0" data-duration="4" data-track-index="1">
+        <div class="inner" id="s1-in">
+          <div id="s1-cards" data-layout-allow-overlap data-layout-allow-overflow data-layout-allow-occlusion></div>
+          <div id="s1-vig"></div>
+          <div class="s1-text">
+            <div class="row" id="s1-r1"><span class="w" id="s1-w1">AI 新闻，</span><span class="w em" id="s1-w2">刷不完。</span></div>
+            <div class="row" id="s1-r2"><span class="w" id="s1-w3">重点，</span><span class="w em" id="s1-w4">全错过。</span></div>
+          </div>
+          <div id="s1-dot"></div>
+        </div>
+      </section>
+
+      <!-- ======================= S2 · brand reveal (4–8) ======================= -->
+      <section id="s2" class="clip" data-start="4" data-duration="4" data-track-index="1">
+        <div class="inner" id="s2-in">
+          <div class="lockup-wrap" id="s2-lock">
+            <div class="lockup">
+              <div class="flame-box">
+                <div class="ring" id="s2-ring"></div>
+                <div class="sparks" id="s2-sparks"></div>
+                <svg class="flame" id="s2-flame" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="s2-grad" x1="0" y1="1" x2="0" y2="0">
+                      <stop offset="0" stop-color="#ff4d1f" />
+                      <stop offset="0.6" stop-color="#ff8a2c" />
+                      <stop offset="1" stop-color="#ffd27a" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    id="s2-flame-fill"
+                    d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+                    fill="url(#s2-grad)"
+                    opacity="0"
+                  />
+                  <path
+                    id="s2-flame-line"
+                    d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+                    fill="none"
+                    stroke="#ffd27a"
+                    stroke-width="1.2"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <div class="wordmark" id="s2-word" data-text="HOTSTREAM"></div>
+            </div>
+            <div class="lock-sub">
+              <span class="zh" id="s2-zh">DSH 热点</span>
+              <span class="rule" id="s2-rule"></span>
+              <span class="tag" id="s2-tag">把 AI 资讯洪流，炼成一份精选。</span>
+            </div>
+            <div class="chip" id="s2-chip">DeepSeek Harness Desktop · 原生插件</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= S3 · pipeline (8–12) ======================= -->
+      <section id="s3" class="clip" data-start="8" data-duration="4" data-track-index="1">
+        <div class="inner" id="s3-in">
+          <svg class="ghost" aria-hidden="true" data-layout-allow-overlap id="s3-ghost" width="2400" height="420" style="left: 60px; top: 640px"><text data-layout-allow-overlap x="0" y="340" font-size="380">PIPELINE</text></svg>
+          <div class="hud-r"><b>02</b> / 处理流水线</div>
+          <div class="s3-head">
+            <div class="title" id="s3-title"><span class="w" id="s3-t1">六类信源，</span><span class="w em" id="s3-t2">一条流水线</span></div>
+            <div class="srcs">
+              <span class="src-chip">RSS</span>
+              <span class="src-chip zh">网页列表</span>
+              <span class="src-chip">JSON</span>
+              <span class="src-chip">X</span>
+              <span class="src-chip zh">公众号</span>
+              <span class="src-chip">External</span>
+            </div>
+          </div>
+          <div class="pipe">
+            <div class="pipe-line"><div id="s3-fill"></div></div>
+            <div id="s3-packet"></div>
+            <div class="nodes">
+              <div class="node"><div class="dot">01</div><div class="nt">采集</div><div class="nd">六类信源</div></div>
+              <div class="node"><div class="dot">02</div><div class="nt">初筛</div><div class="nd">先滤掉噪音</div></div>
+              <div class="node"><div class="dot">03</div><div class="nt">独立双评分</div><div class="nd">两路互不干扰</div></div>
+              <div class="node"><div class="dot">04</div><div class="nt">理解 / 翻译</div><div class="nd">导读 · 中文译文</div></div>
+              <div class="node"><div class="dot">05</div><div class="nt">事件归并</div><div class="nd">相关报道成事件</div></div>
+              <div class="node"><div class="dot">06</div><div class="nt">发布汇总</div><div class="nd">精选 · 报刊 · 榜单</div></div>
+            </div>
+          </div>
+          <div class="s3-foot" id="s3-foot"><i></i>模型调用统一经过 DSH LLM · 请求、响应、用量全程留痕</div>
+        </div>
+      </section>
+
+      <!-- ======================= S4 · selected timeline (12–16) ======================= -->
+      <section id="s4" class="clip" data-start="12" data-duration="4" data-track-index="1">
+        <div class="inner" id="s4-in">
+          <svg class="ghost" aria-hidden="true" data-layout-allow-overlap id="s4-ghost" width="1400" height="460" style="left: -40px; top: 640px"><text data-layout-allow-overlap x="0" y="380" font-size="400">精选</text></svg>
+          <div class="hud-r"><b>03</b> / 精选时间线</div>
+          <div style="position: absolute; left: 110px; top: 250px; width: 540px">
+            <div class="kicker" id="s4-k">SELECTED · 精选</div>
+            <div class="title" id="s4-title"><span class="w">每一条，</span><span class="w">都附<span class="em">推荐理由</span></span></div>
+            <ul class="pts" id="s4-pts">
+              <li><i></i><span>来源、时间、分类<small>一眼看清</small></span></li>
+              <li><i></i><span>AI 评分<small>来自独立双评分</small></span></li>
+              <li><i></i><span>推荐理由<small>一句话说清为什么值得读</small></span></li>
+            </ul>
+          </div>
+          <div class="win" id="s4-win" style="left: 690px; top: 247px; width: 1160px; height: 586px">
+            <div class="win-bar"><i></i><i></i><i></i><span>Hotstream · 精选</span></div>
+            <div class="vp" style="height: 542px">
+              <div class="layer" id="s4-layer">
+                <img src="assets/shots/selected.jpg" alt="" />
+                <div style="position: absolute; left: 200px; top: 126px; width: 2340px; height: 104px; background: #f9f8f4"></div>
+                <div class="hl" id="s4-hl1" style="left: 2386px; top: 298px; width: 96px; height: 42px"></div>
+                <div class="lbl" id="s4-lb1" style="left: 2010px; top: 372px; font-size: 64px; padding: 14px 34px">AI 评分</div>
+                <div class="hl" id="s4-hl2" style="left: 300px; top: 410px; width: 740px; height: 46px"></div>
+                <div class="lbl" id="s4-lb2" style="left: 300px; top: 478px">推荐理由 · 为什么值得读</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= S5 · article (16–20) ======================= -->
+      <section id="s5" class="clip" data-start="16" data-duration="4" data-track-index="1">
+        <div class="inner" id="s5-in">
+          <svg class="ghost" aria-hidden="true" data-layout-allow-overlap id="s5-ghost" width="1400" height="460" style="left: 1080px; top: 660px"><text data-layout-allow-overlap x="0" y="380" font-size="400">阅读</text></svg>
+          <div class="hud-r"><b>04</b> / 文章阅读</div>
+          <div class="win" id="s5-win" style="left: 110px; top: 186px; width: 1180px; height: 708px">
+            <div class="win-bar"><i></i><i></i><i></i><span>Hotstream · 文章</span></div>
+            <div class="vp" style="height: 664px">
+              <div class="layer" id="s5-layer">
+                <img src="assets/shots/article.jpg" alt="" />
+                <div class="hl" id="s5-hl1" style="left: 975px; top: 182px; width: 775px; height: 138px"></div>
+                <div class="lbl" id="s5-lb1" style="left: 987px; top: 350px">AI 导读 · 先抓要点</div>
+                <div class="hl" id="s5-hl2" style="left: 1640px; top: 362px; width: 112px; height: 50px"></div>
+                <div class="lbl" id="s5-lb2" style="left: 1420px; top: 430px">中文 / 原文 一键切换</div>
+                <div class="hl" id="s5-hl3" style="left: 2262px; top: 468px; width: 120px; height: 52px"></div>
+                <div class="lbl" id="s5-lb3" style="left: 2130px; top: 546px">和 AI 讨论</div>
+              </div>
+            </div>
+          </div>
+          <div style="position: absolute; left: 1360px; top: 250px; width: 470px">
+            <div class="kicker" id="s5-k">READER · 阅读</div>
+            <div class="title" id="s5-title"><span class="w">读懂，</span><span class="w">再<span class="em">讨论</span></span></div>
+            <ul class="pts" id="s5-pts">
+              <li><i></i><span>AI 导读<small>正文前先给要点</small></span></li>
+              <li><i></i><span>原文 · 译文<small>许可正文一键切换</small></span></li>
+              <li><i></i><span>和 AI 讨论<small>先备好材料，你审阅后再发送</small></span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= S6 · reports (20–24) ======================= -->
+      <section id="s6" class="clip" data-start="20" data-duration="4" data-track-index="1">
+        <div class="inner" id="s6-in">
+          <div class="hud-r"><b>05</b> / 日报 · 周报 · 月报</div>
+          <div class="s6-left" id="s6-left">
+            <div class="roll">
+              <div class="big" id="s6-b1" data-layout-allow-overlap>日报</div>
+              <div class="big" id="s6-b2" data-layout-allow-overlap>周报</div>
+              <div class="big em" id="s6-b3" data-layout-allow-overlap>月报</div>
+            </div>
+            <div class="roll2">
+              <div class="sub" id="s6-s1" data-layout-allow-overlap>每天 08:00 出刊</div>
+              <div class="sub" id="s6-s2" data-layout-allow-overlap>每周一 出刊</div>
+              <div class="sub" id="s6-s3" data-layout-allow-overlap>每月 1 日 出刊</div>
+            </div>
+            <div class="s6-note" id="s6-note">头条、导读、来源，按刊期汇总。</div>
+          </div>
+          <div class="card" id="s6-c1">
+            <div class="win-bar"><i></i><i></i><i></i><span>AI 日报</span></div>
+            <div class="vp"><img src="assets/shots/daily.jpg" alt="" /></div>
+          </div>
+          <div class="card" id="s6-c2">
+            <div class="win-bar"><i></i><i></i><i></i><span>AI 周报</span></div>
+            <div class="vp"><img src="assets/shots/weekly.jpg" alt="" /></div>
+          </div>
+          <div class="card" id="s6-c3">
+            <div class="win-bar"><i></i><i></i><i></i><span>AI 月报</span></div>
+            <div class="vp"><img src="assets/shots/monthly.jpg" alt="" /></div>
+          </div>
+          <div id="s6-head" class="title">按刊期送达，<span class="em">覆盖不足明确标注</span></div>
+          <div class="tri-lbl" id="s6-l1" style="left: 120px">日报</div>
+          <div class="tri-lbl" id="s6-l2" style="left: 680px">周报</div>
+          <div class="tri-lbl em" id="s6-l3" style="left: 1240px">月报</div>
+        </div>
+      </section>
+
+      <!-- ======================= S7 · leaderboard (24–28) ======================= -->
+      <section id="s7" class="clip" data-start="24" data-duration="4" data-track-index="1">
+        <div class="inner" id="s7-in">
+          <svg class="ghost" aria-hidden="true" data-layout-allow-overlap id="s7-ghost" width="1800" height="460" style="left: -60px; top: 700px"><text data-layout-allow-overlap x="0" y="380" font-size="360">RANK</text></svg>
+          <div class="hud-r"><b>06</b> / 模型榜</div>
+          <div style="position: absolute; left: 110px; top: 230px; width: 420px">
+            <div class="kicker" id="s7-k">LEADERBOARD</div>
+            <div class="title" id="s7-title"><span class="w">选模型，</span><span class="w em">看证据</span></div>
+            <div class="bignum" id="s7-num"><b id="s7-n">0</b><span>类榜单</span></div>
+            <div class="tabs-line" id="s7-tabs"><span>综合</span><span>编程</span><span>推理</span><span>知识</span><span>专业办公</span></div>
+            <div class="s7-note" id="s7-note">评测证据可查 · 官方 API 价格附核验日期，汇率随榜单冻结</div>
+          </div>
+          <div class="win" id="s7-win" style="left: 570px; top: 170px; width: 1280px; height: 764px">
+            <div class="win-bar"><i></i><i></i><i></i><span>Hotstream · 模型榜</span></div>
+            <div class="vp" style="height: 720px">
+              <div class="layer" id="s7-layer">
+                <img src="assets/shots/leaderboard.jpg" alt="" />
+                <div class="hl soft" id="s7-tab" style="left: 215px; top: 326px; width: 52px; height: 7px; border-width: 0; border-radius: 4px; background: #ff6b2c"></div>
+                <div class="lbl" id="s7-lbA" style="left: 214px; top: 356px">五类榜单</div>
+                <div class="hl" id="s7-hlB" style="left: 2436px; top: 505px; width: 90px; height: 470px"></div>
+                <div class="lbl" id="s7-lbB" style="left: 2090px; top: 380px">Hotstream 评分</div>
+                <div class="hl soft" id="s7-hlC" style="left: 1450px; top: 498px; width: 630px; height: 8px; border-width: 0; background: #ff6b2c"></div>
+                <div class="lbl" id="s7-lbC" style="left: 1450px; top: 380px">缓存 · 输入 · 输出价格</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= S8 · trust (28–32) ======================= -->
+      <section id="s8" class="clip" data-start="28" data-duration="4" data-track-index="1">
+        <div class="inner" id="s8-in">
+          <svg class="ghost" aria-hidden="true" data-layout-allow-overlap id="s8-ghost" width="1400" height="460" style="left: -30px; top: 700px"><text data-layout-allow-overlap x="0" y="380" font-size="380">本地</text></svg>
+          <div class="hud-r"><b>07</b> / 数据边界</div>
+          <div class="s8-head">
+            <div class="kicker" id="s8-k">LOCAL FIRST</div>
+            <div class="title" id="s8-title"><span class="w">你的数据，</span><span class="w em">留在本地</span></div>
+          </div>
+          <div class="tiles">
+            <div class="tile" id="s8-t1">
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5" /><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3" /></svg>
+              <h3>插件自有 SQLite</h3>
+              <p>不碰宿主的私有数据库</p>
+            </div>
+            <div class="tile" id="s8-t2">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="m9 12 2 2 4-4" /></svg>
+              <h3>模型只走 DSH LLM</h3>
+              <p>每次调用留存请求与用量</p>
+            </div>
+            <div class="tile" id="s8-t3">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /><path d="M8 9h8" /><path d="M8 13h5" /></svg>
+              <h3>阅读不自动发消息</h3>
+              <p>讨论草稿由你审阅后发送</p>
+            </div>
+            <div class="tile" id="s8-t4">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="5" rx="1" /><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" /><path d="M10 12h4" /></svg>
+              <h3>停用、卸载都保留数据</h3>
+              <p>退出应用期间不采集</p>
+            </div>
+          </div>
+          <div class="s8-foot" id="s8-foot">安装即用 · 无需另起数据库或 Web 服务器</div>
+        </div>
+      </section>
+
+      <!-- ======================= S9 · CTA (32–36) ======================= -->
+      <section id="s9" class="clip" data-start="32" data-duration="4" data-track-index="1">
+        <div class="inner" id="s9-in">
+          <div id="s9-rays"></div>
+          <div class="lockup-wrap" id="s9-lock">
+            <div class="lockup">
+              <div class="flame-box">
+                <div class="ring" id="s9-ring"></div>
+                <div class="sparks" id="s9-sparks"></div>
+                <svg class="flame" id="s9-flame" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="s9-grad" x1="0" y1="1" x2="0" y2="0">
+                      <stop offset="0" stop-color="#ff4d1f" />
+                      <stop offset="0.6" stop-color="#ff8a2c" />
+                      <stop offset="1" stop-color="#ffd27a" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+                    fill="url(#s9-grad)"
+                  />
+                </svg>
+              </div>
+              <div class="wordmark" id="s9-word" data-text="HOTSTREAM"></div>
+            </div>
+            <div class="lock-sub">
+              <span class="zh" id="s9-zh">DSH 热点</span>
+              <span class="rule" id="s9-rule"></span>
+              <span class="tag" id="s9-tag">AI 资讯工作台</span>
+            </div>
+            <div class="pill" id="s9-pill"><em>开源</em>github.com/i-YOLO/dsh-hotstream</div>
+            <div class="tags" id="s9-tags">
+              <span>MIT License</span>
+              <span>DeepSeek Harness 0.2.0-rc.2</span>
+              <span>alpha 开发预览</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= HUD (8–32) ======================= -->
+      <div id="hud" class="clip" data-start="8" data-duration="24" data-track-index="2">
+        <div class="hud-brand" id="hud-brand">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"
+              fill="#ff6b2c"
+            />
+          </svg>
+          HOTSTREAM
+        </div>
+        <div class="hud-track"><div id="hud-fill"></div></div>
+      </div>
+
+      <!-- ======================= transitions overlay ======================= -->
+      <div id="fx" class="clip" data-start="0" data-duration="36" data-track-index="3">
+        <div id="flash"></div>
+        <div class="wipe" id="wipe-b"></div>
+        <div class="wipe" id="wipe-a"></div>
+      </div>
+
+      <!-- ======================= audio ======================= -->
+      <audio id="bgm" src="assets/audio/bgm.wav" data-start="0" data-duration="36" data-track-index="10" data-volume="0.9"></audio>
+      <audio id="sfx-01" src="assets/sfx/pop.mp3" data-start="0.25" data-duration="0.72" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-02" src="assets/sfx/click.mp3" data-start="1" data-duration="0.37" data-track-index="11" data-volume="0.45"></audio>
+      <audio id="sfx-03" src="assets/sfx/pop.mp3" data-start="2" data-duration="0.72" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-04" src="assets/sfx/click.mp3" data-start="2.5" data-duration="0.37" data-track-index="12" data-volume="0.45"></audio>
+      <audio id="sfx-05" src="assets/sfx/glitch-1.mp3" data-start="3.05" data-duration="0.7" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="sfx-06" src="assets/sfx/impact-bass-1.mp3" data-start="4" data-duration="2.12" data-track-index="11" data-volume="0.85"></audio>
+      <audio id="sfx-07" src="assets/sfx/sparkle.mp3" data-start="4.05" data-duration="1.8" data-track-index="12" data-volume="0.32"></audio>
+      <audio id="sfx-08" src="assets/sfx/whoosh.mp3" data-start="7.8" data-duration="0.57" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="sfx-09" src="assets/sfx/pop.mp3" data-start="8.1" data-duration="0.6" data-track-index="12" data-volume="0.2"></audio>
+      <audio id="sfx-10" src="assets/sfx/pop.mp3" data-start="8.2" data-duration="0.6" data-track-index="13" data-volume="0.2"></audio>
+      <audio id="sfx-11" src="assets/sfx/pop.mp3" data-start="8.3" data-duration="0.6" data-track-index="14" data-volume="0.2"></audio>
+      <audio id="sfx-12" src="assets/sfx/pop.mp3" data-start="8.4" data-duration="0.6" data-track-index="11" data-volume="0.2"></audio>
+      <audio id="sfx-13" src="assets/sfx/pop.mp3" data-start="8.5" data-duration="0.6" data-track-index="15" data-volume="0.2"></audio>
+      <audio id="sfx-14" src="assets/sfx/pop.mp3" data-start="8.6" data-duration="0.6" data-track-index="16" data-volume="0.2"></audio>
+      <audio id="sfx-15" src="assets/sfx/click.mp3" data-start="8.75" data-duration="0.37" data-track-index="12" data-volume="0.28"></audio>
+      <audio id="sfx-16" src="assets/sfx/click.mp3" data-start="9.25" data-duration="0.37" data-track-index="11" data-volume="0.28"></audio>
+      <audio id="sfx-17" src="assets/sfx/click.mp3" data-start="9.75" data-duration="0.37" data-track-index="11" data-volume="0.28"></audio>
+      <audio id="sfx-18" src="assets/sfx/click.mp3" data-start="10.25" data-duration="0.37" data-track-index="11" data-volume="0.28"></audio>
+      <audio id="sfx-19" src="assets/sfx/click.mp3" data-start="10.75" data-duration="0.37" data-track-index="11" data-volume="0.28"></audio>
+      <audio id="sfx-20" src="assets/sfx/click.mp3" data-start="11.25" data-duration="0.37" data-track-index="11" data-volume="0.28"></audio>
+      <audio id="sfx-21" src="assets/sfx/whoosh.mp3" data-start="11.75" data-duration="0.57" data-track-index="11" data-volume="0.45"></audio>
+      <audio id="sfx-22" src="assets/sfx/whoosh-short.mp3" data-start="13" data-duration="0.57" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-23" src="assets/sfx/ping.mp3" data-start="13.35" data-duration="1.32" data-track-index="12" data-volume="0.28"></audio>
+      <audio id="sfx-24" src="assets/sfx/whoosh-short.mp3" data-start="14.25" data-duration="0.57" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-25" src="assets/sfx/ping.mp3" data-start="14.55" data-duration="1.32" data-track-index="13" data-volume="0.28"></audio>
+      <audio id="sfx-26" src="assets/sfx/whoosh.mp3" data-start="15.8" data-duration="0.57" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="sfx-27" src="assets/sfx/whoosh-short.mp3" data-start="17" data-duration="0.57" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-28" src="assets/sfx/click.mp3" data-start="18" data-duration="0.37" data-track-index="11" data-volume="0.35"></audio>
+      <audio id="sfx-29" src="assets/sfx/click.mp3" data-start="19" data-duration="0.37" data-track-index="11" data-volume="0.35"></audio>
+      <audio id="sfx-30" src="assets/sfx/whoosh.mp3" data-start="19.75" data-duration="0.57" data-track-index="11" data-volume="0.45"></audio>
+      <audio id="sfx-31" src="assets/sfx/whoosh-short.mp3" data-start="20.05" data-duration="0.57" data-track-index="12" data-volume="0.35"></audio>
+      <audio id="sfx-32" src="assets/sfx/whoosh-short.mp3" data-start="21" data-duration="0.57" data-track-index="11" data-volume="0.35"></audio>
+      <audio id="sfx-33" src="assets/sfx/whoosh-short.mp3" data-start="22" data-duration="0.57" data-track-index="11" data-volume="0.35"></audio>
+      <audio id="sfx-34" src="assets/sfx/sparkle.mp3" data-start="23" data-duration="1.8" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-35" src="assets/sfx/whoosh.mp3" data-start="23.8" data-duration="0.57" data-track-index="12" data-volume="0.5"></audio>
+      <audio id="sfx-36" src="assets/sfx/click.mp3" data-start="24.9" data-duration="0.37" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-37" src="assets/sfx/click.mp3" data-start="25.15" data-duration="0.37" data-track-index="12" data-volume="0.3"></audio>
+      <audio id="sfx-38" src="assets/sfx/click.mp3" data-start="25.4" data-duration="0.37" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-39" src="assets/sfx/click.mp3" data-start="25.65" data-duration="0.37" data-track-index="12" data-volume="0.3"></audio>
+      <audio id="sfx-40" src="assets/sfx/click.mp3" data-start="25.9" data-duration="0.37" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-41" src="assets/sfx/whoosh-short.mp3" data-start="26.25" data-duration="0.57" data-track-index="12" data-volume="0.3"></audio>
+      <audio id="sfx-42" src="assets/sfx/ping.mp3" data-start="26.55" data-duration="1.32" data-track-index="11" data-volume="0.28"></audio>
+      <audio id="sfx-43" src="assets/sfx/whoosh.mp3" data-start="27.75" data-duration="0.57" data-track-index="12" data-volume="0.45"></audio>
+      <audio id="sfx-44" src="assets/sfx/pop.mp3" data-start="28.5" data-duration="0.72" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-45" src="assets/sfx/pop.mp3" data-start="29" data-duration="0.72" data-track-index="12" data-volume="0.3"></audio>
+      <audio id="sfx-46" src="assets/sfx/pop.mp3" data-start="29.5" data-duration="0.72" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-47" src="assets/sfx/pop.mp3" data-start="30" data-duration="0.72" data-track-index="12" data-volume="0.3"></audio>
+      <audio id="sfx-48" src="assets/sfx/whoosh.mp3" data-start="31.5" data-duration="0.57" data-track-index="11" data-volume="0.4"></audio>
+      <audio id="sfx-49" src="assets/sfx/impact-bass-1.mp3" data-start="32" data-duration="2.12" data-track-index="12" data-volume="0.9"></audio>
+      <audio id="sfx-50" src="assets/sfx/sparkle.mp3" data-start="32.1" data-duration="1.8" data-track-index="11" data-volume="0.32"></audio>
+      <audio id="sfx-51" src="assets/sfx/chime.mp3" data-start="34" data-duration="2" data-track-index="11" data-volume="0.38"></audio>
+    </div>
+
+    <script>
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const SR = 0.5; // one beat at 120 BPM
+
+        // Seeded PRNG — deterministic layout for scattered elements.
+        let seed = 20261005;
+        const rnd = () => {
+          seed = (seed * 1664525 + 1013904223) % 4294967296;
+          return seed / 4294967296;
+        };
+
+        // ---------- helpers ----------
+        const focus = (vw, vh, fx, fy, z) => {
+          let x = vw / 2 - fx * z;
+          let y = vh / 2 - fy * z;
+          x = Math.min(0, Math.max(vw - 2560 * z, x));
+          y = Math.min(0, Math.max(vh - 1440 * z, y));
+          return { x, y, scale: z };
+        };
+        const wordmark = (id) => {
+          const el = document.getElementById(id);
+          el.innerHTML = el.dataset.text
+            .split("")
+            .map((c) => `<span class="ch">${c}</span>`)
+            .join("");
+          return el.querySelectorAll(".ch");
+        };
+        const sparks = (id, n) => {
+          const host = document.getElementById(id);
+          const out = [];
+          for (let i = 0; i < n; i++) {
+            const s = document.createElement("div");
+            s.className = "spark";
+            host.appendChild(s);
+            const a = (i / n) * Math.PI * 2 + rnd() * 0.4;
+            const r = 220 + rnd() * 380;
+            out.push({ el: s, dx: Math.cos(a) * r, dy: Math.sin(a) * r * 0.8 + 60 + rnd() * 120, d: 0.8 + rnd() * 0.7, sc: 0.5 + rnd() * 1.2 });
+          }
+          return out;
+        };
+        const zoomIn = (inner, t) => {
+          tl.fromTo(inner, { scale: 0.9, opacity: 0, filter: "blur(16px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.45, ease: "expo.out" }, t);
+        };
+        const zoomOut = (inner, t) => {
+          tl.to(inner, { scale: 1.14, opacity: 0, filter: "blur(16px)", duration: 0.25, ease: "power2.in" }, t - 0.25);
+          tl.fromTo("#flash", { opacity: 0.55 }, { opacity: 0, duration: 0.4, ease: "power2.out", immediateRender: false }, t);
+        };
+        const wipe = (t) => {
+          for (const [id, d] of [["#wipe-b", 0], ["#wipe-a", 0.04]]) {
+            tl.fromTo(id, { x: 0, skewX: -14 }, { x: 2600, skewX: -14, duration: 0.2, ease: "power3.in", immediateRender: false }, t - 0.24 + d);
+            tl.fromTo(id, { x: 2600, skewX: -14 }, { x: 5200, skewX: -14, duration: 0.3, ease: "power3.out", immediateRender: false }, t - 0.02 + d);
+          }
+        };
+        const ghostDrift = (id, t, dx) => {
+          tl.fromTo(id, { x: 0, opacity: 0 }, { x: dx, opacity: 1, duration: 4, ease: "none" }, t);
+        };
+        const pts = (sel, times) => {
+          document.querySelectorAll(sel + " li").forEach((li, i) => {
+            tl.fromTo(li, { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, times[i]);
+            tl.fromTo(li.querySelector("i"), { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2.5)" }, times[i] + 0.05);
+          });
+        };
+        const titleIn = (sel, t) => {
+          tl.fromTo(sel + " > .w", { yPercent: 60, opacity: 0, skewY: 6 }, { yPercent: 0, opacity: 1, skewY: 0, duration: 0.55, ease: "expo.out", stagger: 0.12 }, t);
+        };
+        const kickerIn = (sel, t) => {
+          tl.fromTo(sel, { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, t);
+        };
+        const show = (sel, t, from) => {
+          tl.fromTo(sel, Object.assign({ opacity: 0 }, from), { opacity: 1, x: 0, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.8)" }, t);
+        };
+        const hide = (sel, t) => tl.to(sel, { opacity: 0, duration: 0.25, ease: "power2.out" }, t);
+
+        // ---------- background ambience ----------
+        tl.fromTo("#glow-a", { x: -60, y: 40, scale: 1 }, { x: 90, y: -60, scale: 1.18, duration: 36, ease: "sine.inOut" }, 0);
+        tl.fromTo("#glow-b", { x: 40, y: 0, scale: 1.1 }, { x: -60, y: 70, scale: 0.92, duration: 36, ease: "sine.inOut" }, 0);
+        tl.fromTo("#grid", { x: 0, y: 0 }, { x: -120, y: -60, duration: 36, ease: "none" }, 0);
+        tl.fromTo("#grain", { backgroundPosition: "0px 0px" }, { backgroundPosition: "-4000px 2400px", duration: 36, ease: "steps(432)" }, 0);
+        // Kick-synced glow pulse through the groove (4–30 s) and the CTA bar.
+        for (let t = 4; t < 36; t += SR) {
+          if (t >= 30 && t < 32) continue;
+          if (t >= 34) break;
+          tl.fromTo("#pulse", { opacity: t % 2 === 0 ? 0.9 : 0.55 }, { opacity: 0, duration: 0.45, ease: "power2.out", immediateRender: false }, t);
+        }
+
+        // ================= S1 · hook =================
+        const HEAD = [
+          ["Hugging Face Blog", "微软与 Hugging Face 发布 ThinkingBox"],
+          ["The Decoder", "OpenAI 内部模型得知将被关停后曾考虑自我重启"],
+          ["OpenAI News", "OpenAI 发布 GPT-6 家族模型选用指南"],
+          ["Hugging Face Blog", "Ai2 开源科研报告生成模型 AstaBrief 8B"],
+          ["Google Research", "Google 发布基于 TEE 的新一代联邦学习系统"],
+          ["NVIDIA Blog", "NVIDIA 推出 DGX Spark 64GB 本地 AI 配置"],
+          ["Google DeepMind", "Gemini 3.8 Flash TTS 与 Flash-Lite TTS 发布"],
+          ["Google DeepMind", "Gemini 3.8 Live 与 Live Extended Thinking"],
+          ["OpenAI News", "DevDay 2026 回顾：ChatGPT、Codex 与模型共 20 多项发布"],
+          ["Latent Space", "AMD 以 82 亿美元收购 World Labs"],
+          ["GitHub Blog · AI & ML", "GitHub Security Lab 发布 Fuzzing Taskflow 智能体流水线"],
+          ["Google DeepMind", "WeatherNext 3 全球天气预报模型"],
+          ["Mistral AI", "Mistral 发布 Agentic Search，多步检索复杂文档"],
+          ["Google DeepMind", "Google 为 Private AI Compute 引入安全服务端持久记忆"],
+          ["Microsoft Research", "测量物理 AI 推理卸载到边缘或云端 GPU 的效果"],
+          ["Simon Willison", "从 CUDA 到 MLX：K-Search 如何迁移内核经验"],
+          ["MIT Technology Review", "AI 智能体完成大规模代码迁移"],
+          ["Ars Technica · AI", "本周 AI 模型密集更新"],
+        ];
+        const cardsHost = document.getElementById("s1-cards");
+        const slots = [];
+        for (let r = 0; r < 4; r++) for (let c = 0; c < 5; c++) slots.push([c, r]);
+        const cards = HEAD.map(([src, ttl], i) => {
+          const d = document.createElement("div");
+          d.className = "ncard";
+          d.setAttribute("data-layout-allow-overlap", "");
+          d.setAttribute("data-layout-allow-overflow", "");
+          d.setAttribute("data-layout-allow-occlusion", "");
+          d.innerHTML = `<div class="src" data-layout-allow-overlap data-layout-allow-overflow data-layout-allow-occlusion>${src}</div><div class="ttl" data-layout-allow-overlap data-layout-allow-overflow data-layout-allow-occlusion>${ttl}</div>`;
+          const [c, r] = slots[(i * 7) % 20];
+          const left = -120 + c * 420 + rnd() * 120;
+          const top = -40 + r * 285 + rnd() * 90;
+          d.style.left = left + "px";
+          d.style.top = top + "px";
+          cardsHost.appendChild(d);
+          return { el: d, cx: left + 250, cy: top + 80, rot: (rnd() - 0.5) * 14, sc: 0.78 + rnd() * 0.3, op: 0.55 + rnd() * 0.45 };
+        });
+        cards.forEach((k, i) => {
+          const p = i / cards.length;
+          const t = 0.08 + 2.85 * (1 - Math.pow(1 - p, 1.7));
+          const vx = k.cx - 960;
+          const vy = k.cy - 540;
+          const len = Math.hypot(vx, vy) || 1;
+          tl.fromTo(
+            k.el,
+            { x: (vx / len) * 900, y: (vy / len) * 700, rotation: k.rot * 4, scale: k.sc * 1.3, opacity: 0 },
+            { x: 0, y: 0, rotation: k.rot, scale: k.sc, opacity: k.op, duration: 0.6, ease: "expo.out" },
+            t
+          );
+          tl.to(k.el, { y: -26 - rnd() * 30, duration: 3.0 - t * 0.6, ease: "none" }, t + 0.6);
+          // collapse into the ember point
+          tl.to(k.el, { x: 960 - k.cx, y: 540 - k.cy, scale: 0.04, rotation: k.rot * 6, opacity: 0, duration: 0.55, ease: "power3.in" }, 3.05 + rnd() * 0.15);
+        });
+        tl.fromTo("#s1-vig", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0.15);
+        tl.fromTo("#s1-w1", { yPercent: 70, opacity: 0, skewY: 8 }, { yPercent: 0, opacity: 1, skewY: 0, duration: 0.5, ease: "expo.out" }, 0.25);
+        tl.fromTo("#s1-w2", { scale: 1.6, opacity: 0, filter: "blur(10px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.32, ease: "power4.out" }, 1.0);
+        tl.fromTo("#s1-r1", { x: -16 }, { x: 0, duration: 0.45, ease: "elastic.out(1.2, 0.3)" }, 1.0);
+        tl.fromTo("#s1-w3", { yPercent: 70, opacity: 0, skewY: 8 }, { yPercent: 0, opacity: 1, skewY: 0, duration: 0.5, ease: "expo.out" }, 2.0);
+        tl.fromTo("#s1-w4", { scale: 1.6, opacity: 0, filter: "blur(10px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.32, ease: "power4.out" }, 2.5);
+        tl.fromTo("#s1-r2", { x: 16 }, { x: 0, duration: 0.45, ease: "elastic.out(1.2, 0.3)" }, 2.5);
+        tl.to(".s1-text", { scale: 0.5, x: 260, opacity: 0, filter: "blur(14px)", duration: 0.45, ease: "power3.in" }, 3.2);
+        tl.to("#s1-vig", { opacity: 0, duration: 0.4 }, 3.3);
+        tl.fromTo("#s1-dot", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(3)" }, 3.5);
+        tl.to("#s1-dot", { scale: 1.6, duration: 0.25, ease: "power2.in" }, 3.75);
+
+        // ================= S2 · brand reveal (drop at 4.0) =================
+        const s2ch = wordmark("s2-word");
+        const s2line = document.getElementById("s2-flame-line");
+        const L2 = s2line.getTotalLength();
+        s2line.style.strokeDasharray = L2;
+        tl.fromTo("#flash", { opacity: 1 }, { opacity: 0, duration: 0.55, ease: "power2.out", immediateRender: false }, 4.0);
+        tl.fromTo("#s2-flame", { scale: 0.2, rotation: -12, transformOrigin: "50% 80%" }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2.2)" }, 4.0);
+        tl.fromTo(s2line, { strokeDashoffset: L2 }, { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 4.0);
+        tl.fromTo("#s2-flame-fill", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, 4.25);
+        tl.to("#s2-flame", { scaleY: 1.05, scaleX: 0.98, duration: 0.25, ease: "sine.inOut", yoyo: true, repeat: 11 }, 4.65);
+        tl.fromTo("#s2-ring", { scale: 0.3, opacity: 1 }, { scale: 9, opacity: 0, duration: 0.9, ease: "expo.out" }, 4.0);
+        sparks("s2-sparks", 30).forEach((s) => {
+          tl.fromTo(s.el, { x: 0, y: 0, scale: s.sc, opacity: 1 }, { x: s.dx, y: s.dy, scale: 0.2, opacity: 0, duration: s.d, ease: "power3.out" }, 4.0);
+        });
+        tl.fromTo(s2ch, { yPercent: 110, opacity: 0, rotationX: -70 }, { yPercent: 0, opacity: 1, rotationX: 0, duration: 0.55, ease: "back.out(1.7)", stagger: 0.045 }, 4.12);
+        tl.fromTo("#s2-zh", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 4.75);
+        tl.fromTo("#s2-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power3.out" }, 4.9);
+        tl.fromTo("#s2-tag", { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, 5.0);
+        tl.fromTo("#s2-chip", { y: 30, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 5.6);
+        tl.fromTo("#s2-lock", { scale: 1 }, { scale: 1.05, duration: 3.8, ease: "none" }, 4.0);
+
+        // ================= S3 · pipeline (wipe in at 8.0) =================
+        wipe(8);
+        ghostDrift("#s3-ghost", 8, -160);
+        titleIn("#s3-title", 8.05);
+        tl.fromTo("#s3 .src-chip", { y: 30, opacity: 0, scale: 0.7 }, { y: 0, opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2.4)", stagger: 0.1 }, 8.1);
+        tl.fromTo("#s3 .node", { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "expo.out", stagger: 0.06 }, 8.3);
+        tl.fromTo("#s3-fill", { scaleX: 0 }, { scaleX: 1, duration: 2.5, ease: "none" }, 8.75);
+        tl.fromTo("#s3-packet", { x: 0, opacity: 0 }, { x: 1410, opacity: 1, duration: 2.5, ease: "none" }, 8.75);
+        document.querySelectorAll("#s3 .node").forEach((n, i) => {
+          const t = 8.75 + i * SR;
+          const dot = n.querySelector(".dot");
+          tl.to(dot, { backgroundColor: "#ff6b2c", borderColor: "#ffb547", color: "#1a0c04", duration: 0.12, ease: "none" }, t);
+          tl.fromTo(dot, { scale: 1.35 }, { scale: 1, duration: 0.4, ease: "back.out(2)", immediateRender: false }, t);
+          tl.to(n.querySelector(".nt"), { color: "#ffb547", duration: 0.12 }, t);
+        });
+        tl.fromTo("#s3-foot", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 10.0);
+        tl.fromTo("#s3-foot i", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: 0.4, ease: "power3.out" }, 10.05);
+        zoomOut("#s3-in", 12);
+
+        // ================= S4 · selected (zoom in at 12.0) =================
+        const W4 = { vw: 1160, vh: 542 };
+        zoomIn("#s4-in", 12);
+        ghostDrift("#s4-ghost", 12, 140);
+        kickerIn("#s4-k", 12.15);
+        titleIn("#s4-title", 12.2);
+        pts("#s4-pts", [12.6, 13.25, 14.5]);
+        tl.fromTo("#s4-win", { x: 260, rotationY: -30, rotationX: 10, opacity: 0, transformPerspective: 1800 }, { x: 0, rotationY: -9, rotationX: 4, opacity: 1, transformPerspective: 1800, duration: 0.85, ease: "expo.out" }, 12.05);
+        tl.set("#s4-layer", focus(W4.vw, W4.vh, 0, 0, 1160 / 2560), 12);
+        tl.to("#s4-win", { rotationY: 0, rotationX: 0, duration: 0.6, ease: "power3.inOut" }, 13.0);
+        tl.to("#s4-layer", Object.assign(focus(W4.vw, W4.vh, 1700, 360, 0.62), { duration: 0.6, ease: "power3.inOut" }), 13.0);
+        show("#s4-hl1", 13.35, { scale: 1.4 });
+        show("#s4-lb1", 13.45, { y: 30 });
+        hide(["#s4-hl1", "#s4-lb1"], 14.15);
+        tl.to("#s4-layer", Object.assign(focus(W4.vw, W4.vh, 650, 433, 1.0), { duration: 0.6, ease: "power3.inOut" }), 14.2);
+        show("#s4-hl2", 14.55, { scale: 1.15 });
+        show("#s4-lb2", 14.65, { y: 30 });
+        tl.to("#s4-layer", { scale: 1.06, x: "-=20", y: "-=20", duration: 1.0, ease: "none" }, 14.8);
+
+        // ================= S5 · article (wipe in at 16.0) =================
+        const W5 = { vw: 1180, vh: 664 };
+        wipe(16);
+        ghostDrift("#s5-ghost", 16, -140);
+        tl.fromTo("#s5-win", { x: -300, rotationY: 30, rotationX: 8, opacity: 0, transformPerspective: 1800 }, { x: 0, rotationY: 8, rotationX: 3, opacity: 1, transformPerspective: 1800, duration: 0.85, ease: "expo.out" }, 16.0);
+        tl.set("#s5-layer", focus(W5.vw, W5.vh, 0, 0, 1180 / 2560), 16);
+        kickerIn("#s5-k", 16.15);
+        titleIn("#s5-title", 16.2);
+        pts("#s5-pts", [17.15, 18.15, 19.15]);
+        tl.to("#s5-win", { rotationY: 0, rotationX: 0, duration: 0.6, ease: "power3.inOut" }, 16.9);
+        tl.to("#s5-layer", Object.assign(focus(W5.vw, W5.vh, 1367, 170, 0.95), { duration: 0.6, ease: "power3.inOut" }), 16.9);
+        show("#s5-hl1", 17.25, { scale: 1.1 });
+        show("#s5-lb1", 17.35, { y: 30 });
+        hide(["#s5-hl1", "#s5-lb1"], 17.95);
+        tl.to("#s5-layer", Object.assign(focus(W5.vw, W5.vh, 1700, 385, 1.3), { duration: 0.55, ease: "power3.inOut" }), 17.95);
+        show("#s5-hl2", 18.25, { scale: 1.4 });
+        show("#s5-lb2", 18.35, { y: 30 });
+        hide(["#s5-hl2", "#s5-lb2"], 18.95);
+        tl.to("#s5-layer", Object.assign(focus(W5.vw, W5.vh, 2322, 494, 1.3), { duration: 0.55, ease: "power3.inOut" }), 18.95);
+        show("#s5-hl3", 19.25, { scale: 1.4 });
+        show("#s5-lb3", 19.35, { y: 30 });
+        zoomOut("#s5-in", 20);
+
+        // ================= S6 · reports (zoom in at 20.0) =================
+        zoomIn("#s6-in", 20);
+        const C = ["#s6-c1", "#s6-c2", "#s6-c3"];
+        const B = ["#s6-b1", "#s6-b2", "#s6-b3"];
+        const S = ["#s6-s1", "#s6-s2", "#s6-s3"];
+        C.forEach((c, i) => {
+          const t = 20 + i;
+          tl.fromTo(c, { x: 900, rotationY: -38, opacity: 0, transformPerspective: 2000 }, { x: 0, rotationY: 0, opacity: 1, transformPerspective: 2000, duration: 0.6, ease: "expo.out" }, t);
+          for (let k = 0; k < i; k++) {
+            const depth = i - k;
+            tl.to(C[k], { x: -80 * depth, y: -40 * depth, scale: 1 - 0.07 * depth, opacity: 1 - 0.3 * depth, duration: 0.5, ease: "power3.out" }, t);
+          }
+          tl.fromTo(B[i], { yPercent: 100 }, { yPercent: 0, duration: 0.45, ease: "expo.out" }, t);
+          tl.fromTo(S[i], { yPercent: 100 }, { yPercent: 0, duration: 0.45, ease: "expo.out" }, t + 0.05);
+          if (i < 2) {
+            tl.to(B[i], { yPercent: -100, duration: 0.35, ease: "power3.in" }, t + 0.9);
+            tl.to(S[i], { yPercent: -100, duration: 0.35, ease: "power3.in" }, t + 0.9);
+          }
+        });
+        tl.fromTo("#s6-note", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 20.4);
+        tl.to("#s6-left", { opacity: 0, x: -80, duration: 0.4, ease: "power3.in" }, 22.9);
+        const TRI = [400, 960, 1520];
+        C.forEach((c, i) => {
+          tl.to(c, { x: TRI[i] - 1320, y: 72, scale: 0.52, opacity: 1, rotationY: 0, duration: 0.6, ease: "expo.inOut" }, 23.0 + i * 0.04);
+        });
+        tl.fromTo("#s6-head", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, 23.2);
+        tl.fromTo(["#s6-l1", "#s6-l2", "#s6-l3"], { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "back.out(2)", stagger: 0.08 }, 23.35);
+
+        // ================= S7 · leaderboard (wipe in at 24.0) =================
+        const W7 = { vw: 1280, vh: 720 };
+        wipe(24);
+        ghostDrift("#s7-ghost", 24, 160);
+        tl.fromTo("#s7-win", { y: 320, rotationX: 28, opacity: 0, transformPerspective: 2000 }, { y: 0, rotationX: 0, opacity: 1, transformPerspective: 2000, duration: 0.8, ease: "expo.out" }, 24.0);
+        tl.set("#s7-layer", focus(W7.vw, W7.vh, 0, 0, 0.5), 24);
+        kickerIn("#s7-k", 24.1);
+        titleIn("#s7-title", 24.15);
+        const num = { v: 0 };
+        const nEl = document.getElementById("s7-n");
+        tl.fromTo("#s7-num", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 24.5);
+        tl.fromTo(num, { v: 0 }, { v: 5, duration: 1.25, ease: "none", onUpdate: () => (nEl.textContent = String(Math.round(num.v))) }, 24.75);
+        tl.fromTo("#s7-tabs span", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.3, ease: "back.out(2)", stagger: 0.25 }, 24.85);
+        tl.fromTo("#s7-note", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 26.3);
+        tl.to("#s7-layer", Object.assign(focus(W7.vw, W7.vh, 380, 307, 1.3), { duration: 0.55, ease: "power3.inOut" }), 24.4);
+        const TABS = [
+          [215, 52],
+          [276, 52],
+          [339, 52],
+          [400, 52],
+          [455, 96],
+        ];
+        tl.fromTo("#s7-tab", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 24.9);
+        tl.set("#s7-tab", { transformOrigin: "0 50%" }, 24.9);
+        TABS.forEach(([l, w], i) => {
+          tl.to("#s7-tab", { x: l - 215, scaleX: w / 52, duration: i ? 0.14 : 0.01, ease: "power3.out" }, 24.9 + i * 0.25);
+        });
+        show("#s7-lbA", 24.95, { y: 30 });
+        hide(["#s7-tab", "#s7-lbA"], 26.15);
+        tl.to("#s7-layer", Object.assign(focus(W7.vw, W7.vh, 1950, 560, 0.85), { duration: 0.6, ease: "power3.inOut" }), 26.2);
+        show("#s7-hlB", 26.55, { scale: 1.08 });
+        show("#s7-lbB", 26.65, { y: 30 });
+        tl.fromTo("#s7-hlC", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, opacity: 1, duration: 0.45, ease: "power3.out" }, 26.75);
+        show("#s7-lbC", 26.85, { y: 30 });
+        tl.to("#s7-layer", { scale: 0.88, x: "-=40", duration: 1.0, ease: "none" }, 27.0);
+        zoomOut("#s7-in", 28);
+
+        // ================= S8 · trust (zoom in at 28.0) =================
+        zoomIn("#s8-in", 28);
+        ghostDrift("#s8-ghost", 28, 120);
+        kickerIn("#s8-k", 28.1);
+        titleIn("#s8-title", 28.15);
+        ["#s8-t1", "#s8-t2", "#s8-t3", "#s8-t4"].forEach((t, i) => {
+          tl.fromTo(t, { y: 60, scale: 0.85, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.8)" }, 28.5 + i * SR);
+          tl.fromTo(t + " svg", { rotation: -25, scale: 0.4 }, { rotation: 0, scale: 1, duration: 0.5, ease: "back.out(2.5)" }, 28.55 + i * SR);
+          tl.fromTo(t, { borderColor: "rgba(255,107,44,1)" }, { borderColor: "rgba(243,238,230,0.12)", duration: 0.6, ease: "power2.out", immediateRender: false }, 28.5 + i * SR);
+        });
+        tl.fromTo("#s8-foot", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 30.3);
+        // snare-roll build: tiles tighten, then everything is sucked into the CTA
+        tl.to(".tiles", { scale: 0.97, duration: 1.4, ease: "power1.in" }, 30.2);
+        tl.to("#s8-in", { scale: 0.18, opacity: 0, filter: "blur(18px)", duration: 0.4, ease: "power4.in" }, 31.6);
+
+        // ================= S9 · CTA (drop at 32.0) =================
+        const s9ch = wordmark("s9-word");
+        tl.fromTo("#flash", { opacity: 1 }, { opacity: 0, duration: 0.6, ease: "power2.out", immediateRender: false }, 32.0);
+        tl.fromTo("#s9-rays", { rotation: 0, opacity: 0, scale: 0.6 }, { rotation: 40, opacity: 1, scale: 1, duration: 4, ease: "power1.out" }, 32.0);
+        tl.fromTo("#s9-flame", { scale: 0.2, rotation: 14, transformOrigin: "50% 80%" }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2.4)" }, 32.0);
+        tl.to("#s9-flame", { scaleY: 1.05, scaleX: 0.98, duration: 0.25, ease: "sine.inOut", yoyo: true, repeat: 11 }, 32.6);
+        tl.fromTo("#s9-ring", { scale: 0.3, opacity: 1 }, { scale: 11, opacity: 0, duration: 1.0, ease: "expo.out" }, 32.0);
+        sparks("s9-sparks", 36).forEach((s) => {
+          tl.fromTo(s.el, { x: 0, y: 0, scale: s.sc, opacity: 1 }, { x: s.dx * 1.2, y: s.dy, scale: 0.2, opacity: 0, duration: s.d + 0.2, ease: "power3.out" }, 32.0);
+        });
+        tl.fromTo(s9ch, { yPercent: 110, opacity: 0, rotationX: -70 }, { yPercent: 0, opacity: 1, rotationX: 0, duration: 0.55, ease: "back.out(1.7)", stagger: 0.04 }, 32.1);
+        tl.fromTo("#s9-zh", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 32.6);
+        tl.fromTo("#s9-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "power3.out" }, 32.7);
+        tl.fromTo("#s9-tag", { x: 40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, 32.8);
+        tl.fromTo("#s9-pill", { y: 40, opacity: 0, scale: 0.8 }, { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2)" }, 33.05);
+        tl.fromTo("#s9-tags span", { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out", stagger: 0.08 }, 33.4);
+        // press on the final stab
+        tl.to("#s9-pill", { scale: 0.93, duration: 0.08, ease: "power2.in" }, 33.92);
+        tl.to("#s9-pill", { scale: 1.06, boxShadow: "0 24px 140px rgba(255,107,44,0.9)", duration: 0.25, ease: "back.out(3)" }, 34.0);
+        tl.to("#s9-pill", { scale: 1, boxShadow: "0 24px 80px rgba(255,107,44,0.45)", duration: 0.6, ease: "power2.out" }, 34.25);
+        tl.fromTo("#s9-lock", { scale: 1 }, { scale: 1.04, duration: 3.4, ease: "none" }, 32.0);
+        tl.to("#s9-in", { opacity: 0, duration: 0.6, ease: "power2.in" }, 35.35);
+        tl.to("#bg", { opacity: 0, duration: 0.6, ease: "power2.in" }, 35.35);
+
+        // ================= HUD =================
+        tl.fromTo("#hud-brand", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 8.1);
+        tl.fromTo("#hud-fill", { scaleX: 0 }, { scaleX: 1, duration: 24, ease: "none" }, 8);
+        tl.to("#hud-brand", { opacity: 0, duration: 0.3 }, 31.6);
+
+        window.__timelines["main"] = tl;
+      })();
+    </script>
+  </body>
+</html>
