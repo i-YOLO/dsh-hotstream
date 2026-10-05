@@ -1,0 +1,5 @@
+- insert:
+    - id: hotstream
+      name: dsh-hotstream
+    - id: hotstream-client
+      name: dsh-hotstream-client

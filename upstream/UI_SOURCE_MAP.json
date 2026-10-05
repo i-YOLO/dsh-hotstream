@@ -1,0 +1,1109 @@
+{
+  "commit": "cc66cceb1dc7a0bc147e942e49ff94c9cee418c6",
+  "files": [
+    {
+      "upstream": "apps/web/app/components/Logo.tsx",
+      "destination": "packages/client/src/client/aihot/components/Logo.tsx",
+      "sourceSha256": "886f0f65cc106f41ecf8922ecf41de68b485fe31b028fa215ad58a5ae82f37a2",
+      "destinationSha256": "4797e684c875e3bdaa0c75242b6598baa37c3fea31102e683590287d414c5f4c",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/icons.tsx",
+      "destination": "packages/client/src/client/aihot/components/icons.tsx",
+      "sourceSha256": "4d5ba8b4ebabd64c4835843318a2c9c7ee4dc843948afd077f8528976d923673",
+      "destinationSha256": "39880763feeda4d986be702db1c25ed7775f853c7e55f4de1759ebf6781bf1a8",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/CodeBlock.tsx",
+      "destination": "packages/client/src/client/aihot/components/CodeBlock.tsx",
+      "sourceSha256": "8c0e73677c6ef791990f13742690f2a25caddff19b8bdebfee6be9d6ecd4ba4e",
+      "destinationSha256": "696a71462e64629e1076b781e79ea8906617e2ed6a708d2743084ce82210ccb3",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Tabs.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Tabs.tsx",
+      "sourceSha256": "2f94ab96e9e69b95eaf48320e67dd430d25ef558e0a1b634951a9072264ee5e9",
+      "destinationSha256": "836a4953786471cb4f1d617e783ad9c2e8cc3d28a1a035ba68398adc46c3edcb",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/IntentLink.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/IntentLink.tsx",
+      "sourceSha256": "172a896879c93b5719600bf98d1074339275cdc7ccb13baaa53b305dee003cc4",
+      "destinationSha256": "c86202247db44ee39465ec698fb380838c20ced04ed1f808f8c0c3d1f31a026a",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Sheet.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Sheet.tsx",
+      "sourceSha256": "871a7e2b1a75dfdb1e70f54d2f8f28c599f9f4b439a7abac84a06768eb836356",
+      "destinationSha256": "fa7f8d8f3d0f627ee80b1d164d6ebbd451397dde0baeaa4eb8a8b36cd0247a4f",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/modal.ts",
+      "destination": "packages/client/src/client/aihot/components/ui/modal.ts",
+      "sourceSha256": "bd73cdebadf28ce5d52efafad882d8b16971ad050a8daeb2a11cdaabb902566c",
+      "destinationSha256": "bd0e275a6cd4cfef1705f79234458986fd9ddfa2d4da2d8fa478b5b1ee716076",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Kicker.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Kicker.tsx",
+      "sourceSha256": "92dc39286326aa0ac9360b91f4b519199d8a6c67d72c471a852a3bd799483033",
+      "destinationSha256": "1b8bfac63c1d0f613a161e45ecc774f3c069fb183cf45fdd7bf8a7e37098d352",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Presence.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Presence.tsx",
+      "sourceSha256": "e794e69faac5a0c668e8d5b1b2b98d98aa5120accd6a1ece8e964462098e1761",
+      "destinationSha256": "2e0bbc6e3c0e3bd605ec48dc195720cc61437dc88bb579c52c7cbfc64e1c730a",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/SourceAvatar.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/SourceAvatar.tsx",
+      "sourceSha256": "9e85be6cd4b4de244e68a2cf712456b68831f5ef32e3a5a8350c455e54ed0c0a",
+      "destinationSha256": "cd809256dbd52b499455d0b80f6cc8b76f3d4731bbdaa2bec1e46917e8d93d44",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/OutlineSheet.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/OutlineSheet.tsx",
+      "sourceSha256": "3ed7c6041b6ab5e776c0fe92b95c04cdfa6f06e1bd3406e9552f7c055aa2da37",
+      "destinationSha256": "738ef642e394df550f2535a9d5b52684900f07dc22ece221fe994196b8835717",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Score.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Score.tsx",
+      "sourceSha256": "9ab1ad552e8f3f4ec06d0191d3020cc8cdee98bf5ed9397b74c441e984bcd9c2",
+      "destinationSha256": "70ac8584d5bc72d6315574bb68d17dee00a50b8345088a2b802d6d0a57f9e503",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Menu.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Menu.tsx",
+      "sourceSha256": "6cefbfed7e926db39b3c617f58bcadb16a1c00c261dd2858f57a34a5cdf332fb",
+      "destinationSha256": "6a4ef3d2dd0af350159ae05d52f80e0e2429680351ea6d4dda7470cf1efeac51",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Badge.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Badge.tsx",
+      "sourceSha256": "b3cdc8466cc6af416d14c66ed0b76786f0dcdc08b1240f5effdb412bdf2fd9b0",
+      "destinationSha256": "4842142843e822dcd6fb8199ce6c3d0fb02320480149240b9cf9c92b59afebae",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Page.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Page.tsx",
+      "sourceSha256": "e1f579c058d3f24f48b2c63fd6f7bcc76a0bbb3cb0cfa9cfb260da02160fcef7",
+      "destinationSha256": "9566801fd5199347277ff1ecffe1946bded87c97fac4216c7c66088a6b59def7",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Controls.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Controls.tsx",
+      "sourceSha256": "4d5f2c32b9b56f7b4b36cc52b186401f85f7953e2e7f7e0c9a391119e2a24b91",
+      "destinationSha256": "fcd72ed90458b093a5b21cd89cbd36838cdeded375f7b8810c793e7584d35890",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/ui/Lightbox.tsx",
+      "destination": "packages/client/src/client/aihot/components/ui/Lightbox.tsx",
+      "sourceSha256": "07efd329428eed512038673fbbf1ad11018a8dfbb6f0b2a0f727c1c26be61cf5",
+      "destinationSha256": "612813aa692d8633fde5c821c4b064cd5bcdb887cea8f6a0058fa2419d63d39b",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/shell/PhoneBar.tsx",
+      "destination": "packages/client/src/client/aihot/components/shell/PhoneBar.tsx",
+      "sourceSha256": "0a78dde2603a9183eea91d1e75558a47a84fbde84ee5023fb3bf9dfb72b6b550",
+      "destinationSha256": "9056479a15547654b2caa4dbaf645de2961a3a1b514e5f22cf2c6abcd1370da3",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/shell/screens.ts",
+      "destination": "packages/client/src/client/aihot/components/shell/screens.ts",
+      "sourceSha256": "8f48da897f7a51dc9e7b449a4d869c8c5ee38e27617c9b2b8ea7f92970088084",
+      "destinationSha256": "98f8388b4cfc20b947b85a73bcb0d8fc4f6f331b8c5fc941b793db760e9c8e0c",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/shell/nav.ts",
+      "destination": "packages/client/src/client/aihot/components/shell/nav.ts",
+      "sourceSha256": "77a763990f658ae1021c75db6a9177d0383900d2443c9ba400f484b2beae6832",
+      "destinationSha256": "1e4c7fb32a75877612f150c3c55f0fdadd486b6413a3f84cbdb8b8fc83c0366e",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/shell/transitions.ts",
+      "destination": "packages/client/src/client/aihot/components/shell/transitions.ts",
+      "sourceSha256": "f1ae9905ad9ea5c9fb31c5eb6fbbea9918db6a1cc24aff6a34632e991f5f8ce7",
+      "destinationSha256": "91d3f4e3e0f929c2302054f42baaed9ebac3076b7f1bb62cb0057ba8785873ee",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/shell/Chrome.tsx",
+      "destination": "packages/client/src/client/aihot/components/shell/Chrome.tsx",
+      "sourceSha256": "9449a73b395bd4208f9291feea2568a8038d08b92cdb41e4765cebbff3611c79",
+      "destinationSha256": "ab1983ce6bda9ff1eda13f1fddc7c21d5c6227416323cf9f4caed5f29e9cfd94",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/shell/Sidebar.tsx",
+      "destination": "packages/client/src/client/aihot/components/shell/Sidebar.tsx",
+      "sourceSha256": "c05f836cea279eacbb8fdfbcb0092ee0670cf077d3d455247f8454e94f376383",
+      "destinationSha256": "b8d0ba6fc206f04e28d86db27f34e330e11fc2734ab918146ea29ca120a422dc",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/shell/PullToRefresh.tsx",
+      "destination": "packages/client/src/client/aihot/components/shell/PullToRefresh.tsx",
+      "sourceSha256": "32df0189c3cfadfc91dd355ed79f24ef511c3d6618823729c6c652dbc0996687",
+      "destinationSha256": "9148627e5199db8b269f7c372a41ebcbf158ff7c6da8773dbaf0463a010e821d",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/shell/TabBar.tsx",
+      "destination": "packages/client/src/client/aihot/components/shell/TabBar.tsx",
+      "sourceSha256": "84035e640086fc2cd51421e0ad84c8cf302c4c966a8ce2b769b8b98c52dc68b1",
+      "destinationSha256": "c84ace25a4999f46cdac70717b7dcdc1446bf3e4edfb49a589fea5a8c96703c3",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/components/shell/ThemeSwitch.tsx",
+      "destination": "packages/client/src/client/aihot/components/shell/ThemeSwitch.tsx",
+      "sourceSha256": "deb7cd347ad3c6d2327d82235ffd01aea346c95a6e020e8c2e3b17e5db5aa453",
+      "destinationSha256": "5873150e934f6151a03d3c76abca7b37d54fcde8ac62fa579598a74a116df8fd",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/feed/Filters.tsx",
+      "destination": "packages/client/src/client/aihot/features/feed/Filters.tsx",
+      "sourceSha256": "b45dd31d64da8ac45b16729bf07a310a5827b4919e0235b8c5305e55380897b4",
+      "destinationSha256": "afce9a8b5a53ea32592240bea4d176bacaa882ff2d8a3e2248f0abe0d9f0dc00",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/feed/HotTopics.tsx",
+      "destination": "packages/client/src/client/aihot/features/feed/HotTopics.tsx",
+      "sourceSha256": "e1ba24f80e551f67c4c9af64a27bcf1536d3ab6358aa9c198202e946c5e90ecb",
+      "destinationSha256": "20a69d06034248b8c033112f4f0967a1a792a66496a5adf6da9746d192ab8945",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/feed/Timeline.tsx",
+      "destination": "packages/client/src/client/aihot/features/feed/Timeline.tsx",
+      "sourceSha256": "3477343b5bd50ee4841bbd5094b5bf6e5417daf6afdac571bb7acdc802a5d40c",
+      "destinationSha256": "c651c45726a20dd73f19196c719eaeca2e7bf5ce1a9861663261e9ceebb882f7",
+      "status": "ported",
+      "difference": "Official native read transport; background refresh revalidates the loaded window and retains folds/scroll; see timeline-refresh.ts.",
+      "behaviorEvidence": [
+        "tests/integration/reading-navigation.test.mjs",
+        "tests/integration/client-refresh.test.mjs"
+      ]
+    },
+    {
+      "upstream": "apps/web/app/features/feed/FeedItem.tsx",
+      "destination": "packages/client/src/client/aihot/features/feed/FeedItem.tsx",
+      "sourceSha256": "48329ca04d5f96b1f5a1458f31fc7439bdd0f846f2f0c51c55fd0e81f68b39f7",
+      "destinationSha256": "687e23ff5497be8eaea6d64c0c4fe9ae50cce5ed4c39c2d45c3158839f987c62",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/feed/ReadingGroup.tsx",
+      "destination": "packages/client/src/client/aihot/features/feed/ReadingGroup.tsx",
+      "sourceSha256": "f432ce46f681ad35ac60a83d206e49a9826236ba54b67b51b0a9618c89934ee2",
+      "destinationSha256": "f30b735082e48ea4dfd3f291bb1386d19d7525820fb458e40672a68a1cb0f032",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/feed/parts.tsx",
+      "destination": "packages/client/src/client/aihot/features/feed/parts.tsx",
+      "sourceSha256": "d77e3b530f1947efad50be85d3818748745373f159d34841afaa247be04adecb",
+      "destinationSha256": "ce8289a71b05d5843fee3c167559f985bae24907773ba7014726d6fc08e9a23f",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/feed/DayList.tsx",
+      "destination": "packages/client/src/client/aihot/features/feed/DayList.tsx",
+      "sourceSha256": "9fe346ceb85696670270dd3218eaa7d7c5f16c99bdeefeedf5d7c932bdc54109",
+      "destinationSha256": "509f038e3980c40e322f80b02166841d244b1b01411f49f67d65809fdf34b422",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/hot/curve.ts",
+      "destination": "packages/client/src/client/aihot/features/hot/curve.ts",
+      "sourceSha256": "826938c13186a07959adca19ea83a2408b3a87c07c6d543bf91a7ae1816a5e71",
+      "destinationSha256": "b1455f42fcd0d136b1c5c0b9c066dadb4bd8db9b4755bdf5358ae79b4a95366d",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/hot/Sparkline.tsx",
+      "destination": "packages/client/src/client/aihot/features/hot/Sparkline.tsx",
+      "sourceSha256": "fcba623b2ce68da4d48fa478734239be8615f7251d8ba81f6101806e12c77fd5",
+      "destinationSha256": "dac3b2cb355e7213e820d1102d9173b9acfd4262ec9ee96d2601f92706f54b5c",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/hot/Delta.tsx",
+      "destination": "packages/client/src/client/aihot/features/hot/Delta.tsx",
+      "sourceSha256": "8dc14d87c1b50ec020bb1dca95a127d4e23feed1405d8ea86b26e78d1b7c76ae",
+      "destinationSha256": "7117b39e2495c9dd077c9fcce0d8c719357bed6e080aff3dc415cd9c0d374424",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/hot/Faces.tsx",
+      "destination": "packages/client/src/client/aihot/features/hot/Faces.tsx",
+      "sourceSha256": "ab48c5b9ffac2048e6242dd50c42b4bc379253ac70f423731a27123e01d72e38",
+      "destinationSha256": "502ba04ff6446cabc39764174581ab4b60bfcdb95d1cb61206b1e027b64a2c9d",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/item/StoryFollowups.tsx",
+      "destination": "packages/client/src/client/aihot/features/item/StoryFollowups.tsx",
+      "sourceSha256": "218cb6775cee3f60db680dc7fb649e4fb7a9ca674de97ab9ec712ec6e99d88d3",
+      "destinationSha256": "cbb678349c55ccc4dba8136b710c873cf0b0a24042c26bb492bea9c17b7b4eb0",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/item/highlight.ts",
+      "destination": "packages/client/src/client/aihot/features/item/highlight.ts",
+      "sourceSha256": "76ebe17f97bc713faaf8b9bb92fdd408f81450f3cb728874cc25a0555d1a7cbb",
+      "destinationSha256": null,
+      "status": "native replacement",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/item/ReaderTools.tsx",
+      "destination": "packages/client/src/client/aihot/features/item/ReaderTools.tsx",
+      "sourceSha256": "f2ec2e719d0cc4417f0be0cb9e519d8c6c05b5274dc81275e38eba5df9e92852",
+      "destinationSha256": "4da1b3c293eb090117d4c291700b0239929c7adc782cffeb2825d0e8fbb59124",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/item/ArticleBody.tsx",
+      "destination": "packages/client/src/client/aihot/features/item/ArticleBody.tsx",
+      "sourceSha256": "8956640154106cd00b4b693ffeb5dd2f297cb8b40d19edb5309b9fe04cbafb0b",
+      "destinationSha256": "69bd2eb2dd30c2811b0237aed158c24fc3c0bf0c4e901ee3b239f58d72561775",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/item/PosterSheet.tsx",
+      "destination": "packages/client/src/client/aihot/features/item/PosterSheet.tsx",
+      "sourceSha256": "02e60a98e7c4cbb98db40ee6e641f023f67b1530c713a0d67f63c13f897af0c7",
+      "destinationSha256": "d29ee6dd81bbb88c4c577a18e3682891c07468df06a6d3ca2fb2b702c2bf638f",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/item/MediaGallery.tsx",
+      "destination": "packages/client/src/client/aihot/features/item/MediaGallery.tsx",
+      "sourceSha256": "80157eb6c63459c0e8d631084b286566c581efa2fa474573777415e7476d2332",
+      "destinationSha256": "00d7a70d572e312b301ed7d2caf805b3baac18e18f9b27e8429c8dd5a3a3c2e1",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/item/QuotedPost.tsx",
+      "destination": "packages/client/src/client/aihot/features/item/QuotedPost.tsx",
+      "sourceSha256": "5b5d9a3a948ff4ed1532845b268e8cb87cfeefbd13f17964400372363a9ad239",
+      "destinationSha256": "b91c5b957f16692d533546434d99f65ff51cf79ac0471d2fe09ffc24077823ca",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/item/preview.ts",
+      "destination": "packages/client/src/client/aihot/features/item/preview.ts",
+      "sourceSha256": "4631b37f04da44cffa5ce8e5216c3a688031f98e9e3b96f860f4668569f85eae",
+      "destinationSha256": "86567b0f4c10a61b237c66b730647a830fcabd0444bc6d5680b4d7ea7f597c6f",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/report/ReportLayout.tsx",
+      "destination": "packages/client/src/client/aihot/features/report/ReportLayout.tsx",
+      "sourceSha256": "0997625d2e3c125d27f39ac2a7bae8226e1557345332f567a7e0e3b65801e353",
+      "destinationSha256": "8d90b1cdacb695dc3f516fdadd5073cfd58ebecf1284e1b53a84fe6c4cff0cb9",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/report/Halftone.tsx",
+      "destination": "packages/client/src/client/aihot/features/report/Halftone.tsx",
+      "sourceSha256": "21ba848d75f9174e1556bef1963e797ada35ac8de6f1532449930ae93159691a",
+      "destinationSha256": "55272a98ee279164fbaba00ba23f27bd01d2848f8a306653c2d1c2346ff29da0",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/report/Nameplate.tsx",
+      "destination": "packages/client/src/client/aihot/features/report/Nameplate.tsx",
+      "sourceSha256": "a4c345f13e51acd69c8f92f065105cdaad27ff8d6a04d29840a4c214e30246bc",
+      "destinationSha256": "4ab483a1c64c95a82e3aacaed9256ea537f4b3a8c4f6866ba140cc441bac0b18",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/report/IssueDots.tsx",
+      "destination": "packages/client/src/client/aihot/features/report/IssueDots.tsx",
+      "sourceSha256": "964bd0c9ccab2352a0505cedb1e64beff4adc557fc068a422e94273e45eea15a",
+      "destinationSha256": "4e591d59da5456a1ff808ab260ff4ba9ed0346afb35478ae9b211a9c4478e233",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server. Canvas resources are scoped to report kind/key; background index and callback updates repaint without replaying the intro.",
+      "behaviorEvidence": [
+        "tests/integration/report-canvas-refresh.test.mjs"
+      ]
+    },
+    {
+      "upstream": "apps/web/app/features/report/format.ts",
+      "destination": "packages/client/src/client/aihot/features/report/format.ts",
+      "sourceSha256": "1fbbeff09c585f978a8e0eada002566ab801a3a92f3c839e600e9016b9a8d597",
+      "destinationSha256": "2828495171e2385ca897979cb8684fa3de68e193c9563202f3f7f2057685d980",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/report/ReportNav.tsx",
+      "destination": "packages/client/src/client/aihot/features/report/ReportNav.tsx",
+      "sourceSha256": "1f216d279fe95cd29064ba2e456fa968f43ca7d84aeb82764dc2ece1de6a139d",
+      "destinationSha256": "e635f39a7e53d17d6d0a6fa5c08fc5c62e19d26e920ed933df90056934138e98",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/report/ReportPaper.tsx",
+      "destination": "packages/client/src/client/aihot/features/report/ReportPaper.tsx",
+      "sourceSha256": "1e6df176f913ecc9c7b89e607a91ca6c293fe2d0728d86b4e914a83e3026e598",
+      "destinationSha256": "03d413430223b9a1d1f5eff44ab35f842816a1484acc7d107df9e40f5fc5fdf2",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/story/HeatChart.tsx",
+      "destination": "packages/client/src/client/aihot/features/story/HeatChart.tsx",
+      "sourceSha256": "9c8eae429fd0e051f5aced5e2a08f80e5a3cb8dd708445cdf16983c3c1b03c56",
+      "destinationSha256": "77013b947548e8144bb7db17b2166fe9558992d50c630925e3027becc562b37c",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/topic/Chronicle.tsx",
+      "destination": "packages/client/src/client/aihot/features/topic/Chronicle.tsx",
+      "sourceSha256": "f766d5fd8ebcbf8cf7234f3a514a643c7248bb7bbfa6f179b8330e28b854910f",
+      "destinationSha256": "b17e98916e754cf04b0790cf80b12f07a85a898c02faec90b4df9a82d2561a45",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/leaderboard/BrandMark.tsx",
+      "destination": "packages/client/src/client/aihot/features/leaderboard/BrandMark.tsx",
+      "sourceSha256": "b418eb7e9880488401e040e39a57d5af2633e7f2af4341baea3a9eeade982170",
+      "destinationSha256": "ffb213f3f6837fd8bfa714f4f24e68c7b477bedf7a50c4dcd99cc70e0d35ead0",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/leaderboard/StatusChip.tsx",
+      "destination": "packages/client/src/client/aihot/features/leaderboard/StatusChip.tsx",
+      "sourceSha256": "9e633b944da2abcf3cf3669eac0d21d7aab8626534456599a02eb9f96067227d",
+      "destinationSha256": "a34d8b55d7df44796967fc543e593011c0ad4664bb3c35f75eff401029d4538f",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/leaderboard/format.ts",
+      "destination": "packages/client/src/client/aihot/features/leaderboard/format.ts",
+      "sourceSha256": "bf96530b56a34f3b80fd3d63b1edfa05a14512b25f3f2cd11dea03817801e2eb",
+      "destinationSha256": "abb90026a8dba39ab6935f443296e70beb755d11fce8b9c4f3131c3d47dc92be",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/leaderboard/BoardTabs.tsx",
+      "destination": "packages/client/src/client/aihot/features/leaderboard/BoardTabs.tsx",
+      "sourceSha256": "8e29d4e55c9a6d39e938ed5cdb65f8093d61050e1303755b5fb0bcb9f3861d26",
+      "destinationSha256": "300d927d2b59d54a6575f4f89a5f772a61857ed82cc2699dec644b386c540464",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/leaderboard/BoardTable.tsx",
+      "destination": "packages/client/src/client/aihot/features/leaderboard/BoardTable.tsx",
+      "sourceSha256": "79d52c0c0fe91f644db7e6fef446da88408628fb6c41e34d3072e1b84167d4d0",
+      "destinationSha256": "5e57cb220cb22feee741d778bd16999d65ab7dccfb46894a17f1d51204fe0767",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/monitor/PostCard.tsx",
+      "destination": "packages/client/src/client/aihot/features/monitor/PostCard.tsx",
+      "sourceSha256": "0b09b5c68db5fdebe5b8c0b3a6d8cfb518d89841faa71a52125df239db4c8d13",
+      "destinationSha256": "2b7268c0e0feecf05d695b62d92d645c2b15c7bb12b580f0f20a42d2f5031022",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/monitor/format.ts",
+      "destination": "packages/client/src/client/aihot/features/monitor/format.ts",
+      "sourceSha256": "3a353b0f7837f12d3a7d1af8dddf90f4894bea2b3c76e45522c549477d801aed",
+      "destinationSha256": "c70c1b83ecc781d128dc982d6335a2f4faa104142c84fb9484edc72ae818c950",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/monitor/ResetCalendar.tsx",
+      "destination": "packages/client/src/client/aihot/features/monitor/ResetCalendar.tsx",
+      "sourceSha256": "8b1f217381cef86da2a0263a4a77d26d61e62d5d7b724c14c4568bafbea422d6",
+      "destinationSha256": "900a035cdd8e17537e85305449e22517ff0e0e83e1cffcd241504e0117e53cd7",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/features/about/SignalRiver.tsx",
+      "destination": "packages/client/src/client/aihot/features/about/SignalRiver.tsx",
+      "sourceSha256": "1a656abaf0a80e75fb18224c6e86e62d24bb9f3902fd025b1364d6bd22e29215",
+      "destinationSha256": "436e9ef17277b36a6030d603fd445c186d76805fa3d35d6077e6bd7c0a79e6a1",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/lib/format.ts",
+      "destination": "packages/client/src/client/aihot/lib/format.ts",
+      "sourceSha256": "fca885d3cd8f0843df08c417d922412c78abda2c51a363b72957b4f7a80b4fc6",
+      "destinationSha256": "d05908a756ed1fa856ea2930f7dba0ac2de6e13ff083ec15d95dad1c527e2720",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "packages/contracts/src/site.ts",
+      "destination": "packages/client/src/client/aihot/contracts/site.ts",
+      "sourceSha256": "ccb90def6bd6aa8db4db9080a83837f83f94e17d142a1304a32024a62816ee93",
+      "destinationSha256": "ccb90def6bd6aa8db4db9080a83837f83f94e17d142a1304a32024a62816ee93",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "packages/contracts/src/taxonomy.ts",
+      "destination": "packages/client/src/client/aihot/contracts/taxonomy.ts",
+      "sourceSha256": "d6ce306e2f33d876159390ace54f3f14fe5eda9372fd05d0a93e75c1027ee2bf",
+      "destinationSha256": "5da5b06e6fb0b6b46b0c9dc81d7ec15c45ca913ef53bb88ff01108db52436ab2",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "packages/contracts/src/time.ts",
+      "destination": "packages/client/src/client/aihot/contracts/time.ts",
+      "sourceSha256": "c2c3a1269735d8a6cac75282f759ba8f1acf2e1d6e2c3665d18e48b9e20f8074",
+      "destinationSha256": "c2c3a1269735d8a6cac75282f759ba8f1acf2e1d6e2c3665d18e48b9e20f8074",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "packages/contracts/src/leaderboard.ts",
+      "destination": "packages/client/src/client/aihot/contracts/leaderboard.ts",
+      "sourceSha256": "219f687f193eae7230f8217f4265f4ae2954557ed53e0cb7df00c8abe86cbe54",
+      "destinationSha256": "f661c35e9f59fac14c4cac672cd724cdc489dd5c21fde7425a3b0f1363d94b97",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "packages/contracts/src/monitor.ts",
+      "destination": "packages/client/src/client/aihot/contracts/monitor.ts",
+      "sourceSha256": "78b1cf423950a3577b65e44218fcaf12b2fe2cfb47f9e69dcac744636ede5cfb",
+      "destinationSha256": "b19c6454da817f150afab38ab910054d74b6ebcaffb652113af4efecfa6b03c7",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "industry/taxonomy.ts",
+      "destination": "packages/client/src/client/aihot/industry/taxonomy.ts",
+      "sourceSha256": "93007ed833040db770239b5c3971a2f0ceb49dc76dfa582262279e88f8172186",
+      "destinationSha256": "93007ed833040db770239b5c3971a2f0ceb49dc76dfa582262279e88f8172186",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "industry/site.ts",
+      "destination": "packages/client/src/client/aihot/industry/site.ts",
+      "sourceSha256": "4f0dc84d99885b6817dc799d5321cb8fde64717444afc12cafca532b84336012",
+      "destinationSha256": "1f73212f834ef947b66d3de0ade12420e7382c3d03cdc80c4371dd95533b8920",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "industry/features.ts",
+      "destination": "packages/client/src/client/aihot/industry/features.ts",
+      "sourceSha256": "0862b16aa24a979f8868792d92ac4fb2697350dddc796359b6719a375cdd714b",
+      "destinationSha256": "0862b16aa24a979f8868792d92ac4fb2697350dddc796359b6719a375cdd714b",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "industry/brand/nameplates/daily.svg",
+      "destination": "packages/client/assets/aihot/industry/brand/nameplates/daily.svg",
+      "sourceSha256": "4ecbe4631c146005f7b1212a309cb1e2d2a3b8931f9f5a74e2d2780fb63c656d",
+      "destinationSha256": "4ecbe4631c146005f7b1212a309cb1e2d2a3b8931f9f5a74e2d2780fb63c656d",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "industry/brand/nameplates/monthly.svg",
+      "destination": "packages/client/assets/aihot/industry/brand/nameplates/monthly.svg",
+      "sourceSha256": "248a125f28b42673d05a2abbf1f593e1007397be9b5fd7887622ce61c0b518ca",
+      "destinationSha256": "248a125f28b42673d05a2abbf1f593e1007397be9b5fd7887622ce61c0b518ca",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "industry/brand/nameplates/archive.svg",
+      "destination": "packages/client/assets/aihot/industry/brand/nameplates/archive.svg",
+      "sourceSha256": "98ce5d90fdc589d26915bb04f7f5d9ed37518cdbc7e2b18089b7e847bc38d701",
+      "destinationSha256": "98ce5d90fdc589d26915bb04f7f5d9ed37518cdbc7e2b18089b7e847bc38d701",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "industry/brand/nameplates/weekly.svg",
+      "destination": "packages/client/assets/aihot/industry/brand/nameplates/weekly.svg",
+      "sourceSha256": "cc42086e6a045ff9ca91f33a6af6bcae972f0e1cae045f55f570393909f26045",
+      "destinationSha256": "cc42086e6a045ff9ca91f33a6af6bcae972f0e1cae045f55f570393909f26045",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "industry/brand/nameplates/index.json",
+      "destination": "packages/client/assets/aihot/industry/brand/nameplates/index.json",
+      "sourceSha256": "a02e5e4f70a84f6847de6f8b9b431d18a9e930618ba9e9934dd139fa3b861bd2",
+      "destinationSha256": "a02e5e4f70a84f6847de6f8b9b431d18a9e930618ba9e9934dd139fa3b861bd2",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/xiaomi-mimo.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/xiaomi-mimo.svg",
+      "sourceSha256": "b04ad7dad52af2212c4567daf0ee6856f2c4625c92c680a27f9880295d558b71",
+      "destinationSha256": "b04ad7dad52af2212c4567daf0ee6856f2c4625c92c680a27f9880295d558b71",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/meta.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/meta.svg",
+      "sourceSha256": "e688b9947034e5a1a6e43435da3cd5eeb0d1102290679903dc96c6d43447a99b",
+      "destinationSha256": "e688b9947034e5a1a6e43435da3cd5eeb0d1102290679903dc96c6d43447a99b",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/tencent.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/tencent.svg",
+      "sourceSha256": "0d95df884d51b92b84d65fb61a5603d74e833b386acba0808fb93c53dcfbfc7f",
+      "destinationSha256": "0d95df884d51b92b84d65fb61a5603d74e833b386acba0808fb93c53dcfbfc7f",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/xai.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/xai.svg",
+      "sourceSha256": "0410d14cf99a22d55d34712e9db5e4d0b8b156baa31e7d8c561848847e542edc",
+      "destinationSha256": "0410d14cf99a22d55d34712e9db5e4d0b8b156baa31e7d8c561848847e542edc",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/openai.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/openai.svg",
+      "sourceSha256": "802335af1ddb4e135468f689aabe7ac7798a3177c1b71bbd4549fc602e9264ed",
+      "destinationSha256": "802335af1ddb4e135468f689aabe7ac7798a3177c1b71bbd4549fc602e9264ed",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/thinking-machines.png",
+      "destination": "packages/client/assets/aihot/assets/model-providers/thinking-machines.png",
+      "sourceSha256": "ef907e01669290064ce1db3d7902203fb2786dc110d2c496a8a02ad912d32e7e",
+      "destinationSha256": "ef907e01669290064ce1db3d7902203fb2786dc110d2c496a8a02ad912d32e7e",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/bytedance.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/bytedance.svg",
+      "sourceSha256": "086ed1911b275f825f09a683974a69e4c84b4c8e939243ef8897961051226161",
+      "destinationSha256": "086ed1911b275f825f09a683974a69e4c84b4c8e939243ef8897961051226161",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/nvidia.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/nvidia.svg",
+      "sourceSha256": "0cc710e73dc41650ae2178e9ab1617108ed70a3ad7f2d40db363d30bfad4cda9",
+      "destinationSha256": "0cc710e73dc41650ae2178e9ab1617108ed70a3ad7f2d40db363d30bfad4cda9",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/mistral.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/mistral.svg",
+      "sourceSha256": "cc39e69a73c3140bdded7ec5775579c185eacccdef43a0f94474bcf7231cb0fc",
+      "destinationSha256": "cc39e69a73c3140bdded7ec5775579c185eacccdef43a0f94474bcf7231cb0fc",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/deepseek.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/deepseek.svg",
+      "sourceSha256": "0a47d55e6449ef97fb2185020f8118d75ad1ffe5cd711bef6862699f50d5217b",
+      "destinationSha256": "0a47d55e6449ef97fb2185020f8118d75ad1ffe5cd711bef6862699f50d5217b",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/qianwen.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/qianwen.svg",
+      "sourceSha256": "3abbbb05dfde555971fb944880d1dfe85d2e97a795fa3fe4e96fa1a5912a0364",
+      "destinationSha256": "3abbbb05dfde555971fb944880d1dfe85d2e97a795fa3fe4e96fa1a5912a0364",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/minimax.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/minimax.svg",
+      "sourceSha256": "d066ca12e8cfb12c0027be49ea22e06bb62d382f5b3836ff01b9f18af01154ba",
+      "destinationSha256": "d066ca12e8cfb12c0027be49ea22e06bb62d382f5b3836ff01b9f18af01154ba",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/z-ai.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/z-ai.svg",
+      "sourceSha256": "3a0e993946e43e227f10414df38c29b9eae247218dd750815595583485d1beb1",
+      "destinationSha256": "3a0e993946e43e227f10414df38c29b9eae247218dd750815595583485d1beb1",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/google.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/google.svg",
+      "sourceSha256": "4fb5af9c85ca246667d2376d06fc785325e37ce9c9ef3d6606f07ba18602868e",
+      "destinationSha256": "4fb5af9c85ca246667d2376d06fc785325e37ce9c9ef3d6606f07ba18602868e",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/anthropic.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/anthropic.svg",
+      "sourceSha256": "d4366130584b1027bbc376e3c06a48500d6e862403a69556726d7722610e5561",
+      "destinationSha256": "d4366130584b1027bbc376e3c06a48500d6e862403a69556726d7722610e5561",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/moonshot.svg",
+      "destination": "packages/client/assets/aihot/assets/model-providers/moonshot.svg",
+      "sourceSha256": "8149f95f8513573da9bcffb79a1b800c856e054d97633c8c43b6cd9ebe7b7859",
+      "destinationSha256": "8149f95f8513573da9bcffb79a1b800c856e054d97633c8c43b6cd9ebe7b7859",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/model-providers/NOTICE.md",
+      "destination": "packages/client/assets/aihot/assets/model-providers/NOTICE.md",
+      "sourceSha256": "f210acaeb3bc6573dab9642e674a7523a28b81f1ce473a5f14d1f6ace062f73c",
+      "destinationSha256": "f210acaeb3bc6573dab9642e674a7523a28b81f1ce473a5f14d1f6ace062f73c",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/taptap-maker.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/taptap-maker.svg",
+      "sourceSha256": "b18b4da68cd040fe341ebd1c8362259516dbdafc7212e692dca7e999bdbd0202",
+      "destinationSha256": "b18b4da68cd040fe341ebd1c8362259516dbdafc7212e692dca7e999bdbd0202",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/agents-last-exam.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/agents-last-exam.svg",
+      "sourceSha256": "7682868d3ca48a64c530453a06f83142b86c7c8fae1231c771c2c08441e92fa5",
+      "destinationSha256": "7682868d3ca48a64c530453a06f83142b86c7c8fae1231c771c2c08441e92fa5",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/epoch.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/epoch.svg",
+      "sourceSha256": "5267735e52798f7bf56a5fef7f2d3547769e0210e2f0992df6dc271644b077db",
+      "destinationSha256": "5267735e52798f7bf56a5fef7f2d3547769e0210e2f0992df6dc271644b077db",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/llm2014.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/llm2014.svg",
+      "sourceSha256": "2cf45339fe31904c02896007f6e717840f55e3a8d3f22134be3dd74121ca5bad",
+      "destinationSha256": "2cf45339fe31904c02896007f6e717840f55e3a8d3f22134be3dd74121ca5bad",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/eqbench.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/eqbench.svg",
+      "sourceSha256": "23a60a58759fe3c5416ee946d0a382c1e51f6883de9278ecfc3e8a56107315d0",
+      "destinationSha256": "23a60a58759fe3c5416ee946d0a382c1e51f6883de9278ecfc3e8a56107315d0",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/livebench.png",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/livebench.png",
+      "sourceSha256": "c386396ec70db3608075b5fbfaac4ab1ccaa86ba05a68ab393ec551eb66c3e00",
+      "destinationSha256": "c386396ec70db3608075b5fbfaac4ab1ccaa86ba05a68ab393ec551eb66c3e00",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/vals.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/vals.svg",
+      "sourceSha256": "e33b882753a9eb95786d09eb4540abe9d12dedeee9dcf495560d632299ec9780",
+      "destinationSha256": "e33b882753a9eb95786d09eb4540abe9d12dedeee9dcf495560d632299ec9780",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/sierra.png",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/sierra.png",
+      "sourceSha256": "e91c953ec269e82801c02373fe93bb156cb0a1ad79257ccd3766dffe21af00a9",
+      "destinationSha256": "e91c953ec269e82801c02373fe93bb156cb0a1ad79257ccd3766dffe21af00a9",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/artificial-analysis-purple-2026.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/artificial-analysis-purple-2026.svg",
+      "sourceSha256": "e8da4cc643f98fb6f3cd8c6239d43a26f7eef92ce9aaa9371b1b8ebff4492291",
+      "destinationSha256": "e8da4cc643f98fb6f3cd8c6239d43a26f7eef92ce9aaa9371b1b8ebff4492291",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/mercor.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/mercor.svg",
+      "sourceSha256": "70ea83c681065732d7969077397b89254e42afca3dcf62a18de663353d32500c",
+      "destinationSha256": "70ea83c681065732d7969077397b89254e42afca3dcf62a18de663353d32500c",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/arena.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/arena.svg",
+      "sourceSha256": "b818931c76bfd9d0ce4fad9fb8db512a1bd1884452d278c1599d51ff3848846b",
+      "destinationSha256": "b818931c76bfd9d0ce4fad9fb8db512a1bd1884452d278c1599d51ff3848846b",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/rapidata.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/rapidata.svg",
+      "sourceSha256": "9229242d6238399c45987ffb9c61f6515a31bec4a77aaf1da75ad95893203c77",
+      "destinationSha256": "9229242d6238399c45987ffb9c61f6515a31bec4a77aaf1da75ad95893203c77",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/deepswe.svg",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/deepswe.svg",
+      "sourceSha256": "b25c9ac39910579ceb0273edd74691efa93824fe720da7683900cd2578ab3968",
+      "destinationSha256": "b25c9ac39910579ceb0273edd74691efa93824fe720da7683900cd2578ab3968",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "assets/leaderboard-sources/NOTICE.md",
+      "destination": "packages/client/assets/aihot/assets/leaderboard-sources/NOTICE.md",
+      "sourceSha256": "c8373f22bd9166be147ead1f19c7833f76619a12bbe4440a60a6f1dabe8c8b34",
+      "destinationSha256": "c8373f22bd9166be147ead1f19c7833f76619a12bbe4440a60a6f1dabe8c8b34",
+      "status": "ported",
+      "difference": "Native imports, scoped CSS Module conversion and native view/state/transport adapters; no upstream HTTP server."
+    },
+    {
+      "upstream": "apps/web/app/routes/item.tsx",
+      "destination": "packages/client/src/client/aihot/native/ArticlePage.tsx",
+      "sourceSha256": "dd342a059e27a5b939ed56573580583859e1f206050afad45c5092117baa734f",
+      "status": "adapted",
+      "difference": "Source item layout, headline/rails/body-language/outline structure. Native permitted detail DTO, explicit Host media loading, new Session discussion. No site sharing/export endpoints or browser history.",
+      "destinationSha256": "89350f7bcf2e3f74707beb4fdd7c72d70eb71250f132f3d4db3f71462d5bc7d8"
+    },
+    {
+      "upstream": "apps/web/app/routes/codex-reset.tsx",
+      "destination": "packages/client/src/client/aihot/native/MonitorPage.tsx",
+      "sourceSha256": "070f42ba3c42702484dfa69ed8680b9142da0b4b239ddeb5b9f8a2ffc01fd646",
+      "status": "adapted",
+      "difference": "Original Hero/Stats/ResetCalendar with native read-only monitor DTOs and no website polling.",
+      "destinationSha256": "eb93a2edd0b299408dafca6960ebff09700ddf7867989e6f6279bce9578d55a8"
+    },
+    {
+      "upstream": "packages/backend/src/monitor/read.ts",
+      "destination": "packages/storage-sqlite/src/ui-monitor.ts",
+      "sourceSha256": "dfb7c639cc918408a3d3ea128f489c91c0e13809c7f71445861e2bff9b331caa",
+      "status": "adapted",
+      "difference": "Original display-state/calendar/median rules; SQLite Worker snapshot, selected-day post loading, local URL and no remote avatar.",
+      "destinationSha256": "b76f86b44de7acbc1cceb8f45521ae6c5afdc5cd77e6a7661a38bbfdc6649e31"
+    },
+    {
+      "upstream": "packages/contracts/src/monitor.ts",
+      "destination": "packages/contracts/src/monitor-ui.ts",
+      "sourceSha256": "78b1cf423950a3577b65e44218fcaf12b2fe2cfb47f9e69dcac744636ede5cfb",
+      "status": "adapted",
+      "difference": "Pinned presentation DTOs plus explicit native request/result; no public website endpoint.",
+      "destinationSha256": "f70c44dd64bf61af54773dcb0d95bfa13fb2d4a80ea2e25b41506a62819ffafd"
+    },
+    {
+      "upstream": "apps/web/app/routes/leaderboard.tsx",
+      "destination": "packages/client/src/client/aihot/native/LeaderboardPage.tsx",
+      "sourceSha256": "1fd924f90b5ed4843b7b0945a2a9dcc89633b1d89cf09e775074f5f66645a8f0",
+      "status": "adapted",
+      "difference": "Original BoardTable/BoardTabs/BrandMark; native saved metadata, original currency when frozen FX unavailable.",
+      "destinationSha256": "dcc68e3f47abfc66c36bcb001873572ff380e6b731f208a7e0705752ff0d65a2"
+    },
+    {
+      "upstream": "apps/web/app/features/item/ArticleBody.tsx",
+      "destination": "packages/client/src/client/image-read-queue.ts",
+      "sourceSha256": "8956640154106cd00b4b693ffeb5dd2f297cb8b40d19edb5309b9fe04cbafb0b",
+      "status": "adapted",
+      "difference": "Native bounded admission for automatic viewport image loading; Host checks current Publication on every cache read.",
+      "destinationSha256": "ec0530b2b7974d09f460238fb82c602d16ac6d4e5d6d4db8f48bac78f845ea74"
+    },
+    {
+      "upstream": "apps/web/app/features/item/ArticleBody.tsx",
+      "destination": "packages/client/src/client/body-view.ts",
+      "sourceSha256": "8956640154106cd00b4b693ffeb5dd2f297cb8b40d19edb5309b9fe04cbafb0b",
+      "destinationSha256": "e87d00d8df7f9d5b2f89e6f771ab4f1c70525ba394cf3ae61eac4b865f1ddd83",
+      "status": "native-adapter",
+      "difference": "Inert allowed-node React rendering with child-free void elements; official Host image indexes.",
+      "behaviorEvidence": [
+        "tests/integration/article-render.test.mjs",
+        "artifacts/ui-alpha3/bootloops-auto-images-native.jpg"
+      ]
+    },
+    {
+      "upstream": "apps/web/app/features/feed/Timeline.tsx",
+      "destination": "packages/client/src/client/timeline-refresh.ts",
+      "sourceSha256": "3477343b5bd50ee4841bbd5094b5bf6e5417daf6afdac571bb7acdc802a5d40c",
+      "destinationSha256": "47720aadee9fbee0d5d55f98deb7552252dc1de0e65f83051c5cc2bb4a53c25d",
+      "status": "native-adapter",
+      "difference": "Revalidate loaded native pages after watch changes without resetting folds or losing later pages.",
+      "behaviorEvidence": [
+        "tests/integration/reading-navigation.test.mjs"
+      ]
+    },
+    {
+      "upstream": "apps/web/app/routes/item.tsx",
+      "destination": "packages/client/src/client/aihot/native/ViewBoundary.tsx",
+      "sourceSha256": "dd342a059e27a5b939ed56573580583859e1f206050afad45c5092117baa734f",
+      "destinationSha256": "b4fb592816bbc25bcf7353fe3b9bede60d18d059583fd2563ef8a64902eefb7a",
+      "status": "native-adapter",
+      "difference": "Native-only page error boundary retains navigation and provides return/refresh actions.",
+      "behaviorEvidence": [
+        "tests/integration/article-render.test.mjs"
+      ]
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/NewsPanel.tsx",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "75e46f6fabf4100909bdacacedf5896a5950497ba4c43b431f4b3c8e903e4f1c"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/admin/Admin.module.css",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "42292c7d53e91d0d304899564ad846c3dc209620a4286c39b283b84f0228abed"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/admin/Controls.tsx",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "3d2269f63d3b1a1dae8766cbb467d907937f905e3d77394c7168b48c05248766"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/admin/Integrations.tsx",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "ac979021362e3b7b3f37f510c654577ec6f59b4e5805fda3c8841650a4179f8c"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/admin/SettingsPage.tsx",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "3bfeb20f895c050ca08cf41873a553128cbce91619ba4f4adba308cc37c4353b"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/admin/SourcesPage.tsx",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "0db67f598a541641b2d6a4b1f9c0f76bf63a1c4aeb6c32b193a507c0bc2e771d"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/admin/types.ts",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "8861e264d4ee7dea6283e06318236468a2139756349e92c5bde48adc1defa046"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/aihot/native/SourcePanel.tsx",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "2673b697a2df3473bca3b92e1379956014ce2abf363d957c22a8bb17b4728956"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/locales.ts",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "bac1b0d38a8b072b9914f504af569dc5b7f20c64d8c6ff0eb970682d1bd8efd6"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/news-controller.ts",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "baed28acf21de5c9ee3e9ec716d1ffacb089605a45c98ce7a50266d4737c4ead"
+    },
+    {
+      "upstream": "apps/web/app/routes/admin.tsx; DSH public UI primitives",
+      "destination": "packages/client/src/client/settings-draft.ts",
+      "sourceSha256": null,
+      "status": "native-adapter",
+      "difference": "Explicit-save forms, scoped credential/test cards, consistent responsive admin controls; ADR 014.",
+      "behaviorEvidence": [
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "destinationSha256": "608a523e5bab9531d714d16588d0f36ca68e537fa0c31bda16bc95c447d8cc64"
+    },
+    {
+      "destination": "packages/client/src/client/aihot/features/leaderboard/BoardTable.module.css",
+      "upstream": [
+        "AIHOT apps/web/app/features/leaderboard/BoardTable.tsx"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Use native content container width, with compact rows and non-overlapping dates.",
+      "destinationSha256": "22928f9cb3ae29c3178f4a00fde3afeac8541f264b47e704cb0b2eeaed1225b6"
+    }
+  ],
+  "conversion": {
+    "compiler": "4.3.3 development-only",
+    "sourceCss": "upstream/aihot-ui.css",
+    "generatedCss": "packages/client/src/client/aihot/source.module.css",
+    "runtime": "DSH shared React 18 / native Slots and Remote"
+  }
+}

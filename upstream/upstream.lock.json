@@ -1,0 +1,37 @@
+{
+  "documentVersion": "1.0",
+  "checkedAt": "2026-10-03",
+  "status": "local alpha.2 implementation and evidence; formal release gate remains",
+  "aihot": {
+    "repo": "https://github.com/KKKKhazix/AIHOT",
+    "commit": "cc66cceb1dc7a0bc147e942e49ff94c9cee418c6",
+    "sourcePath": "industry/sources.json",
+    "sourceBlobSha": "6d7455945571fac29c207c56371596cc3ff4fc30",
+    "snapshotItems": 18,
+    "packagedSnapshotSha256": "d17e39df0a343149e5cd3ba99fa52b71d72a4a21f32e568367989598703adab7",
+    "automaticSourceSync": false
+  },
+  "dsh": {
+    "repo": "https://github.com/deepseek-ai/deepseek-harness",
+    "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+    "sourceManifestVersion": "0.2.0-rc.2",
+    "cordis": "4.0.4",
+    "testedNode": "24.18.1",
+    "runtimeTested": "isolated macOS official Desktop; Windows pending"
+  },
+  "dshDesignBaseline": {
+    "repo": "https://github.com/deepseek-ai/deepseek-harness",
+    "commit": "5badb15009ae1756c3afe0ae0cef1faafc290ccc",
+    "sourceManifestVersion": "0.2.1-alpha.1",
+    "runtimeTested": false,
+    "compatibilityPolicy": "exact baseline first; widen only after tests"
+  },
+  "previousSourceReview": {
+    "repo": "https://github.com/deepseek-ai/deepseek-harness",
+    "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+    "sourceManifestVersion": "0.2.0-rc.2",
+    "runtimeTested": false,
+    "compatibilityPolicy": "exact baseline first; widen only after tests",
+    "tag": "dsh-v0.2.0-rc.2"
+  }
+}

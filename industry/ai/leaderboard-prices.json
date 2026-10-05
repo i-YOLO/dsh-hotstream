@@ -1,0 +1,707 @@
+{
+  "_note": "Generated from all dated AIHOT official-price files at cc66cceb. Later files replace earlier entries; prices are per million tokens at the vendor tier documented in each source file.",
+  "prices": {
+    "claude-opus-5-5": [
+      "USD",
+      4,
+      20,
+      0.2,
+      "https://platform.claude.com/docs/en/models/opus-5-5/overview"
+    ],
+    "claude-fable-5-1": [
+      "USD",
+      10,
+      50,
+      0.25,
+      "https://platform.claude.com/docs/en/models/fable-5-1/overview"
+    ],
+    "gpt-6-astra": [
+      "USD",
+      10,
+      50,
+      1,
+      "https://developers.openai.com/api/docs/models/gpt-6-astra"
+    ],
+    "claude-fable-5": [
+      "USD",
+      10,
+      50,
+      1,
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ],
+    "claude-opus-5": [
+      "USD",
+      5,
+      25,
+      0.5,
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ],
+    "muse-spark-1-3": [
+      "USD",
+      1.25,
+      4.25,
+      null,
+      "https://dev.meta.ai/docs/pricing-rate-limits/"
+    ],
+    "gpt-6-sol": [
+      "USD",
+      2,
+      10,
+      0.2,
+      "https://developers.openai.com/api/docs/models/gpt-6-sol"
+    ],
+    "gpt-5-6-sol": [
+      "USD",
+      4,
+      20,
+      0.4,
+      "https://developers.openai.com/api/docs/pricing"
+    ],
+    "grok-4-7": [
+      "USD",
+      2,
+      6,
+      0.5,
+      "https://docs.x.ai/developers/grok-4-7"
+    ],
+    "qwen-3-8-max": [
+      "CNY",
+      12,
+      36,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "glm-5-3": [
+      "USD",
+      1.4,
+      4.4,
+      0.26,
+      "https://docs.z.ai/guides/overview/pricing"
+    ],
+    "grok-4-6": [
+      "USD",
+      2,
+      6,
+      0.5,
+      "https://docs.x.ai/developers/grok-4-6"
+    ],
+    "kimi-k-3": [
+      "CNY",
+      20,
+      100,
+      2,
+      "https://platform.moonshot.cn/"
+    ],
+    "gpt-5-6-terra": [
+      "USD",
+      2,
+      12,
+      0.2,
+      "https://developers.openai.com/api/docs/models"
+    ],
+    "claude-opus-4-8": [
+      "USD",
+      5,
+      25,
+      0.5,
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ],
+    "gemini-3-8-flash": [
+      "USD",
+      0.75,
+      3.75,
+      0.075,
+      "https://ai.google.dev/gemini-api/docs/pricing"
+    ],
+    "qwen-3-8-max-0902": [
+      "CNY",
+      12,
+      36,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "glm-5-3-flash": [
+      "CNY",
+      0.8,
+      2.8,
+      0.23,
+      "https://www.bigmodel.cn/pricing"
+    ],
+    "claude-opus-4-7": [
+      "USD",
+      5,
+      25,
+      0.5,
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ],
+    "qwen-3-8-flash-next": [
+      "CNY",
+      0.8,
+      2.7,
+      null,
+      "https://help.aliyun.com/zh/model-studio/qwen3-8-flash"
+    ],
+    "muse-spark-1-2": [
+      "USD",
+      1.25,
+      4.25,
+      null,
+      "https://developer.meta.com/ai/models/muse-spark/"
+    ],
+    "deepseek-v-4-1-flash": [
+      "USD",
+      0.3,
+      1.2,
+      0.006,
+      "https://api-docs.deepseek.com/quick_start/pricing/"
+    ],
+    "gemini-3-7-flash": [
+      "USD",
+      0.75,
+      3.75,
+      0.075,
+      "https://ai.google.dev/gemini-api/docs/pricing"
+    ],
+    "gpt-5-4": [
+      "USD",
+      2.5,
+      15,
+      0.25,
+      "https://developers.openai.com/api/docs/models/gpt-5.4"
+    ],
+    "grok-4-5": [
+      "USD",
+      2,
+      6,
+      0.3,
+      "https://docs.x.ai/developers/pricing"
+    ],
+    "gpt-5-5": [
+      "USD",
+      5,
+      30,
+      0.5,
+      "https://developers.openai.com/api/docs/models/gpt-5.5"
+    ],
+    "claude-sonnet-5": [
+      "USD",
+      2,
+      10,
+      0.2,
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ],
+    "gpt-5-6-luna": [
+      "USD",
+      0.2,
+      1.2,
+      0.02,
+      "https://developers.openai.com/api/docs/models"
+    ],
+    "gpt-6-luna": [
+      "USD",
+      0.1,
+      0.5,
+      0.01,
+      "https://developers.openai.com/api/docs/models/gpt-6-luna"
+    ],
+    "deepseek-v-4-pro-20260813": [
+      "CNY",
+      9,
+      27,
+      0.3,
+      "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+    ],
+    "qwen-3-8-27-b": [
+      "CNY",
+      3,
+      12,
+      0.6,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "muse-spark-1-1": [
+      "USD",
+      1.25,
+      4.25,
+      null,
+      "https://developer.meta.com/ai/resources/blog/build-with-muse-spark/"
+    ],
+    "deepseek-v-4-pro-preview": [
+      "USD",
+      0.435,
+      0.87,
+      0.003625,
+      "https://api-docs.deepseek.com/quick_start/pricing/"
+    ],
+    "deepseek-v-4-flash-preview": [
+      "USD",
+      0.14,
+      0.28,
+      0.0028,
+      "https://api-docs.deepseek.com/quick_start/pricing/"
+    ],
+    "gemini-3-6-flash": [
+      "USD",
+      0.75,
+      3.75,
+      0.075,
+      "https://ai.google.dev/gemini-api/docs/pricing"
+    ],
+    "glm-5-2": [
+      "CNY",
+      8,
+      28,
+      2,
+      "https://www.bigmodel.cn/pricing"
+    ],
+    "gemini-3-5-flash": [
+      "USD",
+      1.5,
+      9,
+      0.15,
+      "https://ai.google.dev/gemini-api/docs/pricing"
+    ],
+    "claude-sonnet-4-6": [
+      "USD",
+      3,
+      15,
+      0.3,
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ],
+    "gpt-5-2-2025-12-11": [
+      "USD",
+      1.75,
+      14,
+      0.175,
+      "https://developers.openai.com/api/docs/models/gpt-5.2"
+    ],
+    "claude-opus-4-6": [
+      "USD",
+      5,
+      25,
+      0.5,
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ],
+    "gemini-3-1-pro-preview": [
+      "USD",
+      2,
+      12,
+      0.2,
+      "https://ai.google.dev/gemini-api/docs/pricing"
+    ],
+    "deepseek-v-4-flash-20260731": [
+      "CNY",
+      3,
+      9,
+      0.1,
+      "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/"
+    ],
+    "qwen-3-7-max": [
+      "CNY",
+      12,
+      36,
+      2.4,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "gpt-5-4-nano-2026-03-17": [
+      "USD",
+      0.2,
+      1.25,
+      0.02,
+      "https://developers.openai.com/api/docs/models/gpt-5.4-nano"
+    ],
+    "gemini-3-flash-preview": [
+      "USD",
+      0.5,
+      3,
+      0.05,
+      "https://ai.google.dev/gemini-api/docs/pricing"
+    ],
+    "qwen-3-6-max-preview": [
+      "CNY",
+      9,
+      54,
+      0.9,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "gpt-5-2025-08-07": [
+      "USD",
+      1.25,
+      10,
+      0.125,
+      "https://developers.openai.com/api/docs/models/gpt-5"
+    ],
+    "o-3-2025-04-16": [
+      "USD",
+      2,
+      8,
+      0.5,
+      "https://developers.openai.com/api/docs/models/o3"
+    ],
+    "gpt-5-1-2025-11-13": [
+      "USD",
+      1.25,
+      10,
+      0.125,
+      "https://developers.openai.com/api/docs/models/gpt-5.1"
+    ],
+    "qwen-3-max-2025-09-23": [
+      "CNY",
+      6,
+      24,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-qwen3-max"
+    ],
+    "gpt-5-4-pro-2026-03-05": [
+      "USD",
+      30,
+      180,
+      null,
+      "https://developers.openai.com/api/docs/models/gpt-5.4-pro"
+    ],
+    "gpt-5-4-2026-03-05": [
+      "USD",
+      2.5,
+      15,
+      0.25,
+      "https://developers.openai.com/api/docs/models/gpt-5.4"
+    ],
+    "claude-opus-4-5-20251101": [
+      "USD",
+      5,
+      25,
+      0.5,
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ],
+    "claude-sonnet-5-5": [
+      "USD",
+      2,
+      10,
+      0.2,
+      "https://platform.claude.com/docs/en/about-claude/pricing"
+    ],
+    "gpt-6-1-sol": [
+      "USD",
+      2,
+      10,
+      0.1,
+      "https://developers.openai.com/api/docs/pricing"
+    ],
+    "mimo-v-2-6-pro": [
+      "CNY",
+      3,
+      6,
+      0.025,
+      "https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+    ],
+    "mimo-v-2-5-pro": [
+      "CNY",
+      3,
+      6,
+      0.025,
+      "https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+    ],
+    "mimo-v-2-5": [
+      "CNY",
+      1,
+      2,
+      0.02,
+      "https://mimo.mi.com/docs/en-US/price/pay-as-you-go"
+    ],
+    "minimax-m-3": [
+      "CNY",
+      2.1,
+      8.4,
+      0.42,
+      "https://platform.minimaxi.com/docs/guides/pricing-paygo"
+    ],
+    "glm-5": [
+      "CNY",
+      4,
+      18,
+      1,
+      "https://docs.bigmodel.cn/cn/guide/start/pricing"
+    ],
+    "glm-5-1": [
+      "CNY",
+      6,
+      24,
+      1.3,
+      "https://docs.bigmodel.cn/cn/guide/start/pricing"
+    ],
+    "glm-4-7": [
+      "CNY",
+      3,
+      14,
+      0.6,
+      "https://docs.bigmodel.cn/cn/guide/start/pricing"
+    ],
+    "glm-4-7-flash": [
+      "CNY",
+      0,
+      0,
+      0,
+      "https://docs.bigmodel.cn/cn/guide/start/pricing"
+    ],
+    "kimi-k-2-6": [
+      "CNY",
+      6.5,
+      27,
+      1.1,
+      "https://platform.kimi.com/docs/pricing/chat"
+    ],
+    "kimi-k-2-7-code": [
+      "CNY",
+      6.5,
+      27,
+      1.3,
+      "https://platform.kimi.com/docs/pricing/chat"
+    ],
+    "qwen-3-7-plus": [
+      "CNY",
+      2,
+      8,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-6-plus": [
+      "CNY",
+      2,
+      12,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-5-plus": [
+      "CNY",
+      0.8,
+      4.8,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-6-flash": [
+      "CNY",
+      1.2,
+      7.2,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-5-flash": [
+      "CNY",
+      0.2,
+      2,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-6-27-b": [
+      "CNY",
+      3,
+      18,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-5-27-b": [
+      "CNY",
+      0.6,
+      4.8,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-5-35-b-a-3-b": [
+      "CNY",
+      0.4,
+      3.2,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-5-122-b-a-10-b": [
+      "CNY",
+      0.8,
+      6.4,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-5-397-b-a-17-b": [
+      "CNY",
+      1.2,
+      7.2,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-235-b-a-22-b-2507": [
+      "CNY",
+      2,
+      20,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-32-b": [
+      "CNY",
+      2,
+      20,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-30-b-a-3-b": [
+      "CNY",
+      0.75,
+      7.5,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "qwen-3-14-b": [
+      "CNY",
+      1,
+      10,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing"
+    ],
+    "inkling": [
+      "USD",
+      1,
+      4.05,
+      0.17,
+      "https://tinker-docs.thinkingmachines.ai/tinker/models/"
+    ],
+    "inkling-small": [
+      "USD",
+      0.3,
+      1.2,
+      0.06,
+      "https://tinker-docs.thinkingmachines.ai/tinker/models/"
+    ],
+    "mistral-medium-3-5": [
+      "USD",
+      1.5,
+      7.5,
+      0.15,
+      "https://mistral.ai/pricing/api/"
+    ],
+    "gemma-4-31-b-it": [
+      "USD",
+      0,
+      0,
+      0,
+      "https://ai.google.dev/gemini-api/docs/pricing"
+    ],
+    "kimi-k-2-5": [
+      "CNY",
+      null,
+      null,
+      null,
+      "https://platform.kimi.com/docs/models",
+      "已于 2026-08-31 下线"
+    ],
+    "qwen-3-4-b": [
+      "CNY",
+      null,
+      null,
+      null,
+      "https://help.aliyun.com/zh/model-studio/model-pricing",
+      "百炼未提供"
+    ],
+    "gpt-oss-120-b": [
+      "USD",
+      null,
+      null,
+      null,
+      "https://developers.openai.com/api/docs/pricing",
+      "OpenAI 只发布权重，官方 API 不提供"
+    ],
+    "nemotron-3-ultra-550-b-a-55-b": [
+      "USD",
+      null,
+      null,
+      null,
+      "https://build.nvidia.com/nvidia/nemotron-3-ultra-550b-a55b",
+      "仅免费试用接口"
+    ]
+  },
+  "priceDates": {
+    "claude-opus-5-5": "2026-09-26",
+    "claude-fable-5-1": "2026-09-26",
+    "gpt-6-astra": "2026-09-26",
+    "claude-fable-5": "2026-09-26",
+    "claude-opus-5": "2026-09-26",
+    "muse-spark-1-3": "2026-09-26",
+    "gpt-6-sol": "2026-09-26",
+    "gpt-5-6-sol": "2026-09-26",
+    "grok-4-7": "2026-09-26",
+    "qwen-3-8-max": "2026-09-26",
+    "glm-5-3": "2026-09-26",
+    "grok-4-6": "2026-09-26",
+    "kimi-k-3": "2026-09-26",
+    "gpt-5-6-terra": "2026-09-26",
+    "claude-opus-4-8": "2026-09-26",
+    "gemini-3-8-flash": "2026-09-26",
+    "qwen-3-8-max-0902": "2026-09-26",
+    "glm-5-3-flash": "2026-09-26",
+    "claude-opus-4-7": "2026-09-26",
+    "qwen-3-8-flash-next": "2026-09-26",
+    "muse-spark-1-2": "2026-09-26",
+    "deepseek-v-4-1-flash": "2026-09-26",
+    "gemini-3-7-flash": "2026-09-26",
+    "gpt-5-4": "2026-09-26",
+    "grok-4-5": "2026-09-26",
+    "gpt-5-5": "2026-09-26",
+    "claude-sonnet-5": "2026-09-26",
+    "gpt-5-6-luna": "2026-09-26",
+    "gpt-6-luna": "2026-09-26",
+    "deepseek-v-4-pro-20260813": "2026-09-26",
+    "qwen-3-8-27-b": "2026-09-26",
+    "muse-spark-1-1": "2026-09-26",
+    "deepseek-v-4-pro-preview": "2026-09-26",
+    "deepseek-v-4-flash-preview": "2026-09-26",
+    "gemini-3-6-flash": "2026-09-26",
+    "glm-5-2": "2026-09-26",
+    "gemini-3-5-flash": "2026-09-26",
+    "claude-sonnet-4-6": "2026-09-26",
+    "gpt-5-2-2025-12-11": "2026-09-26",
+    "claude-opus-4-6": "2026-09-26",
+    "gemini-3-1-pro-preview": "2026-09-26",
+    "deepseek-v-4-flash-20260731": "2026-09-26",
+    "qwen-3-7-max": "2026-09-26",
+    "gpt-5-4-nano-2026-03-17": "2026-09-26",
+    "gemini-3-flash-preview": "2026-09-26",
+    "qwen-3-6-max-preview": "2026-09-26",
+    "gpt-5-2025-08-07": "2026-09-26",
+    "o-3-2025-04-16": "2026-09-26",
+    "gpt-5-1-2025-11-13": "2026-09-26",
+    "qwen-3-max-2025-09-23": "2026-09-26",
+    "gpt-5-4-pro-2026-03-05": "2026-09-26",
+    "gpt-5-4-2026-03-05": "2026-09-26",
+    "claude-opus-4-5-20251101": "2026-09-26",
+    "claude-sonnet-5-5": "2026-09-30",
+    "gpt-6-1-sol": "2026-09-30",
+    "mimo-v-2-6-pro": "2026-09-30",
+    "mimo-v-2-5-pro": "2026-09-30",
+    "mimo-v-2-5": "2026-09-30",
+    "minimax-m-3": "2026-09-30",
+    "glm-5": "2026-09-30",
+    "glm-5-1": "2026-09-30",
+    "glm-4-7": "2026-09-30",
+    "glm-4-7-flash": "2026-09-30",
+    "kimi-k-2-6": "2026-09-30",
+    "kimi-k-2-7-code": "2026-09-30",
+    "qwen-3-7-plus": "2026-09-30",
+    "qwen-3-6-plus": "2026-09-30",
+    "qwen-3-5-plus": "2026-09-30",
+    "qwen-3-6-flash": "2026-09-30",
+    "qwen-3-5-flash": "2026-09-30",
+    "qwen-3-6-27-b": "2026-09-30",
+    "qwen-3-5-27-b": "2026-09-30",
+    "qwen-3-5-35-b-a-3-b": "2026-09-30",
+    "qwen-3-5-122-b-a-10-b": "2026-09-30",
+    "qwen-3-5-397-b-a-17-b": "2026-09-30",
+    "qwen-3-235-b-a-22-b-2507": "2026-09-30",
+    "qwen-3-32-b": "2026-09-30",
+    "qwen-3-30-b-a-3-b": "2026-09-30",
+    "qwen-3-14-b": "2026-09-30",
+    "inkling": "2026-09-30",
+    "inkling-small": "2026-09-30",
+    "mistral-medium-3-5": "2026-09-30",
+    "gemma-4-31-b-it": "2026-09-30",
+    "kimi-k-2-5": "2026-09-30",
+    "qwen-3-4-b": "2026-09-30",
+    "gpt-oss-120-b": "2026-09-30",
+    "nemotron-3-ultra-550-b-a-55-b": "2026-09-30"
+  }
+}

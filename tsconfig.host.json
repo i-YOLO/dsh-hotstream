@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "references": [
+    { "path": "./packages/contracts/tsconfig.json" },
+    { "path": "./packages/core/tsconfig.json" },
+    { "path": "./packages/storage-sqlite/tsconfig.json" },
+    { "path": "./packages/host/tsconfig.json" },
+    { "path": "./packages/client/tsconfig.host.json" }
+  ]
+}

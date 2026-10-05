@@ -1,0 +1,11 @@
+{
+  "name": "hotstream-ui-conversion",
+  "private": true,
+  "version": "0.1.0-alpha.3",
+  "type": "module",
+  "devDependencies": {
+    "tailwindcss": "4.3.3",
+    "@tailwindcss/node": "4.3.3",
+    "@tailwindcss/oxide": "4.3.3"
+  }
+}

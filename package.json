@@ -1,0 +1,38 @@
+{
+  "name": "dsh-hotstream-workspace",
+  "version": "0.1.0-alpha.7",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=24.11"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc -b tsconfig.host.json tsconfig.client.json",
+    "test": "vitest run",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "pack:bundle": "node scripts/pack.mjs && node scripts/verify-artifact.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.0",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
+    "lightningcss": "1.32.0",
+    "tsdown": "0.22.2",
+    "tsx": "4.22.4",
+    "typescript": "6.0.3",
+    "vitest": "4.1.8",
+    "zustand": "4.4.7",
+    "immer": "10.2.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/i-YOLO/dsh-hotstream.git"
+  },
+  "homepage": "https://github.com/i-YOLO/dsh-hotstream#readme",
+  "bugs": {
+    "url": "https://github.com/i-YOLO/dsh-hotstream/issues"
+  }
+}

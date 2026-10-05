@@ -1,0 +1,1182 @@
+{
+  "executedAt": "2026-10-04T06:51:52.706709+00:00",
+  "candidate": "0.1.0-alpha.2",
+  "sourceSpecificationSha256": "a49db4729de7bedf45dffa5242e8c9570c4fb0df4a85c09570c9dda1c269eec3",
+  "targetDsh": "0.2.0-rc.2",
+  "targetCommit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "node": "24.18.1",
+  "automatedTests": {
+    "passed": 95,
+    "total": 95
+  },
+  "summary": {
+    "passed": 37,
+    "partial": 19,
+    "not-run": 1
+  },
+  "cases": [
+    {
+      "id": "INIT-001",
+      "specification": {
+        "id": "INIT-001",
+        "module": "初始化",
+        "given": "全新安装未点击初始化",
+        "when": "打开页面、切页、重启",
+        "then": "外部源请求=0；模型请求=0；无业务定时任务",
+        "milestone": "M1",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "未初始化读取无采集/模型/业务调度；watch 无数据库初始化。",
+      "evidence": [
+        "tests/integration/m0.test.mjs",
+        "artifacts/m0-recovery/native-observations.json"
+      ]
+    },
+    {
+      "id": "INIT-002",
+      "specification": {
+        "id": "INIT-002",
+        "module": "初始化",
+        "given": "默认配置",
+        "when": "连续点击初始化并模拟响应丢失",
+        "then": "只有一个初始化事务；18源只导入一次",
+        "milestone": "M1",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "初始化 commandId 幂等，18 源只导入一次；原生初始化已有 M0 记录。",
+      "evidence": [
+        "tests/integration/runtime.test.mjs"
+      ]
+    },
+    {
+      "id": "INIT-003",
+      "specification": {
+        "id": "INIT-003",
+        "module": "初始化",
+        "given": "数据库只读或迁移失败",
+        "when": "点击初始化",
+        "then": "不发外部请求；状态可诊断；数据不被重建覆盖",
+        "milestone": "M1",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "未知库、checksum/缺号、只读、SQLite FULL 拒写并保留数据。",
+      "evidence": [
+        "tests/integration/storage-faults.test.mjs"
+      ]
+    },
+    {
+      "id": "INIT-004",
+      "specification": {
+        "id": "INIT-004",
+        "module": "初始化",
+        "given": "部分来源失败",
+        "when": "执行首轮",
+        "then": "正常源可阅读；失败源独立恢复；不要求全部完成",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "正常 RSS 源已实抓；部分来源失败仅模拟，尚无同轮原生混合失败截图。",
+      "evidence": [
+        "tests/integration/providers.test.mjs",
+        "artifacts/live-rss/authorized-public-dns/summary.json"
+      ]
+    },
+    {
+      "id": "SRC-001",
+      "specification": {
+        "id": "SRC-001",
+        "module": "信源",
+        "given": "包内快照",
+        "when": "初始化并查看配置",
+        "then": "18项均RSS、全部启用、间隔与快照一致、首轮覆盖8",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "18 个锁定 RSS / 144 条，每源 8 条，保留间隔。",
+      "evidence": [
+        "artifacts/live-rss/authorized-public-dns/summary.json",
+        "artifacts/mac-native/real-rss-inbox.json"
+      ]
+    },
+    {
+      "id": "SRC-002",
+      "specification": {
+        "id": "SRC-002",
+        "module": "信源",
+        "given": "新建无覆盖配置RSS",
+        "when": "提供40条且固定日期",
+        "then": "通用30与12×30天条件正确；未知日期沿原逻辑",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "通用 30 条 / 12 月规则已保留，40 条跨边界完整案例尚未独立执行。",
+      "evidence": [
+        "packages/host/src/sources/collect.ts"
+      ]
+    },
+    {
+      "id": "SRC-003",
+      "specification": {
+        "id": "SRC-003",
+        "module": "信源",
+        "given": "RSS首次回填8条",
+        "when": "第二轮feed仍相同",
+        "then": "首轮不保存validator；普通轮可补读；之后304零新模型任务",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "304 / validator 配置归属已测；首次8条到补读的完整三轮事务仍需专项记录。",
+      "evidence": [
+        "tests/integration/parsers.test.mjs"
+      ]
+    },
+    {
+      "id": "SRC-004",
+      "specification": {
+        "id": "SRC-004",
+        "module": "信源",
+        "given": "抓取部分写入后故障",
+        "when": "恢复并重抓",
+        "then": "游标不越过未提交材料；文章/观察/作业幂等",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "游标事务、重复身份和 received 回放已验证。",
+      "evidence": [
+        "tests/integration/runtime.test.mjs",
+        "tests/integration/providers.test.mjs"
+      ]
+    },
+    {
+      "id": "SRC-005",
+      "specification": {
+        "id": "SRC-005",
+        "module": "信源",
+        "given": "删除/修改默认源",
+        "when": "升级再启动",
+        "then": "不补回删除源、不覆盖用户频率或筛选配置",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "命令/源修订/重启保留已验证，删除默认源后的原生跨升级专项未执行。",
+      "evidence": [
+        "tests/integration/runtime.test.mjs",
+        "artifacts/mac-native/upgrade-alpha2-5.json"
+      ]
+    },
+    {
+      "id": "SRC-006",
+      "specification": {
+        "id": "SRC-006",
+        "module": "信源",
+        "given": "X/公众号无凭据",
+        "when": "开启对应源",
+        "then": "显示blocked而非静默空白；其他源运行",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "缺凭据局部 blocked 已实现；真实 X / 公众号凭据未授权/未测试。",
+      "evidence": [
+        "tests/integration/providers.test.mjs",
+        "artifacts/mac-full/optional-off-history.json"
+      ]
+    },
+    {
+      "id": "SRC-007",
+      "specification": {
+        "id": "SRC-007",
+        "module": "信源",
+        "given": "网页/JSON配错选择器路径",
+        "when": "后台试抓",
+        "then": "明确校验/解析错误；不把导航当文章；不入内容库",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "坏选择器/JSON 路径抛出明确错误，导航链接不作为内容。",
+      "evidence": [
+        "tests/integration/parsers.test.mjs"
+      ]
+    },
+    {
+      "id": "SRC-008",
+      "specification": {
+        "id": "SRC-008",
+        "module": "信源",
+        "given": "付费服务预览",
+        "when": "试抓并超限",
+        "then": "提示费用；试抓计入预算；超限停止",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "预算和 raw 回执模拟通过，付费预览原生互动未单独执行。",
+      "evidence": [
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ]
+    },
+    {
+      "id": "SRC-009",
+      "specification": {
+        "id": "SRC-009",
+        "module": "信源",
+        "given": "已停用source",
+        "when": "普通调度到期",
+        "then": "不调用该源；历史仍可读",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "停用来源不进入调度，历史投影保留。",
+      "evidence": [
+        "tests/integration/runtime.test.mjs"
+      ]
+    },
+    {
+      "id": "EXT-001",
+      "specification": {
+        "id": "EXT-001",
+        "module": "外部输入",
+        "given": "本机external适配关闭",
+        "when": "向端口/服务请求",
+        "then": "无监听或拒绝；初始化前不接受入库",
+        "milestone": "M0",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "默认无监听，显式初始化+开关+独立凭据才开放环回。",
+      "evidence": [
+        "tests/integration/external.test.mjs"
+      ]
+    },
+    {
+      "id": "EXT-002",
+      "specification": {
+        "id": "EXT-002",
+        "module": "外部输入",
+        "given": "适配开启",
+        "when": "错误token、Origin、超长批次",
+        "then": "拒绝；不绕过源类型、预算与去重；不监听公网",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "错误 token、Origin、2 MiB、100 条、重复和身份冲突拒绝。",
+      "evidence": [
+        "tests/integration/external.test.mjs",
+        "artifacts/mac-native/host-business-evidence.json"
+      ]
+    },
+    {
+      "id": "ED-001",
+      "specification": {
+        "id": "ED-001",
+        "module": "编辑",
+        "given": "固定预筛结果",
+        "when": "输入PASS/BLOCK/UNKNOWN与证据不足",
+        "then": "与上游可见性和继续处理语义一致",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "PASS / BLOCK / UNKNOWN 与证据不足路径模拟通过。",
+      "evidence": [
+        "tests/integration/pipeline.test.mjs"
+      ]
+    },
+    {
+      "id": "ED-002",
+      "specification": {
+        "id": "ED-002",
+        "module": "编辑",
+        "given": "双评分路由固定",
+        "when": "分别回60和90",
+        "then": "两次真实独立调用槽位；第二次不见第一结果；均值判断正确",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "真实两次独立评分，第二次无第一次结果；原始输入和响应保留。",
+      "evidence": [
+        "tests/integration/pipeline.test.mjs",
+        "artifacts/mac-native/real-model-evidence.json"
+      ]
+    },
+    {
+      "id": "ED-003",
+      "specification": {
+        "id": "ED-003",
+        "module": "编辑",
+        "given": "够分但未完成归组",
+        "when": "延迟/错误/格式无效关系结果",
+        "then": "不进入精选；进度与超时告警正确",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "精选归组门禁通过；完整超时告警的原生视觉专项未执行。",
+      "evidence": [
+        "tests/integration/pipeline.test.mjs"
+      ]
+    },
+    {
+      "id": "ED-004",
+      "specification": {
+        "id": "ED-004",
+        "module": "编辑",
+        "given": "任务执行中改模型/提示词",
+        "when": "完成旧任务并排新任务",
+        "then": "旧任务使用冻结快照；新任务用新版本；无半途漂移",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "冻结解析参数/输入，行业与设置只影响新任务，新身份重评。",
+      "evidence": [
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ]
+    },
+    {
+      "id": "ED-005",
+      "specification": {
+        "id": "ED-005",
+        "module": "编辑",
+        "given": "输入修订更新",
+        "when": "旧任务迟到提交",
+        "then": "旧修订不得覆盖新publication；可保留旧分析审计",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "迟到旧 run/修订保存审计但不能替换已应用投影。",
+      "evidence": [
+        "tests/integration/business-commands.test.mjs"
+      ]
+    },
+    {
+      "id": "EV-001",
+      "specification": {
+        "id": "EV-001",
+        "module": "事件",
+        "given": "同发布、多报道、后续和同公司不同事",
+        "when": "固定关系结果归组",
+        "then": "Article/Fact/Story关系正确；不混事件",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "Fact/Story 归组与三源同一真实事件、综合稿隔离及修订通过。",
+      "evidence": [
+        "tests/integration/pipeline.test.mjs",
+        "tests/integration/business-commands.test.mjs",
+        "artifacts/mac-native/real-reading-fix-evidence.json"
+      ]
+    },
+    {
+      "id": "EV-002",
+      "specification": {
+        "id": "EV-002",
+        "module": "事件",
+        "given": "已有手动归属",
+        "when": "重新归组/源改变",
+        "then": "人工覆盖不被自动清除；热度/投影随之更新",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "人工归属、拆分、合并、撤销覆盖与 stale 判断拒绝。",
+      "evidence": [
+        "tests/integration/business-commands.test.mjs"
+      ]
+    },
+    {
+      "id": "EV-003",
+      "specification": {
+        "id": "EV-003",
+        "module": "事件",
+        "given": "同主体多个源、重复抓取",
+        "when": "计算48小时热度",
+        "then": "参与者去重；24小时贡献减半；无重复加热",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "参与者、24小时衰减、来源去重与原始 PG 结果一致。",
+      "evidence": [
+        "artifacts/reference/compare.json"
+      ]
+    },
+    {
+      "id": "EV-004",
+      "specification": {
+        "id": "EV-004",
+        "module": "事件",
+        "given": "首次历史回填",
+        "when": "计算今日与热点",
+        "then": "旧新闻不按采集时间成为今日热点",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "历史首次导入与未来时间处理不按采集时间加热。",
+      "evidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ]
+    },
+    {
+      "id": "EV-005",
+      "specification": {
+        "id": "EV-005",
+        "module": "事件",
+        "given": "采集落后或新增源",
+        "when": "比较6小时趋势",
+        "then": "unknown/覆盖标记正确，不伪造涨幅",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "趋势覆盖、百分比、10% 阈值及徽标等价。",
+      "evidence": [
+        "artifacts/reference/compare.json"
+      ]
+    },
+    {
+      "id": "EV-006",
+      "specification": {
+        "id": "EV-006",
+        "module": "事件",
+        "given": "embedding未配置/换维度",
+        "when": "召回与重建",
+        "then": "词面正常；维度/模型隔离；不混旧向量",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "词面默认、服务/模型/维度缓存隔离、失败不静默回退；提供方模拟。",
+      "evidence": [
+        "tests/integration/embedding.test.mjs"
+      ]
+    },
+    {
+      "id": "PUB-001",
+      "specification": {
+        "id": "PUB-001",
+        "module": "可见性",
+        "given": "文章/事件被撤回",
+        "when": "列表/搜索/报告/收藏/预填读取",
+        "then": "全部遵守统一可见性；收藏保留标记非被禁全文",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "列表/详情/报告/收藏/媒体统一门禁，撤回标记保留。",
+      "evidence": [
+        "tests/integration/pipeline.test.mjs",
+        "tests/integration/reports.test.mjs",
+        "tests/integration/reading-media.test.mjs"
+      ]
+    },
+    {
+      "id": "RPT-001",
+      "specification": {
+        "id": "RPT-001",
+        "module": "报告",
+        "given": "到达北京时间08点",
+        "when": "生成日报",
+        "then": "刊期窗口正确；日报生成新增模型调用=0",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "北京08点窗口，实际规则日报与原生模拟日报均不调用模型。",
+      "evidence": [
+        "tests/integration/reports.test.mjs",
+        "artifacts/reference/compare.json",
+        "artifacts/mac-full/daily-detail.png"
+      ]
+    },
+    {
+      "id": "RPT-002",
+      "specification": {
+        "id": "RPT-002",
+        "module": "报告",
+        "given": "周/月报固定日报输入",
+        "when": "模型输出幻觉名称/数字",
+        "then": "条目不变；违规导读模板回退",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "条目固定，幻觉导读回退；原生模拟结构和覆盖可见。",
+      "evidence": [
+        "tests/integration/reports.test.mjs",
+        "artifacts/reference/compare.json",
+        "artifacts/mac-full/weekly.png",
+        "artifacts/mac-full/monthly.png"
+      ]
+    },
+    {
+      "id": "RPT-003",
+      "specification": {
+        "id": "RPT-003",
+        "module": "报告",
+        "given": "停机错过多个刊期",
+        "when": "恢复",
+        "then": "仅按实际资料补缺期；每刊期唯一；有界调度",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "缺期按材料、有界最多8、唯一刊期和空期避免反复生成。",
+      "evidence": [
+        "tests/integration/reports.test.mjs"
+      ]
+    },
+    {
+      "id": "RPT-004",
+      "specification": {
+        "id": "RPT-004",
+        "module": "报告",
+        "given": "系统时区改变",
+        "when": "重启/展示",
+        "then": "业务刊期仍Asia/Shanghai，时间标签明确",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "业务使用固定Asia/Shanghai已测；改变操作系统时区后的实际重启未执行。",
+      "evidence": [
+        "tests/integration/reports.test.mjs"
+      ]
+    },
+    {
+      "id": "LIB-001",
+      "specification": {
+        "id": "LIB-001",
+        "module": "个人状态",
+        "given": "收藏/已读/主题偏好",
+        "when": "换workspace、重启",
+        "then": "同一全局库状态一致；无导入导出和云同步",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "收藏/已读/筛选/滚动保存与重启已测；全工作区偏好矩阵未遍历。",
+      "evidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "artifacts/mac-full/force-kill-restart.json",
+        "artifacts/mac-native/real-personal-flow-evidence.json"
+      ]
+    },
+    {
+      "id": "CHAT-001",
+      "specification": {
+        "id": "CHAT-001",
+        "module": "讨论",
+        "given": "选择正常文章",
+        "when": "点击和AI讨论",
+        "then": "新上下文预填；消息发送=0；模型请求=0",
+        "milestone": "M0",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "真实来源新 Session 草稿预填，发送0，调用计数不增加。",
+      "evidence": [
+        "artifacts/mac-native/real-discussion-draft.png",
+        "artifacts/mac-native/real-personal-flow-evidence.json"
+      ]
+    },
+    {
+      "id": "CHAT-002",
+      "specification": {
+        "id": "CHAT-002",
+        "module": "讨论",
+        "given": "已有空白会话带草稿/附件",
+        "when": "点击讨论",
+        "then": "不覆盖、不清附件；无法安全创建时提示且保留来源页面",
+        "milestone": "M0",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "已有草稿与附件保护在旧 M0 原生记录中执行。",
+      "evidence": [
+        "artifacts/m0/native-observations.json"
+      ]
+    },
+    {
+      "id": "CHAT-003",
+      "specification": {
+        "id": "CHAT-003",
+        "module": "讨论",
+        "given": "慢创建/连击/后来导航",
+        "when": "切走并返回",
+        "then": "不晚到覆盖UI、不重复创建草稿、不自动发送",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "异步导航已测；全部连续点击/慢创建原生竞态专项尚未遍历。",
+      "evidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "packages/client/src/client/controller.ts"
+      ]
+    },
+    {
+      "id": "COST-001",
+      "specification": {
+        "id": "COST-001",
+        "module": "预算",
+        "given": "接近上限且并发",
+        "when": "同时发多个请求",
+        "then": "预留/实际尝试原子计量，不能超次数上限",
+        "milestone": "M1",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "原子预留/滚动与累计限额、固定模型和独立服务预算。",
+      "evidence": [
+        "tests/integration/runtime.test.mjs",
+        "tests/integration/model-authorization.test.mjs"
+      ]
+    },
+    {
+      "id": "COST-002",
+      "specification": {
+        "id": "COST-002",
+        "module": "预算",
+        "given": "达到服务上限",
+        "when": "运行其他源任务",
+        "then": "只局部blocked；无自动换付费提供方；到期/修复后恢复",
+        "milestone": "M2",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "局部 blocked、预算到期恢复、无替换提供方；模拟协议。",
+      "evidence": [
+        "tests/integration/providers.test.mjs",
+        "tests/integration/embedding.test.mjs"
+      ]
+    },
+    {
+      "id": "COST-003",
+      "specification": {
+        "id": "COST-003",
+        "module": "回执",
+        "given": "raw response已持久，业务提交前崩溃",
+        "when": "重启",
+        "then": "复用received；不再付费调用",
+        "milestone": "M1",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "received 与官方 Session 响应恢复均不重新派发。",
+      "evidence": [
+        "tests/integration/recovery.test.mjs"
+      ]
+    },
+    {
+      "id": "COST-004",
+      "specification": {
+        "id": "COST-004",
+        "module": "回执",
+        "given": "请求发出后结果未知",
+        "when": "恢复并到释放时间",
+        "then": "不立刻重发；最多一次自动释放；再失败待确认",
+        "milestone": "M1",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "30分钟、一次自动释放、独立账单确认与人工重试检查。",
+      "evidence": [
+        "tests/integration/runtime.test.mjs",
+        "tests/integration/recovery.test.mjs"
+      ]
+    },
+    {
+      "id": "COST-005",
+      "specification": {
+        "id": "COST-005",
+        "module": "模型",
+        "given": "日志持久失败/工具调用输出",
+        "when": "发起或处理辅助调用",
+        "then": "日志失败不发请求；工具结果绝不执行",
+        "milestone": "M0",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "真实 SDK audit flush已验证；工具输出拒绝实现存在，完整故障组合仍需专项执行。",
+      "evidence": [
+        "tests/integration/m0.test.mjs",
+        "packages/host/src/calls.ts"
+      ]
+    },
+    {
+      "id": "RUN-001",
+      "specification": {
+        "id": "RUN-001",
+        "module": "运行",
+        "given": "DSH中有计划任务",
+        "when": "关闭页面/隐藏主窗口",
+        "then": "Host存活则继续，和任何session是否打开无关",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "Host独立调度已实现；窗口隐藏时实际有工作任务的专项未执行。",
+      "evidence": [
+        "packages/host/src/runtime.ts",
+        "artifacts/mac-full/final-native-gateway.json"
+      ]
+    },
+    {
+      "id": "RUN-002",
+      "specification": {
+        "id": "RUN-002",
+        "module": "运行",
+        "given": "后台采集中",
+        "when": "彻底退出/强杀/休眠",
+        "then": "不虚假执行；重新打开按持久状态恢复，无独立孤儿服务",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "已实际正常退出、强杀、重启，无旧子进程；当时处理暂停，物理休眠未执行。",
+      "evidence": [
+        "artifacts/mac-full/force-kill-restart.json",
+        "tests/integration/recovery.test.mjs"
+      ]
+    },
+    {
+      "id": "RUN-003",
+      "specification": {
+        "id": "RUN-003",
+        "module": "运行",
+        "given": "多次错过同源slot",
+        "when": "恢复",
+        "then": "只补一轮到期采集；已存在stage任务不重复创建",
+        "milestone": "M1",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "过期slot只补一轮，stage任务去重。",
+      "evidence": [
+        "tests/integration/runtime.test.mjs"
+      ]
+    },
+    {
+      "id": "RUN-004",
+      "specification": {
+        "id": "RUN-004",
+        "module": "运行",
+        "given": "运行中停用再启用",
+        "when": "循环10次",
+        "then": "无重复timer/listener/worker；使用新AbortController",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "最后alpha2-7十轮实际停启通过，数据/23次授权计数保留，单writer和不重复timer/订阅。",
+      "evidence": [
+        "artifacts/mac-native/final-lifecycle-10-cycles.json"
+      ]
+    },
+    {
+      "id": "DATA-001",
+      "specification": {
+        "id": "DATA-001",
+        "module": "数据",
+        "given": "已有内容收藏配置",
+        "when": "升级/卸载/重装",
+        "then": "内容仍在；只执行必要schema迁移，不重seed",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "升级、重启、强杀与alpha2-7卸载重装后模拟内容、收藏、设置保留；真实库升级/停启保留。",
+      "evidence": [
+        "artifacts/m0/native-observations.json",
+        "artifacts/mac-native/upgrade-alpha2-5.json",
+        "artifacts/mac-full/force-kill-restart.json",
+        "artifacts/mac-full/uninstall-reinstall.json"
+      ]
+    },
+    {
+      "id": "DATA-002",
+      "specification": {
+        "id": "DATA-002",
+        "module": "数据",
+        "given": "外部请求未完成",
+        "when": "清空后返回迟到结果",
+        "then": "epoch阻止旧响应写回；不影响DSH聊天/共享Key",
+        "milestone": "M1",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "deleting先持久化并推进epoch，旧结果不写回，取消原始响应留证。",
+      "evidence": [
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ]
+    },
+    {
+      "id": "DATA-003",
+      "specification": {
+        "id": "DATA-003",
+        "module": "数据",
+        "given": "普通日志到期、关键回执未决",
+        "when": "运行清理",
+        "then": "只清过期日志/缓存，新闻与关键证据不删",
+        "milestone": "M3",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "按保留期清日志/缓存并保留新闻和关键证据；到期真实清理专项未独立执行。",
+      "evidence": [
+        "packages/storage-sqlite/src/business.ts"
+      ]
+    },
+    {
+      "id": "DATA-004",
+      "specification": {
+        "id": "DATA-004",
+        "module": "数据",
+        "given": "磁盘满/第二个Host",
+        "when": "写入/启动",
+        "then": "暂停新写入或明确拒绝writer；无静默丢失",
+        "milestone": "M1",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "实际SQLite页限满盘、只读、第二writer、响应落盘失败注入；非物理全盘填满。",
+      "evidence": [
+        "tests/integration/storage-faults.test.mjs",
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs"
+      ]
+    },
+    {
+      "id": "OPT-001",
+      "specification": {
+        "id": "OPT-001",
+        "module": "可选模块",
+        "given": "两个开关关闭",
+        "when": "正常运行",
+        "then": "无对应采集/模型请求；菜单隐藏；数据保留",
+        "milestone": "M4",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "默认关闭计数0，关闭保留历史并撤销菜单，旧代次提交拒绝。",
+      "evidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/integration/cancellation.test.mjs",
+        "artifacts/mac-full/optional-off-history.json",
+        "artifacts/mac-full/optional-off.ax.txt"
+      ]
+    },
+    {
+      "id": "OPT-002",
+      "specification": {
+        "id": "OPT-002",
+        "module": "模型榜",
+        "given": "输入固定评测与名录尺度",
+        "when": "计算与切分类",
+        "then": "与上游同方法结果一致，显示时间/来源/版本",
+        "milestone": "M4",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "v17逐字段对照，完整排名筛选与原生模拟说明/来源。",
+      "evidence": [
+        "artifacts/reference/optional-compare.json",
+        "tests/golden/optional-rules.test.mjs",
+        "artifacts/mac-full/leaderboard.png"
+      ]
+    },
+    {
+      "id": "OPT-003",
+      "specification": {
+        "id": "OPT-003",
+        "module": "监控",
+        "given": "预告/确认/撤回及不确定帖子",
+        "when": "推进状态机",
+        "then": "原规则与人工确认保留，不把预告变成完成",
+        "milestone": "M4",
+        "status": "not-run"
+      },
+      "status": "passed",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "预告不确认、故障/恢复、人工保护与修订留痕；模拟与上游对照。",
+      "evidence": [
+        "artifacts/reference/optional-compare.json",
+        "tests/integration/optional.test.mjs",
+        "artifacts/mac-full/monitor.png"
+      ]
+    },
+    {
+      "id": "SEC-001",
+      "specification": {
+        "id": "SEC-001",
+        "module": "安全",
+        "given": "恶意RSS/HTML/Markdown",
+        "when": "采集和阅读",
+        "then": "脚本不执行；注入不升为系统指令；模型不执行工具",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "HTML白名单与不执行脚本已测，模型无tools；提示注入和工具输出全组合未独立完成。",
+      "evidence": [
+        "tests/integration/reading-media.test.mjs",
+        "tests/integration/parsers.test.mjs",
+        "packages/host/src/calls.ts"
+      ]
+    },
+    {
+      "id": "SEC-002",
+      "specification": {
+        "id": "SEC-002",
+        "module": "安全",
+        "given": "私网/metadata/DNS重绑定/跨源重定向",
+        "when": "采集请求",
+        "then": "每跳目标检查；不泄露认证；明确拒绝与超时",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "私网/metadata/映射地址及Socket检查已测；完整多跳重定向/重绑定故障矩阵未执行。",
+      "evidence": [
+        "tests/integration/providers.test.mjs",
+        "tests/integration/parsers.test.mjs",
+        "packages/host/src/network.ts"
+      ]
+    },
+    {
+      "id": "SEC-003",
+      "specification": {
+        "id": "SEC-003",
+        "module": "安全",
+        "given": "URL/header含秘密",
+        "when": "日志/反馈/草稿/Remote",
+        "then": "脱敏；不自动上传；无全Key返回",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "账单与秘密读写按命名空间、请求脱敏已测；全部错误/反馈输出通道尚未遍历。",
+      "evidence": [
+        "tests/integration/providers.test.mjs",
+        "artifacts/mac-native/real-model-evidence.json"
+      ]
+    },
+    {
+      "id": "PACK-001",
+      "specification": {
+        "id": "PACK-001",
+        "module": "发布",
+        "given": "干净macOS/Windows官方Desktop",
+        "when": "安装已发布tgz",
+        "then": "无需数据库Docker；Host/Client/worker/assets均能解析",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "macOS实际安装与非SDK依赖/WASM闭包已测，SDK由官方Host解析；Windows x64未执行。",
+      "evidence": [
+        "artifacts/candidate/installed-closure.json",
+        "artifacts/mac-full/final-native-gateway.json"
+      ]
+    },
+    {
+      "id": "PACK-002",
+      "specification": {
+        "id": "PACK-002",
+        "module": "发布",
+        "given": "不匹配peer / 不支持node:sqlite",
+        "when": "安装或启动",
+        "then": "明确阻止；不正常使用版本豁免，不自动下载驱动",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "not-run",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "精确peer已声明；不匹配官方版本/无node:sqlite环境的实际拒绝安装尚未执行。",
+      "evidence": [
+        "packages/bundle/package.json",
+        "docs/10_Windows验收流程.md"
+      ]
+    },
+    {
+      "id": "PERF-001",
+      "specification": {
+        "id": "PERF-001",
+        "module": "性能",
+        "given": "固定10万条本地数据集",
+        "when": "分页/搜索/同时采集",
+        "then": "记录p95与RSS；查询目标<500ms；聊天不冻结",
+        "milestone": "M5",
+        "status": "not-run"
+      },
+      "status": "partial",
+      "environment": "macOS 15.7.5 arm64; official Desktop 0.2.0-rc.2 Node 24.18.1; Windows unexecuted",
+      "result": "查询p95和内存通过；10万条库下同时采集与真实聊天UI压力未执行。",
+      "evidence": [
+        "artifacts/performance/latest.json",
+        "docs/09_性能报告.md"
+      ]
+    }
+  ],
+  "realBusinessExecution": {
+    "executedAt": "2026-10-04",
+    "environment": "User-authorized installed official macOS DSH Desktop 0.2.0-rc.2 / ~/.dsh; actual DSH built-in Flash",
+    "rssCandidates": 144,
+    "readable": 140,
+    "selected": 35,
+    "prefilterBlocked": 4,
+    "stories": 25,
+    "realModelAttempts": 786,
+    "newRealModelAttempts": 763,
+    "modelRetries": 0,
+    "otherPaidCollectors": 0,
+    "oldThirtyCallLimit": "retired by explicit user instruction; historical allowance retained",
+    "evidence": [
+      "artifacts/official-live/real-business-evidence.json",
+      "artifacts/official-live/real-data-upgrade.json",
+      "artifacts/official-live/selected-real.png"
+    ],
+    "limitations": [
+      "First-import data does not establish current heat or real-content report issues.",
+      "Real optional-module and X/WeChat paid providers not enabled.",
+      "Windows remains unexecuted."
+    ],
+    "statusChanges": "Original 57-case results retained; no bulk conversion to passed.",
+    "storedStoriesIncludingWithdrawnSimulation": 28,
+    "actualBookmarksAndDrafts": {
+      "samples": [
+        "NVIDIA DGX Spark 64GB",
+        "ThinkingBox",
+        "BootLoops"
+      ],
+      "sentMessages": 0,
+      "evidence": [
+        "artifacts/official-live/nvidia-discussion-alpha11.jpg",
+        "artifacts/official-live/bootloops-discussion-alpha11.jpg",
+        "artifacts/official-live/thinkingbox-discussion-alpha13.ax.txt"
+      ]
+    },
+    "finalNativeReactivation": "artifacts/official-live/ui-reactivation-alpha13.json",
+    "finalInstall": "artifacts/official-live/upgrade-alpha14.json"
+  },
+  "realReportExecution": {
+    "executedAt": "2026-10-04T09:29:22.176Z",
+    "environment": "Installed official macOS DSH 0.2.0-rc.2 / Node 24.18.1 / ~/.dsh plugin-owned library",
+    "daily": 16,
+    "weekly": 7,
+    "monthly": 3,
+    "newRealModelAttempts": 10,
+    "modelRetries": 0,
+    "model": "deepseek-account/deepseek-flash",
+    "coverage": "All historical source snapshots incomplete; live heat/backfill gates retained",
+    "checks": {
+      "strictPayloadRejected": true,
+      "commandIdempotent": true,
+      "publicationAndBackfillUnchanged": true,
+      "readingHasZeroNewCalls": true,
+      "allHistoricalIncomplete": true,
+      "fixedRealModel": true,
+      "auditsSettled": true,
+      "frozenRequestHashesValid": true,
+      "allAttemptsClassified": true,
+      "noDailyModelCalls": true
+    },
+    "evidence": [
+      "artifacts/reports-live/official-compilation.json",
+      "docs/11_真实报告验收.md",
+      "artifacts/reports-live/final-native.json",
+      "artifacts/reports-live/daily-final.jpg",
+      "artifacts/reports-live/weekly-detail.ax.txt",
+      "artifacts/reports-live/monthly-detail.ax.txt"
+    ],
+    "original57CaseStates": "Preserved, no bulk pass conversion",
+    "nativeUI": "All three actual report details, source links, date and coverage passed via native AX; full daily final pixels accepted. Weekly/monthly thumbnails and stale frames excluded.",
+    "uiChecks": {
+      "dailyDetail": true,
+      "weeklyDetail": true,
+      "monthlyDetail": true,
+      "allHaveSourceLinks": true,
+      "historicalCoverageLabels": true,
+      "noNewCallsFromNativeReading": true,
+      "oneStorageWorker": true,
+      "oneBusinessTimer": true,
+      "noActiveCalls": true
+    },
+    "finalInstall": "artifacts/official-live/upgrade-alpha17.json"
+  }
+}

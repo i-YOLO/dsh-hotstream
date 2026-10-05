@@ -1,0 +1,9 @@
+.panel { color: var(--dsw-alias-label-primary); padding: 32px; max-width: 960px; margin: 0 auto; overflow: auto; height: 100%; }
+.panel h1 { margin: 0; font-size: 28px; }
+.caption { color: var(--dsw-alias-label-secondary); }
+.card { margin: 24px 0; padding: 20px; border: 1px solid var(--dsw-alias-border-l3); border-radius: var(--dsw-radius-lg); }
+.facts { display: grid; grid-template-columns: 160px 1fr; gap: 12px; margin: 24px 0; }
+.facts dt { color: var(--dsw-alias-label-secondary); }
+.facts dd { margin: 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.error { color: var(--dsw-alias-state-error-primary); }

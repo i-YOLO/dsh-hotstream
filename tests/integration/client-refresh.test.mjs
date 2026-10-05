@@ -1,0 +1,36 @@
+import {describe,it,expect} from 'vitest';
+import {NewsViewController} from '../../packages/client/lib/types/client/news-controller.js';
+import {defaultSettings} from '../../packages/contracts/lib/types/runtime.js';
+const ok=value=>Promise.resolve({ok:true,value});
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const optionalData=records=>({enabled:true,total:records.length,records,sources:[],models:[],state:{}});
+const modelRows=optionalData([{modelId:'model-a',slug:'model-a',name:'Model A',rank:1,score:0}]);
+const monitorRows=optionalData(Array.from({length:8},(_,n)=>({id:'event-'+n,title:'Monitor event '+n})));
+function optionalFixture(){const f=fixture();f.remote.moduleHealth=()=>ok({leaderboard:{},monitor:{latestTest:null}});f.remote.uiMonitor=()=>ok({events:[]});return f;}
+function fixture(){const state={initialized:true,deleting:false,dataRevision:1,moduleGenerations:{leaderboard:0,monitor:0},epoch:0,revision:2,schemaVersion:7,sourceCount:18,settings:defaultSettings({provider:'fixture',model:'fixture'}),counts:{articles:3}};let release,closed=false;const queue=[];const stream={async *[Symbol.asyncIterator](){yield {epoch:0,dataRevision:state.dataRevision,reset:true,scopes:['content']};while(!closed){if(!queue.length)await new Promise(resolve=>release=resolve);if(queue.length)yield queue.shift();}},dispose(){closed=true;release?.();}};let saves=0;let values={page:'selected',query:'',category:null,topic:null,offset:0};const remote={runtime:()=>ok({state:{...state},defaultRoute:null,error:null,running:true}),preferences:()=>ok({revision:1,values}),models:()=>ok({providers:[]}),browse:()=>ok({items:[],total:0}),uiFeed:()=>ok({cards:[],total:0,dayCounts:[],nextCursor:null,epoch:0,dataRevision:1}),reading:()=>ok({hot:[],reports:[],topics:[],events:[]}),candidates:()=>ok({items:[],total:0}),modelAuthorization:()=>ok({active:false,maximum:0,used:0}),watch:()=>stream,savePreferences:request=>{saves++;values=request.values;return ok({revision:1+saves,values});}};const view=new NewsViewController({remote:{hotstream:remote},layout:{beginNavigation:()=>new AbortController().signal}},()=>{});return {view,state,remote,push(){state.dataRevision++;queue.push({epoch:0,dataRevision:state.dataRevision,reset:false,scopes:['content']});release?.();},saves:()=>saves};}
+describe('Client refresh and navigation stability',()=>{
+ it('returns from detail to the same filtered list, history identity and scroll position',async()=>{const f=fixture(),face=f.view.face();f.remote.uiArticle=()=>ok({item:null,bodyState:'unavailable',images:[]});await f.view.load();face.navigateUrl('/all?category=ai-models');await wait(1);face.recordScroll(640);const key=f.view.state.getSnapshot().routeKey;face.openArticle('detail');await wait(1);face.goBack();await wait(1);expect(f.view.state.getSnapshot()).toMatchObject({path:'/all?category=ai-models',category:'ai-models',routeKey:key,navigationScroll:640});f.view.dispose();});
+ it('updates from a watch notification without showing a foreground loading state',async()=>{const f=fixture(),detach=f.view.face().mountNews();try{await wait(170);const samples=[];const unsubscribe=f.view.state.subscribe(()=>samples.push(f.view.state.getSnapshot().busy));f.push();await wait(170);expect(f.view.state.getSnapshot().runtime.state.dataRevision).toBe(2);expect(samples).not.toContain(true);unsubscribe();}finally{detach();f.view.dispose();}});
+ it('does not persist unchanged scroll positions repeatedly',async()=>{const f=fixture(),face=f.view.face(),detach=face.mountNews();try{await wait(170);face.recordScroll(200);await wait(550);expect(f.saves()).toBe(1);face.recordScroll(200);await wait(550);expect(f.saves()).toBe(1);}finally{detach();f.view.dispose();}});
+ it('does not allow a delayed article to replace a newer navigation',async()=>{const f=fixture();await f.view.load();let resolve;f.remote.uiArticle=()=>new Promise(done=>resolve=done);const face=f.view.face();face.openArticle('late');await wait(1);face.setPage('all');resolve({ok:true,value:{item:{id:'late'}}});await wait(1);expect(f.view.state.getSnapshot().page).toBe('all');expect(f.view.state.getSnapshot().detail).toBeNull();f.view.dispose();});
+ it('keeps tail-page marks in memory and bookmarks without a foreground list reload',async()=>{const f=fixture(),face=f.view.face();await f.view.load();f.remote.uiFeed=()=>ok({cards:[{item:{id:'tail',bookmarked:true,readAt:12}}],total:31,dayCounts:[],nextCursor:null,epoch:0,dataRevision:1});await face.readFeed({});expect(f.view.state.getSnapshot().marks.tail).toEqual({bookmarked:true,readAt:12});let calls=0;f.remote.mark=()=>{calls++;return ok(true);};f.remote.uiFeed=()=>{throw new Error('Bookmark must not replace loaded pages');};face.markArticle('tail',false);await wait(1);expect(calls).toBe(1);expect(f.view.state.getSnapshot().marks.tail.bookmarked).toBe(false);expect(f.view.state.getSnapshot().busy).toBe(false);expect(f.view.state.getSnapshot().error).toBeNull();f.view.dispose();});
+ it('deduplicates read marks and resets scroll for explicit pagination',async()=>{const f=fixture(),face=f.view.face();await f.view.load();let calls=0;f.remote.mark=()=>{calls++;return ok(true);};face.markRead('article');face.markRead('article');await wait(1);face.markRead('article');expect(calls).toBe(1);face.recordScroll(700);const key=f.view.state.getSnapshot().routeKey;face.pageOffset(30);await wait(1);expect(f.view.state.getSnapshot()).toMatchObject({offset:30,navigationScroll:0});expect(f.view.state.getSnapshot().routeKey).not.toBe(key);f.view.dispose();});
+
+ it('clears monitor records before the model page renders, while retaining valid rows during a same-page refresh',async()=>{
+  const f=optionalFixture(),face=f.view.face();let release;
+  f.remote.optional=request=>request.module==='monitor'?ok(monitorRows):new Promise(resolve=>release=resolve);
+  try{await f.view.load();face.navigateUrl('/codex-reset');await wait(1);expect(f.view.state.getSnapshot().optional.records).toHaveLength(8);
+   face.navigateUrl('/leaderboard');expect(f.view.state.getSnapshot().optional).toBeNull();expect(f.view.state.getSnapshot().uiMonitor).toBeNull();await wait(1);
+   release({ok:true,value:modelRows});await wait(1);expect(f.view.state.getSnapshot().optional).toEqual(modelRows);
+   const observed=[];const detach=f.view.state.subscribe(()=>observed.push(f.view.state.getSnapshot().optional));f.remote.optional=()=>ok(modelRows);await f.view.load();detach();expect(observed).not.toContain(null);
+  }finally{f.view.dispose();}
+ });
+ it('rejects a late monitor response after returning to the leaderboard',async()=>{
+  const f=optionalFixture(),face=f.view.face();let release;
+  f.remote.optional=request=>request.module==='leaderboard'?ok(modelRows):new Promise(resolve=>release=resolve);
+  try{await f.view.load();face.navigateUrl('/leaderboard');await wait(1);face.navigateUrl('/codex-reset');expect(f.view.state.getSnapshot().optional).toBeNull();await wait(1);
+   face.navigateUrl('/leaderboard');await wait(1);release({ok:true,value:monitorRows});await wait(1);expect(f.view.state.getSnapshot().optional).toEqual(modelRows);expect(f.view.state.getSnapshot().page).toBe('leaderboard');
+  }finally{f.view.dispose();}
+ });
+
+});

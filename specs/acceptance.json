@@ -1,0 +1,515 @@
+[
+  {
+    "id": "INIT-001",
+    "module": "初始化",
+    "given": "全新安装未点击初始化",
+    "when": "打开页面、切页、重启",
+    "then": "外部源请求=0；模型请求=0；无业务定时任务",
+    "milestone": "M1",
+    "status": "not-run"
+  },
+  {
+    "id": "INIT-002",
+    "module": "初始化",
+    "given": "默认配置",
+    "when": "连续点击初始化并模拟响应丢失",
+    "then": "只有一个初始化事务；18源只导入一次",
+    "milestone": "M1",
+    "status": "not-run"
+  },
+  {
+    "id": "INIT-003",
+    "module": "初始化",
+    "given": "数据库只读或迁移失败",
+    "when": "点击初始化",
+    "then": "不发外部请求；状态可诊断；数据不被重建覆盖",
+    "milestone": "M1",
+    "status": "not-run"
+  },
+  {
+    "id": "INIT-004",
+    "module": "初始化",
+    "given": "部分来源失败",
+    "when": "执行首轮",
+    "then": "正常源可阅读；失败源独立恢复；不要求全部完成",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "SRC-001",
+    "module": "信源",
+    "given": "包内快照",
+    "when": "初始化并查看配置",
+    "then": "18项均RSS、全部启用、间隔与快照一致、首轮覆盖8",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "SRC-002",
+    "module": "信源",
+    "given": "新建无覆盖配置RSS",
+    "when": "提供40条且固定日期",
+    "then": "通用30与12×30天条件正确；未知日期沿原逻辑",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "SRC-003",
+    "module": "信源",
+    "given": "RSS首次回填8条",
+    "when": "第二轮feed仍相同",
+    "then": "首轮不保存validator；普通轮可补读；之后304零新模型任务",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "SRC-004",
+    "module": "信源",
+    "given": "抓取部分写入后故障",
+    "when": "恢复并重抓",
+    "then": "游标不越过未提交材料；文章/观察/作业幂等",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "SRC-005",
+    "module": "信源",
+    "given": "删除/修改默认源",
+    "when": "升级再启动",
+    "then": "不补回删除源、不覆盖用户频率或筛选配置",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "SRC-006",
+    "module": "信源",
+    "given": "X/公众号无凭据",
+    "when": "开启对应源",
+    "then": "显示blocked而非静默空白；其他源运行",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "SRC-007",
+    "module": "信源",
+    "given": "网页/JSON配错选择器路径",
+    "when": "后台试抓",
+    "then": "明确校验/解析错误；不把导航当文章；不入内容库",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "SRC-008",
+    "module": "信源",
+    "given": "付费服务预览",
+    "when": "试抓并超限",
+    "then": "提示费用；试抓计入预算；超限停止",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "SRC-009",
+    "module": "信源",
+    "given": "已停用source",
+    "when": "普通调度到期",
+    "then": "不调用该源；历史仍可读",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "EXT-001",
+    "module": "外部输入",
+    "given": "本机external适配关闭",
+    "when": "向端口/服务请求",
+    "then": "无监听或拒绝；初始化前不接受入库",
+    "milestone": "M0",
+    "status": "not-run"
+  },
+  {
+    "id": "EXT-002",
+    "module": "外部输入",
+    "given": "适配开启",
+    "when": "错误token、Origin、超长批次",
+    "then": "拒绝；不绕过源类型、预算与去重；不监听公网",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "ED-001",
+    "module": "编辑",
+    "given": "固定预筛结果",
+    "when": "输入PASS/BLOCK/UNKNOWN与证据不足",
+    "then": "与上游可见性和继续处理语义一致",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "ED-002",
+    "module": "编辑",
+    "given": "双评分路由固定",
+    "when": "分别回60和90",
+    "then": "两次真实独立调用槽位；第二次不见第一结果；均值判断正确",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "ED-003",
+    "module": "编辑",
+    "given": "够分但未完成归组",
+    "when": "延迟/错误/格式无效关系结果",
+    "then": "不进入精选；进度与超时告警正确",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "ED-004",
+    "module": "编辑",
+    "given": "任务执行中改模型/提示词",
+    "when": "完成旧任务并排新任务",
+    "then": "旧任务使用冻结快照；新任务用新版本；无半途漂移",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "ED-005",
+    "module": "编辑",
+    "given": "输入修订更新",
+    "when": "旧任务迟到提交",
+    "then": "旧修订不得覆盖新publication；可保留旧分析审计",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "EV-001",
+    "module": "事件",
+    "given": "同发布、多报道、后续和同公司不同事",
+    "when": "固定关系结果归组",
+    "then": "Article/Fact/Story关系正确；不混事件",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "EV-002",
+    "module": "事件",
+    "given": "已有手动归属",
+    "when": "重新归组/源改变",
+    "then": "人工覆盖不被自动清除；热度/投影随之更新",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "EV-003",
+    "module": "事件",
+    "given": "同主体多个源、重复抓取",
+    "when": "计算48小时热度",
+    "then": "参与者去重；24小时贡献减半；无重复加热",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "EV-004",
+    "module": "事件",
+    "given": "首次历史回填",
+    "when": "计算今日与热点",
+    "then": "旧新闻不按采集时间成为今日热点",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "EV-005",
+    "module": "事件",
+    "given": "采集落后或新增源",
+    "when": "比较6小时趋势",
+    "then": "unknown/覆盖标记正确，不伪造涨幅",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "EV-006",
+    "module": "事件",
+    "given": "embedding未配置/换维度",
+    "when": "召回与重建",
+    "then": "词面正常；维度/模型隔离；不混旧向量",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "PUB-001",
+    "module": "可见性",
+    "given": "文章/事件被撤回",
+    "when": "列表/搜索/报告/收藏/预填读取",
+    "then": "全部遵守统一可见性；收藏保留标记非被禁全文",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "RPT-001",
+    "module": "报告",
+    "given": "到达北京时间08点",
+    "when": "生成日报",
+    "then": "刊期窗口正确；日报生成新增模型调用=0",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "RPT-002",
+    "module": "报告",
+    "given": "周/月报固定日报输入",
+    "when": "模型输出幻觉名称/数字",
+    "then": "条目不变；违规导读模板回退",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "RPT-003",
+    "module": "报告",
+    "given": "停机错过多个刊期",
+    "when": "恢复",
+    "then": "仅按实际资料补缺期；每刊期唯一；有界调度",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "RPT-004",
+    "module": "报告",
+    "given": "系统时区改变",
+    "when": "重启/展示",
+    "then": "业务刊期仍Asia/Shanghai，时间标签明确",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "LIB-001",
+    "module": "个人状态",
+    "given": "收藏/已读/主题偏好",
+    "when": "换workspace、重启",
+    "then": "同一全局库状态一致；无导入导出和云同步",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "CHAT-001",
+    "module": "讨论",
+    "given": "选择正常文章",
+    "when": "点击和AI讨论",
+    "then": "新上下文预填；消息发送=0；模型请求=0",
+    "milestone": "M0",
+    "status": "not-run"
+  },
+  {
+    "id": "CHAT-002",
+    "module": "讨论",
+    "given": "已有空白会话带草稿/附件",
+    "when": "点击讨论",
+    "then": "不覆盖、不清附件；无法安全创建时提示且保留来源页面",
+    "milestone": "M0",
+    "status": "not-run"
+  },
+  {
+    "id": "CHAT-003",
+    "module": "讨论",
+    "given": "慢创建/连击/后来导航",
+    "when": "切走并返回",
+    "then": "不晚到覆盖UI、不重复创建草稿、不自动发送",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "COST-001",
+    "module": "预算",
+    "given": "接近上限且并发",
+    "when": "同时发多个请求",
+    "then": "预留/实际尝试原子计量，不能超次数上限",
+    "milestone": "M1",
+    "status": "not-run"
+  },
+  {
+    "id": "COST-002",
+    "module": "预算",
+    "given": "达到服务上限",
+    "when": "运行其他源任务",
+    "then": "只局部blocked；无自动换付费提供方；到期/修复后恢复",
+    "milestone": "M2",
+    "status": "not-run"
+  },
+  {
+    "id": "COST-003",
+    "module": "回执",
+    "given": "raw response已持久，业务提交前崩溃",
+    "when": "重启",
+    "then": "复用received；不再付费调用",
+    "milestone": "M1",
+    "status": "not-run"
+  },
+  {
+    "id": "COST-004",
+    "module": "回执",
+    "given": "请求发出后结果未知",
+    "when": "恢复并到释放时间",
+    "then": "不立刻重发；最多一次自动释放；再失败待确认",
+    "milestone": "M1",
+    "status": "not-run"
+  },
+  {
+    "id": "COST-005",
+    "module": "模型",
+    "given": "日志持久失败/工具调用输出",
+    "when": "发起或处理辅助调用",
+    "then": "日志失败不发请求；工具结果绝不执行",
+    "milestone": "M0",
+    "status": "not-run"
+  },
+  {
+    "id": "RUN-001",
+    "module": "运行",
+    "given": "DSH中有计划任务",
+    "when": "关闭页面/隐藏主窗口",
+    "then": "Host存活则继续，和任何session是否打开无关",
+    "milestone": "M5",
+    "status": "not-run"
+  },
+  {
+    "id": "RUN-002",
+    "module": "运行",
+    "given": "后台采集中",
+    "when": "彻底退出/强杀/休眠",
+    "then": "不虚假执行；重新打开按持久状态恢复，无独立孤儿服务",
+    "milestone": "M5",
+    "status": "not-run"
+  },
+  {
+    "id": "RUN-003",
+    "module": "运行",
+    "given": "多次错过同源slot",
+    "when": "恢复",
+    "then": "只补一轮到期采集；已存在stage任务不重复创建",
+    "milestone": "M1",
+    "status": "not-run"
+  },
+  {
+    "id": "RUN-004",
+    "module": "运行",
+    "given": "运行中停用再启用",
+    "when": "循环10次",
+    "then": "无重复timer/listener/worker；使用新AbortController",
+    "milestone": "M5",
+    "status": "not-run"
+  },
+  {
+    "id": "DATA-001",
+    "module": "数据",
+    "given": "已有内容收藏配置",
+    "when": "升级/卸载/重装",
+    "then": "内容仍在；只执行必要schema迁移，不重seed",
+    "milestone": "M5",
+    "status": "not-run"
+  },
+  {
+    "id": "DATA-002",
+    "module": "数据",
+    "given": "外部请求未完成",
+    "when": "清空后返回迟到结果",
+    "then": "epoch阻止旧响应写回；不影响DSH聊天/共享Key",
+    "milestone": "M1",
+    "status": "not-run"
+  },
+  {
+    "id": "DATA-003",
+    "module": "数据",
+    "given": "普通日志到期、关键回执未决",
+    "when": "运行清理",
+    "then": "只清过期日志/缓存，新闻与关键证据不删",
+    "milestone": "M3",
+    "status": "not-run"
+  },
+  {
+    "id": "DATA-004",
+    "module": "数据",
+    "given": "磁盘满/第二个Host",
+    "when": "写入/启动",
+    "then": "暂停新写入或明确拒绝writer；无静默丢失",
+    "milestone": "M1",
+    "status": "not-run"
+  },
+  {
+    "id": "OPT-001",
+    "module": "可选模块",
+    "given": "两个开关关闭",
+    "when": "正常运行",
+    "then": "无对应采集/模型请求；菜单隐藏；数据保留",
+    "milestone": "M4",
+    "status": "not-run"
+  },
+  {
+    "id": "OPT-002",
+    "module": "模型榜",
+    "given": "输入固定评测与名录尺度",
+    "when": "计算与切分类",
+    "then": "与上游同方法结果一致，显示时间/来源/版本",
+    "milestone": "M4",
+    "status": "not-run"
+  },
+  {
+    "id": "OPT-003",
+    "module": "监控",
+    "given": "预告/确认/撤回及不确定帖子",
+    "when": "推进状态机",
+    "then": "原规则与人工确认保留，不把预告变成完成",
+    "milestone": "M4",
+    "status": "not-run"
+  },
+  {
+    "id": "SEC-001",
+    "module": "安全",
+    "given": "恶意RSS/HTML/Markdown",
+    "when": "采集和阅读",
+    "then": "脚本不执行；注入不升为系统指令；模型不执行工具",
+    "milestone": "M5",
+    "status": "not-run"
+  },
+  {
+    "id": "SEC-002",
+    "module": "安全",
+    "given": "私网/metadata/DNS重绑定/跨源重定向",
+    "when": "采集请求",
+    "then": "每跳目标检查；不泄露认证；明确拒绝与超时",
+    "milestone": "M5",
+    "status": "not-run"
+  },
+  {
+    "id": "SEC-003",
+    "module": "安全",
+    "given": "URL/header含秘密",
+    "when": "日志/反馈/草稿/Remote",
+    "then": "脱敏；不自动上传；无全Key返回",
+    "milestone": "M5",
+    "status": "not-run"
+  },
+  {
+    "id": "PACK-001",
+    "module": "发布",
+    "given": "干净macOS/Windows官方Desktop",
+    "when": "安装已发布tgz",
+    "then": "无需数据库Docker；Host/Client/worker/assets均能解析",
+    "milestone": "M5",
+    "status": "not-run"
+  },
+  {
+    "id": "PACK-002",
+    "module": "发布",
+    "given": "不匹配peer / 不支持node:sqlite",
+    "when": "安装或启动",
+    "then": "明确阻止；不正常使用版本豁免，不自动下载驱动",
+    "milestone": "M5",
+    "status": "not-run"
+  },
+  {
+    "id": "PERF-001",
+    "module": "性能",
+    "given": "固定10万条本地数据集",
+    "when": "分页/搜索/同时采集",
+    "then": "记录p95与RSS；查询目标<500ms；聊天不冻结",
+    "milestone": "M5",
+    "status": "not-run"
+  }
+]

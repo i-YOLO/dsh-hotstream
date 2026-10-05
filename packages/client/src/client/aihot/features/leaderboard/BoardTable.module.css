@@ -1,0 +1,12 @@
+.wrap{container-type:inline-size;container-name:leaderboard-table;max-width:100%;overflow-x:auto;}
+.table th,.table td{overflow-wrap:normal;}
+.table time{white-space:nowrap;}
+@container leaderboard-table (max-width:1100px){
+ .table th:nth-child(n+3):nth-child(-n+7),.table td:nth-child(n+3):nth-child(-n+7){display:none!important;}
+ .table th:first-child{width:60px!important;}
+ .table th:last-child{width:136px!important;}
+ .table [data-lb-desktop]{display:none!important;}
+ .table [data-lb-mobile=block]{display:block!important;}
+ .table [data-lb-mobile=inline]{display:inline-flex!important;}
+ .table td{padding-top:16px;padding-bottom:16px;}
+}

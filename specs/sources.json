@@ -1,0 +1,189 @@
+{
+  "S01": {
+    "title": "需求依据：上传的讨论记录",
+    "paths": "《讨论插件可行性架构原理.pdf》",
+    "note": "用户上传，41 页；重点第 16–18、23–38、39–41 页。仅作为需求讨论依据，技术说法不视为运行验证。",
+    "urls": []
+  },
+  "S02": {
+    "title": "需求依据：当前对话最终确认",
+    "paths": "本次对话",
+    "note": "保留完整新闻功能；固定 DSH 模型；无手动采集；全局热点库；数据保留；讨论只预填；预算保护；不做备份恢复。后续明确决定优先于旧讨论。",
+    "urls": []
+  },
+  "S03": {
+    "title": "AIHOT 项目定位与范围",
+    "paths": "README.md",
+    "note": "18 个示范信源，不包含线上运营信源库；网站快照，非持续同步承诺。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/README.md"
+    ]
+  },
+  "S04": {
+    "title": "内置信源真实快照",
+    "paths": "industry/sources.json",
+    "note": "18 项，均为 RSS；各项 initialBackfillLimit=8；保留各项 60/120/180 分钟间隔和全文许可字段。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/industry/sources.json"
+    ]
+  },
+  "S05": {
+    "title": "首次采集与游标",
+    "paths": "packages/backend/src/sources/collect.ts",
+    "note": "通用回填默认 30 条、12×30 天，配置可覆盖；先去重；首次 RSS 不保存 validator；失败不推进成功游标。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/packages/backend/src/sources/collect.ts"
+    ]
+  },
+  "S06": {
+    "title": "精选、日报与校准规则",
+    "paths": "docs/selection.md",
+    "note": "两次独立评分；归组后才放行精选；日报按规则编排；周/月报仅总述和栏目导读调用模型。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/docs/selection.md"
+    ]
+  },
+  "S07": {
+    "title": "信源配置与跨行业",
+    "paths": "docs/sources.md | docs/customize.md",
+    "note": "六类采集方式；跨行业还要修改预筛、分类、评分和术语，不只是换 URL。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/docs/sources.md",
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/docs/customize.md"
+    ]
+  },
+  "S08": {
+    "title": "可靠任务与付费回执",
+    "paths": "packages/backend/src/jobs/queue.ts | packages/backend/src/providers/receipts.ts",
+    "note": "作为迁移合同：业务写入与入队原子性、请求身份、回执复用、未知结果处理；落地时重跑原测试。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/packages/backend/src/jobs/queue.ts",
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/packages/backend/src/providers/receipts.ts"
+    ]
+  },
+  "S09": {
+    "title": "DSH 存储边界",
+    "paths": "packages/storage/storage-domain/README.zh.md | docs/subsystems/storage.zh.md",
+    "note": "KV；没有跨表事务、二级索引和通用数据迁移；不能直接承接原关系数据库。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/storage/storage-domain/README.zh.md",
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/docs/subsystems/storage.zh.md"
+    ]
+  },
+  "S10": {
+    "title": "DSH SQLite 驱动基线",
+    "paths": "packages/storage/storage-sqlite/README.zh.md",
+    "note": "使用 node:sqlite；同步数据库调用；单条 KV 写入原子性不等于业务多表事务。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/storage/storage-sqlite/README.zh.md"
+    ]
+  },
+  "S11": {
+    "title": "DSH 定时任务语义",
+    "paths": "packages/schedule/schedule/README.zh.md",
+    "note": "面向会话投递后续消息，不是通用采集任务队列。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/schedule/schedule/README.zh.md"
+    ]
+  },
+  "S12": {
+    "title": "DSH 桌面生命周期",
+    "paths": "apps/desktop/README.zh.md",
+    "note": "关闭工作区主窗口通常为隐藏；彻底退出停止 Host。文档有旧段落，实机验证是发布门禁。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/apps/desktop/README.zh.md"
+    ]
+  },
+  "S13": {
+    "title": "DSH 模型调用合同",
+    "paths": "packages/llm/llm/README.zh.md",
+    "note": "ctx.llm.stream、模型发现、单次请求与终止状态；模型可见输入必须可由会话日志重建。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/llm/llm/README.zh.md"
+    ]
+  },
+  "S14": {
+    "title": "辅助模型调用审计参考",
+    "paths": "packages/session/session-title-llm/README.zh.md",
+    "note": "官方辅助请求先记录精确请求，再调用 ctx.llm；不等于启动完整 Agent。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/session/session-title-llm/README.zh.md"
+    ]
+  },
+  "S15": {
+    "title": "新对话与预填",
+    "paths": "packages/client/ui-workspace/README.md",
+    "note": "uiWorkspace.startSession 可携带 prompt / clearPreviousDraft；新会话可能复用空白会话，不能覆盖已有草稿。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/client/ui-workspace/README.md"
+    ]
+  },
+  "S16": {
+    "title": "客户端开发规范",
+    "paths": "packages/client/AGENTS.md",
+    "note": "Slots、派生 props、声明式 store、Host/Client 隔离、共享 React/Cordis、禁止直接运行时依赖其他业务插件。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/client/AGENTS.md"
+    ]
+  },
+  "S17": {
+    "title": "安装与版本兼容",
+    "paths": "packages/boot/plugin-manager/README.zh.md",
+    "note": "以 bundle 管理外部插件；安装和启动检查 peer 兼容；不使用版本豁免掩盖不兼容。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/boot/plugin-manager/README.zh.md"
+    ]
+  },
+  "S18": {
+    "title": "源码版本与开发工具基线",
+    "paths": "apps/desktop/package.json",
+    "note": "源码清单为 0.2.1-alpha.1，包含 TypeScript 6.0.3、pnpm 11.7.0、React 18 系列开发关系；不是桌面安装联调报告。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/apps/desktop/package.json"
+    ]
+  },
+  "S19": {
+    "title": "Bundle 与 Client 元数据参考",
+    "paths": "packages/bundle/headless/package.json | packages/client/ui-plugin-manager/package.json",
+    "note": "dsh.bundle.patch、dsh.client、./client 导出、产物文件清单。headless 只参考打包声明，不能用于运行本插件 UI。",
+    "urls": [
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/bundle/headless/package.json",
+      "https://github.com/deepseek-ai/deepseek-harness/blob/5badb15009ae1756c3afe0ae0cef1faafc290ccc/packages/client/ui-plugin-manager/package.json"
+    ]
+  },
+  "S20": {
+    "title": "模型榜与监控",
+    "paths": "docs/leaderboard.md",
+    "note": "模型榜方法、采集器与种子；Tibo/Codex 监控依赖 SocialData；均为可选 AI 模块。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/docs/leaderboard.md"
+    ]
+  },
+  "S21": {
+    "title": "归组与热度实现",
+    "paths": "packages/backend/src/events/recall.ts | packages/backend/src/events/hot.ts",
+    "note": "14 天候选；向量或词面召回；48 小时热度窗口、24 小时半衰；独立参与者去重。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/packages/backend/src/events/recall.ts",
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/packages/backend/src/events/hot.ts"
+    ]
+  },
+  "S22": {
+    "title": "定时与报告时区",
+    "paths": "apps/worker/src/schedules.ts | packages/contracts/src/time.ts",
+    "note": "原调度与刊期采用 Asia/Shanghai。插件第一版保留此业务时区，不自动跟随操作系统改刊期。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/apps/worker/src/schedules.ts",
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/packages/contracts/src/time.ts"
+    ]
+  },
+  "S23": {
+    "title": "许可与品牌边界",
+    "paths": "LICENSE | NOTICE",
+    "note": "代码 MIT；AIHOT 名称、Logo 不属于代码许可。发布需新品牌并保留上游声明。",
+    "urls": [
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/LICENSE",
+      "https://github.com/KKKKhazix/AIHOT/blob/cc66cceb1dc7a0bc147e942e49ff94c9cee418c6/NOTICE"
+    ]
+  }
+}

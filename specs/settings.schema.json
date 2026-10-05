@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hotstream:design-settings:v1",
+  "title": "Hotstream v1 design settings (partial release contract)",
+  "type": "object",
+  "required": [
+    "configVersion",
+    "initialized",
+    "model",
+    "features",
+    "collection",
+    "budgets",
+    "data",
+    "ui",
+    "discuss",
+    "backupEnabled",
+    "restoreEnabled",
+    "cloudSyncEnabled"
+  ],
+  "properties": {
+    "configVersion": {
+      "const": 1
+    },
+    "initialized": {
+      "type": "boolean"
+    },
+    "autoCollectEnabled": {
+      "type": "boolean"
+    },
+    "model": {
+      "type": "object",
+      "required": [
+        "mode",
+        "provider",
+        "model",
+        "stageOverrides"
+      ],
+      "properties": {
+        "mode": {
+          "const": "fixed-dsh-route"
+        },
+        "provider": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "model": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stageOverrides": {
+          "type": "object"
+        }
+      }
+    },
+    "features": {
+      "type": "object",
+      "required": [
+        "leaderboard",
+        "codexResetMonitor"
+      ],
+      "properties": {
+        "leaderboard": {
+          "type": "boolean"
+        },
+        "codexResetMonitor": {
+          "type": "boolean"
+        }
+      }
+    },
+    "backupEnabled": {
+      "const": false
+    },
+    "restoreEnabled": {
+      "const": false
+    },
+    "cloudSyncEnabled": {
+      "const": false
+    },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "manualCollectButton": {
+          "const": false
+        }
+      }
+    },
+    "discuss": {
+      "type": "object",
+      "required": [
+        "autoSend",
+        "clearPreviousDraft"
+      ],
+      "properties": {
+        "autoSend": {
+          "const": false
+        },
+        "clearPreviousDraft": {
+          "const": false
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "required": [
+        "automaticSourceSync",
+        "intervalPolicy"
+      ],
+      "properties": {
+        "automaticSourceSync": {
+          "const": false
+        },
+        "intervalPolicy": {
+          "const": "per-source-snapshot"
+        },
+        "concurrency": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "scope": {
+          "const": "dsh-home-global"
+        },
+        "contentRetentionDays": {
+          "type": "null"
+        },
+        "ordinaryLogDays": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "cacheDays": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "required": [
+        "llm",
+        "paidCollectorPerService"
+      ],
+      "properties": {
+        "llm": {
+          "$ref": "#/$defs/limit"
+        },
+        "paidCollectorPerService": {
+          "$ref": "#/$defs/limit"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "limit": {
+      "type": "object",
+      "required": [
+        "perMinute",
+        "perHour",
+        "per24Hours"
+      ],
+      "properties": {
+        "perMinute": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "perHour": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "per24Hours": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    }
+  },
+  "$comment": "仅对设计不可变项和主要字段进行校验。实施时需扩展完整 Host schema；禁止直接当作已发布接口。"
+}

@@ -1,0 +1,102 @@
+{
+  "$comment": "设计默认值，非已实现的 DSH Config schema。模型和凭据为空必须由用户选择；初始化前无业务外部调用。",
+  "configVersion": 1,
+  "initialized": false,
+  "autoCollectEnabled": true,
+  "model": {
+    "mode": "fixed-dsh-route",
+    "provider": null,
+    "model": null,
+    "stageOverrides": {}
+  },
+  "embedding": {
+    "mode": "lexical",
+    "providerRef": null,
+    "model": null,
+    "credentialRef": null
+  },
+  "features": {
+    "leaderboard": false,
+    "codexResetMonitor": false
+  },
+  "collection": {
+    "intervalPolicy": "per-source-snapshot",
+    "concurrency": 3,
+    "initialFallbackLimit": 30,
+    "initialFallbackMonths": 12,
+    "initialMonthDays": 30,
+    "missedSourcePolicy": "coalesce-once",
+    "sourceSnapshotItems": 18,
+    "automaticSourceSync": false
+  },
+  "processing": {
+    "modelConcurrency": 2,
+    "groupingConcurrency": 1,
+    "maxQueuePage": 100,
+    "freshnessChecksOnStartup": true
+  },
+  "reports": {
+    "businessTimeZone": "Asia/Shanghai",
+    "dailyAt": "08:00",
+    "weeklyDay": 1,
+    "weeklyAt": "10:00",
+    "monthlyDay": 1,
+    "monthlyAt": "10:30",
+    "missedPeriodPolicy": "bounded-evidence-based-recovery"
+  },
+  "budgets": {
+    "windowBasis": "rolling",
+    "llm": {
+      "perMinute": 20,
+      "perHour": 200,
+      "per24Hours": 1000
+    },
+    "paidCollectorPerService": {
+      "perMinute": 2,
+      "perHour": 20,
+      "per24Hours": 100
+    },
+    "zeroMeans": "paused",
+    "countPreviewsAndRetries": true
+  },
+  "receipts": {
+    "unknownReleaseAfterMinutes": 30,
+    "maxAutomaticUnknownReleases": 1,
+    "retainDeduplicationEvidence": true
+  },
+  "data": {
+    "scope": "dsh-home-global",
+    "keepUserDataOnDisable": true,
+    "keepUserDataOnUninstall": true,
+    "contentRetentionDays": null,
+    "ordinaryLogDays": 30,
+    "cacheDays": 7,
+    "clearRequiresSecondConfirmation": true
+  },
+  "ui": {
+    "mainEntry": "热点",
+    "defaultPage": "selected",
+    "manualCollectButton": false,
+    "showLastSuccessAt": true,
+    "showPipelineState": true
+  },
+  "discuss": {
+    "mode": "new-context-prefill",
+    "autoSend": false,
+    "clearPreviousDraft": false,
+    "maxCharacters": 12000,
+    "maxSourceLinks": 5
+  },
+  "externalIngest": {
+    "enabled": false,
+    "bind": "127.0.0.1",
+    "port": "ephemeral",
+    "maxBytes": 2097152,
+    "maxItems": 100,
+    "credentialRef": null,
+    "allowBrowserOrigins": false
+  },
+  "backupEnabled": false,
+  "restoreEnabled": false,
+  "cloudSyncEnabled": false
+}

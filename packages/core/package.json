@@ -1,0 +1,43 @@
+{
+  "name": "dsh-hotstream-core",
+  "version": "0.1.0-alpha.7",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json",
+    "./*": {
+      "types": "./lib/types/*.d.ts",
+      "default": "./lib/types/*.js"
+    }
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts",
+    "lib/types/**/*.js"
+  ],
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "4.0.4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.4",
+    "@types/sanitize-html": "2.16.1"
+  },
+  "dependencies": {
+    "zod": "4.4.3",
+    "cheerio": "1.2.0",
+    "sanitize-html": "2.17.7",
+    "fast-xml-parser": "5.11.1",
+    "@mozilla/readability": "0.6.0",
+    "linkedom": "0.18.13",
+    "undici": "8.11.2",
+    "highs": "1.15.3",
+    "domhandler": "5.0.3"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "verbatimModuleSyntax": true,
+    "rewriteRelativeImportExtensions": true,
+    "composite": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "paths": {
+      "dsh-hotstream-contracts": [
+        "./packages/contracts/src/index.ts"
+      ],
+      "dsh-hotstream-contracts/*": [
+        "./packages/contracts/src/*.ts"
+      ],
+      "dsh-hotstream-core": [
+        "./packages/core/src/index.ts"
+      ],
+      "dsh-hotstream-storage-sqlite": [
+        "./packages/storage-sqlite/src/index.ts"
+      ],
+      "dsh-hotstream-host": [
+        "./packages/host/src/index.ts"
+      ],
+      "dsh-hotstream-core/*": [
+        "./packages/core/src/*.ts"
+      ]
+    },
+    "ignoreDeprecations": "6.0"
+  }
+}

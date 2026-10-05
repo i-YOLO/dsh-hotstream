@@ -1,0 +1,12 @@
+/** Inert, allow-listed body nodes. Rendering never injects source HTML or remote media tags. */
+export type BodyNode={text:string}|{tag:string;href:string|null;children:BodyNode[];id?:string;mediaIndex?:number;alt?:string};
+const allowed=new Set(['p','br','hr','strong','em','b','i','h2','h3','h4','h5','ul','ol','li','blockquote','pre','code','table','thead','tbody','tr','td','th','a']);
+export function richBody(html:string,base:string,options:{images?:ReadonlyMap<string,number>;headingPrefix?:string}={}):BodyNode[]{
+ let heading=0;
+ const inert=html.replace(/<\/?hotstream-image\b[^>]*>/gi,'').replace(/<(?:img|video|audio|iframe|source|link)\b[^>]*>/gi,tag=>{if(!/^<img\b/i.test(tag)||!options.images)return '';const src=/\bsrc\s*=\s*(?:"([^"]*)"|'([^']*)')/i.exec(tag);if(!src)return '';try{const index=options.images.get(new URL((src[1]??src[2]??'').replace(/&amp;/g,'&'),base).href);return index===undefined?'':`<hotstream-image data-index="${index}"></hotstream-image>`;}catch{return '';}});const doc=new DOMParser().parseFromString('<!doctype html><html><body>'+inert+'</body></html>','text/html');
+ const visit=(node:Node):BodyNode[]=>{if(node.nodeType===3)return [{text:node.textContent??''}];if(node.nodeType!==1)return[];const element=node as Element,tag=element.tagName.toLowerCase();if(tag==='hotstream-image'){const index=Number(element.getAttribute('data-index'));return [...options.images?.values()??[]].includes(index)?[{tag:'span',href:null,children:[],mediaIndex:index}]:[];}if(['script','style','iframe','svg','math','object','embed','video','audio'].includes(tag))return[];const children=[...element.childNodes].flatMap(visit);if(!allowed.has(tag))return children;let href:string|null=null;
+  if(tag==='a'){try{const url=new URL(element.getAttribute('href')??'',base);if(['http:','https:'].includes(url.protocol)&&!url.username&&!url.password){for(const key of [...url.searchParams.keys()])if(/key|token|secret|password|signature|authorization/i.test(key))url.searchParams.delete(key);href=url.href;}}catch{}}
+  const hasImage=(nodes:BodyNode[]):boolean=>nodes.some(child=>!('text'in child)&&(child.mediaIndex!==undefined||hasImage(child.children)));if(tag==='a'&&hasImage(children))return children;
+  return [{tag,href,children,...options.headingPrefix&&/^h[2-5]$/.test(tag)?{id:options.headingPrefix+'-'+(++heading)}:{}}];};
+ return [...doc.body.childNodes].flatMap(visit);
+}

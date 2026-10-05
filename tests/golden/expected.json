@@ -1,0 +1,106 @@
+{
+  "sourceCommit": "cc66cceb1dc7a0bc147e942e49ff94c9cee418c6",
+  "fixture": "2026-10-04-source-evidence-v1",
+  "heat": [
+    {
+      "story": "story-b",
+      "title": "Anthropic 更新 Fixture",
+      "heat": 33.7,
+      "trend": "up",
+      "trendPct": 38.7,
+      "badges": [
+        "rising"
+      ],
+      "participants": 4,
+      "editorial": 2,
+      "signal": 2,
+      "representative": "b-person",
+      "sourceNames": [
+        "Independent media",
+        "Verified author"
+      ]
+    },
+    {
+      "story": "story-a",
+      "title": "OpenAI 发布 Fixture",
+      "heat": 15.7,
+      "trend": "flat",
+      "trendPct": 9.8,
+      "badges": [],
+      "participants": 2,
+      "editorial": 2,
+      "signal": 0,
+      "representative": "a-official",
+      "sourceNames": [
+        "Official maker",
+        "Independent media"
+      ]
+    }
+  ],
+  "daily": [
+    {
+      "id": "b-person",
+      "title": "Anthropic 作者介绍 Fixture",
+      "related": [],
+      "sources": 2,
+      "authority": 2,
+      "importance": 104.60964047443682,
+      "mentions": [],
+      "fillIn": false,
+      "previous": null
+    },
+    {
+      "id": "a-official",
+      "title": "OpenAI 发布 Fixture",
+      "related": [
+        "a-follow"
+      ],
+      "sources": 2,
+      "authority": 0,
+      "importance": 102.92481250360578,
+      "mentions": [],
+      "fillIn": false,
+      "previous": null
+    },
+    {
+      "id": "roundup",
+      "title": "OpenAI 与 Anthropic 动态综述",
+      "related": [],
+      "sources": 1,
+      "authority": 3,
+      "importance": 89,
+      "mentions": [
+        "story-a",
+        "story-b"
+      ],
+      "fillIn": false,
+      "previous": null
+    }
+  ],
+  "dailyStats": {
+    "selectedReports": 6,
+    "facts": 4,
+    "repeatsSuppressed": 0,
+    "fillIns": 0,
+    "events": 3
+  },
+  "period": {
+    "issues": 1,
+    "entries": [
+      {
+        "id": "a-official",
+        "title": "OpenAI 发布 Fixture",
+        "score": 85,
+        "role": "官方",
+        "source": "maker"
+      },
+      {
+        "id": "b-person",
+        "title": "Anthropic 作者介绍 Fixture",
+        "score": 80,
+        "role": "官方",
+        "source": "person"
+      }
+    ]
+  }
+}

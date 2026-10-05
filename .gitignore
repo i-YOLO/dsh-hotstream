@@ -1,0 +1,18 @@
+node_modules/
+/packages/*/lib/
+*.tsbuildinfo
+artifacts/
+.cache/
+.env
+.DS_Store
+coverage/
+
+# Local runtime, credentials and installation diagnostics
+.local/
+.env.*
+*.sqlite
+*.sqlite-*
+*.db
+*.log
+*.tgz
+scripts/diagnostics/

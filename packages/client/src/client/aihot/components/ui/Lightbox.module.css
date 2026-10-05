@@ -1,0 +1,5 @@
+.viewer.viewer{width:min(1200px,calc(100vw - 48px));max-width:none;max-height:calc(100vh - 48px);}
+.content.content{padding-top:0;min-width:0;overflow:hidden;display:flex;flex-direction:column;}
+.tools{display:flex;justify-content:flex-end;margin-bottom:8px;}
+.imageArea{overflow:auto;min-height:0;max-height:calc(100vh - 180px);border-radius:8px;}
+@media(max-width:600px){.viewer.viewer{width:calc(100vw - 24px);max-height:calc(100vh - 24px);}}

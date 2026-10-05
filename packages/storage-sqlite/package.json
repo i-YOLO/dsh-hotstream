@@ -1,0 +1,41 @@
+{
+  "name": "dsh-hotstream-storage-sqlite",
+  "version": "0.1.0-alpha.7",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts",
+    "lib/types/**/*.js",
+    "lib/worker.js"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "4.0.4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.4"
+  },
+  "dependencies": {
+    "dsh-hotstream-contracts": "workspace:*",
+    "zod": "4.4.3",
+    "@deepseek-ai/dsh-atomic-write": "0.2.0-rc.2",
+    "dsh-hotstream-core": "workspace:*",
+    "highs": "1.15.3",
+    "cheerio": "1.2.0",
+    "sanitize-html": "2.17.7",
+    "fast-xml-parser": "5.11.1",
+    "@mozilla/readability": "0.6.0",
+    "linkedom": "0.18.13",
+    "undici": "8.11.2",
+    "domhandler": "5.0.3"
+  }
+}

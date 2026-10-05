@@ -1,0 +1,7 @@
+packages:
+  - packages/*
+  - scripts/ui
+minimumReleaseAge: 0
+allowBuilds:
+  esbuild: true
+  koffi: true

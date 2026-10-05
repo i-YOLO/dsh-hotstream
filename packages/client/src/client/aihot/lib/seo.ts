@@ -1,0 +1,2 @@
+export function listPath(path:string,params:Record<string,unknown>={}){const query=new URLSearchParams();for(const [key,value]of Object.entries(params))if(value!==null&&value!==undefined&&value!=='')query.set(key,String(value));return path+(query.size?'?'+query:'');}
+export function filterParams(filters:{channel?:string|undefined;category?:string|null|undefined;tag?:string|null|undefined}){return {channel:filters.channel,category:filters.category,tag:filters.tag};}

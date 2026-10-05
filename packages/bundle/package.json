@@ -1,0 +1,63 @@
+{
+  "name": "dsh-hotstream",
+  "version": "0.1.0-alpha.7",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/types/**/*.d.ts",
+    "lib/types/**/*.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "AIHOT-MIT.txt",
+    "industry/ai/**",
+    "docs/**",
+    "upstream/SOURCE_MAP.*",
+    "upstream/upstream.lock.json",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "4.0.4",
+    "@deepseek-ai/dsh-llm": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-typert-registry": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-agent-default-model": "0.2.0-rc.2"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.4",
+    "@deepseek-ai/dsh-llm": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-typert-registry": "0.2.0-rc.2",
+    "@deepseek-ai/dsh-agent-default-model": "0.2.0-rc.2"
+  },
+  "dependencies": {
+    "dsh-hotstream-contracts": "workspace:*",
+    "dsh-hotstream-storage-sqlite": "workspace:*",
+    "dsh-hotstream-host": "workspace:*",
+    "dsh-hotstream-client": "workspace:*",
+    "@deepseek-ai/schemastery": "3.18.4",
+    "@deepseek-ai/dsh-home-paths": "0.2.0-rc.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/i-YOLO/dsh-hotstream.git"
+  },
+  "homepage": "https://github.com/i-YOLO/dsh-hotstream#readme",
+  "bugs": {
+    "url": "https://github.com/i-YOLO/dsh-hotstream/issues"
+  }
+}

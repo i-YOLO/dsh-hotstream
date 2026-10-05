@@ -1,0 +1,2958 @@
+{
+  "aihotCommit": "cc66cceb1dc7a0bc147e942e49ff94c9cee418c6",
+  "dshCommit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+  "files": [
+    {
+      "destination": "packages/core/src/content/extract.ts",
+      "upstream": [
+        "packages/backend/src/content/extract.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "e5474b321158e0265a5b2e72f8136a10f9dd6ed1a60118d10cab3b5edca1469f",
+      "upstreamSha256": "c59fb401f81c494f94cdc538679a6a50d832f02a7c96f73d9837f3b1a556817a",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/content/materials.ts",
+      "upstream": [
+        "packages/backend/src/content/materials.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "27e7e86c412292ebe43f31dc649dc964befd0caaef72a91989ca4ee8d7a04e9b",
+      "upstreamSha256": "470fe9549b30d8d5e618c4f4c67702c33f294922db0abd0defb802d671dafc22",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/content/provenance.ts",
+      "upstream": [
+        "packages/backend/src/content/provenance.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "1d75d27c402d79d3fd76ae1d49ea8b74d54a3ee0d80882455a950cf125a7ea53",
+      "upstreamSha256": "8705454eb56be583226f107a165a6b5c5f6480fb4658a21aec2c7b3215834c57",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/content/reading-media.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "d7b4c9b4a38e50344c2836edcbf87631c00067f79c13afc99079b0975d9dd8de",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/content/sanitize.ts",
+      "upstream": [
+        "packages/backend/src/content/sanitize.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "16f61c8100d68a03a585d5adbe68eccf8f496f17b561196b8ba75065131d28b2",
+      "upstreamSha256": "428dfce827c421d26d95b9362a7e7f356bf6112d5baa3bbb62b2720a1dd0527b",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/editorial/analyze.ts",
+      "upstream": [
+        "packages/backend/src/editorial/analyze.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "f38533b0c135d1f614e92c3ef2a4ff85b276f8f4e481399fecba424406aa2107",
+      "upstreamSha256": "4ee8e936fb78150fd82d8bd7f75c1f184eee29a789e3db660e12813c553ed235",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/editorial/input.ts",
+      "upstream": [
+        "packages/backend/src/editorial/input.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "5ba266b104b941f358213c389977d8621e7ba669336ca155e4fd15ab0895edfe",
+      "upstreamSha256": "79c6af59ba4285e253fda230bc7ddcb66ec8c23c99fb41a55b2a863b65cd136e",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/editorial/prompts.ts",
+      "upstream": [
+        "packages/backend/src/editorial/prompts.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "b56125ea90823a880ed73d9dfae16b70e973347b4209619a8aa10dd6ed85e22d",
+      "upstreamSha256": "dde539a023f475b29175a2d0f34162cae7859afcc5622c89476f0aed342e36c0",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/editorial/translate.ts",
+      "upstream": [
+        "packages/backend/src/editorial/translate.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "00f6c9e726c70a0ca25bd670e2ed9884685a62c5fb59c8517f0a951ebf811364",
+      "upstreamSha256": "e8ecb7f8a64376be9d40485163561c15cb14a9d780de9e4ef680724e4c0fb495",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/editorial/vocabulary.ts",
+      "upstream": [
+        "packages/backend/src/editorial/vocabulary.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "95802d9e12370d9802452465aef062818f944c38884f958b578acf369d511534",
+      "upstreamSha256": "ae0b6f229199f547fb70f2445b4861b51a10392a5019b4b68ff9f442fff1ce0e",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/editorial/writing.ts",
+      "upstream": [
+        "packages/backend/src/editorial/writing.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "bdb050dadaadb867c48051acff383c2e291c6d233d51228e0899e3d8d836cc14",
+      "upstreamSha256": "0b65c1a43b06b98cb835590c12adaa748ee86c257b8c526a01961ced45fc2e2f",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/events/digest.ts",
+      "upstream": [
+        "packages/backend/src/events/digest.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "784f54c2382ae6f38b24605ee2e4124fdce0b356c8f7d35c2655137ab46bbdcf",
+      "upstreamSha256": "14c5dc7463bd57fcb441e209712a40ac10fef226c63a25e370f7f6e3fb1d0fa3",
+      "behaviorEvidence": [
+        "tests/integration/business-commands.test.mjs",
+        "tests/golden/reading-rules.test.mjs",
+        "tests/integration/story-copy.test.mjs"
+      ],
+      "difference": "Plugin-owned SQL transactions add epoch/lease/revision fences and manual protection; firstParty remains T1-derived on pinned reading paths."
+    },
+    {
+      "destination": "packages/core/src/events/hot.ts",
+      "upstream": [
+        "packages/backend/src/events/hot.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "6ca2694dd4c5bb04704673ea782a21f91ed2588c4384daa582847f7656b67ba5",
+      "upstreamSha256": "7c90493502ccbdc73c036c6c14db5f2b1ee0804309423b40f77a8289b4520842",
+      "behaviorEvidence": [
+        "tests/integration/business-commands.test.mjs",
+        "tests/golden/reading-rules.test.mjs",
+        "tests/integration/story-copy.test.mjs"
+      ],
+      "difference": "Plugin-owned SQL transactions add epoch/lease/revision fences and manual protection; firstParty remains T1-derived on pinned reading paths."
+    },
+    {
+      "destination": "packages/core/src/events/relate.ts",
+      "upstream": [
+        "packages/backend/src/events/relate.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "58c9f6c38e8960747fc8c3ff9b289547c47a8509b4ab2728211254f7bdecedd0",
+      "upstreamSha256": "1b25efc7af6c3aefcb4d87d0d23974fbaf2caffdd5bffe49148ad94b9b560114",
+      "behaviorEvidence": [
+        "tests/integration/business-commands.test.mjs",
+        "tests/golden/reading-rules.test.mjs",
+        "tests/integration/story-copy.test.mjs"
+      ],
+      "difference": "Plugin-owned SQL transactions add epoch/lease/revision fences and manual protection; firstParty remains T1-derived on pinned reading paths."
+    },
+    {
+      "destination": "packages/core/src/index.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "4d759ebb6e1bebd41b3442f107595dee19ea745646844efc04203ec599ff40e6",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/industry/chronicle.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "3c324245eb92aabff4d3b3e7b14dc0b0f276b549039342bdc5b83ec600f7f394",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/industry/prompts.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "ff87bbf3a41f53d8f507af36dd867b7842e8d00d3f46fd8fdd0b72f41f698b38",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/industry/selection.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "28e24ba260b31876fe0a6374ddda78335e227ec73ca5529e8ec7087389ab1a76",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/industry/taxonomy.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "a0b1d6e31a91211832225b87bb1146c38a33ab19f58061424f3dbd6513e12df2",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/access.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/access.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "d1f11c693c604a61b9a1d8f100ffba6311e1440c5283bdf6a8b3fd9915a04a4f",
+      "upstreamSha256": "2ff0ebc3e379c7b5d8e0340757936e607702d8c872e617d6508bdf1e3be7b04b",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/admission.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "35f8ef515a4712cef487bbcc88b5a3b9f1cdac393e89a439403bf892485618d0",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/identity.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "e7045ea0f70b8b7b3218ea49829e44b331a9acd5d326037dab3ecd9a4f075ea9",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/method/calibration.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/method/calibration.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "4e7df2d5220881fd75282de5f9b179231d28d16730685aae7d448b42c4c31791",
+      "upstreamSha256": "41217de698e896410089aa1419f60c15b8aa3caa90e7e19d36974be2e3b25b4b",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/method/consensus.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/method/consensus.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "ac9ecad7a2e8c4c0950e874f0a6b4b3a6b41030ea65543828a746eaebd225230",
+      "upstreamSha256": "e8fd90db6cc79644896d0d47c05f7c2bdd8b220ef745a32dca38eff0d92cb652",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/method/kemeny.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/method/kemeny.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "547f474e3a10796eba45a2f3465adddd90dd2009b66ab2245c2a3bc3a26c8582",
+      "upstreamSha256": "2dade04c1c6e55da41bf1ef82dc46ca542fa937c0459e73c659c7401e1dd1ff1",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/method/qualification.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "3c7ce7e815afbd46f88c852e000904f77a13c833c4096efa000d31f787980501",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/method/score.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/method/score.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "5151299638fc210b24e215e022ad61d660ce805abe0a471820f18985b2a9eea0",
+      "upstreamSha256": "bc3d6f2cf3c4052d0769078c17f7e513779cd0923e25cf9d588861e8e02cfa23",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/protocol.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "2f633f39e41f92f5ff4ffd0f83d53291ea692b3e200d9d66795ddc71b65873c3",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/leaderboard/providers.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/providers.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "3e824ec595cf3345ee06a8b3833bc780bb688ed0da34bdb3a5a479bab753d462",
+      "upstreamSha256": "3e824ec595cf3345ee06a8b3833bc780bb688ed0da34bdb3a5a479bab753d462",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/core/src/lib/ids.ts",
+      "upstream": [
+        "packages/backend/src/lib/ids.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "073b7d6d2ec89c8ce49a830e5e711cf331da7927eaff53c16f431d574ff5d548",
+      "upstreamSha256": "e14fbf18a75cf5744761722d65f0b50a13e14cc6d17c693404c618b77be5d779",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/lib/image-url.ts",
+      "upstream": [
+        "packages/backend/src/lib/image-url.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "390d701101fb71c023f4084924ca7c55d5c317941b7ea25a66fdb3b16b8ca136",
+      "upstreamSha256": "8c41d632b8f51583495947a3ab4f1096ba391d7692fafb4ee0f993c9425634fc",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/lib/text.ts",
+      "upstream": [
+        "packages/backend/src/lib/text.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "1910ea9eecc1b91de2963e3dfbe52fb7ee720db87dcddf92c7ceaf6ed995bd9c",
+      "upstreamSha256": "e8b74509416c57df5a55381a5f4927fbe436e936a008d05ab85ce2e3b9fbdcb2",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/lib/time.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "1af35e4e1a1809d3109b617b92753ca32a1537b0cee2984a0176eff7f9087234",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/lib/url.ts",
+      "upstream": [
+        "packages/backend/src/lib/url.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "f111e21c6c19acfcf177d95692086665d1d26571080566f4311f0924e6b2a7bb",
+      "upstreamSha256": "e38b9979516502e1e8a4dcef577295d84a28c56ce4587fe58808afaaec7d705d",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/monitor/recognize.ts",
+      "upstream": [
+        "packages/backend/src/monitor/recognize.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "2d0558d4045f2c0a010abd5259752780ebc86a63a14063e000a7b8f79c5bc4ba",
+      "upstreamSha256": "079d764c9e791a2593e1163e198ac733dcfa3fcd4457f8b651196b40717fbd97",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "artifacts/reference/optional-compare.json"
+      ],
+      "difference": "Public context/state rules retained; paid receipts, generations and manual command history are native extensions."
+    },
+    {
+      "destination": "packages/core/src/monitor/time.ts",
+      "upstream": [
+        "packages/backend/src/monitor/time.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "c2565dfb00c7ad5c17d5ffa99967992969bb374d2b42e8c0fcb275e3fd856513",
+      "upstreamSha256": "c2565dfb00c7ad5c17d5ffa99967992969bb374d2b42e8c0fcb275e3fd856513",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "artifacts/reference/optional-compare.json"
+      ],
+      "difference": "Public context/state rules retained; paid receipts, generations and manual command history are native extensions."
+    },
+    {
+      "destination": "packages/core/src/publication/representative.ts",
+      "upstream": [
+        "packages/backend/src/publication/representative.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "1204f6d05e96a484dba31f93b4fccd6cdfed9c59236d448cdc8ba52e13a836c8",
+      "upstreamSha256": "8d4128ff938323d57b165a27fc82a9d7b271af1b898699476dc83761e588ec33",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/publication/topic-chronicle.ts",
+      "upstream": [
+        "packages/backend/src/publication/topic-chronicle.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "a37b5ef0ed2eee535ed05d3876d2032b7f8697ca61ad2770553a45551edd868c",
+      "upstreamSha256": "a1ac217c1fc4b7449d1fb0d253e5abd1f1cd69ad0a4e10348a4c3b2c95f4fcc2",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/core/src/reports/compose.ts",
+      "upstream": [
+        "packages/backend/src/reports/compose.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "53272e51c7f9cb59711dfa196455ab02c8e3f3dad1f3f19279ec8ee57e14bf6b",
+      "upstreamSha256": "e052cd27648cf2037941426b50cd441ede4286a40424f8fdb401d441fa0c8a3c",
+      "behaviorEvidence": [
+        "tests/integration/reports.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Membership/order follow pinned PostgreSQL reference; only period prose uses DSH LLM."
+    },
+    {
+      "destination": "packages/core/src/reports/edition.ts",
+      "upstream": [
+        "packages/backend/src/reports/edition.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "d309684ae8911a6e03053a26d1c396b29b89aca13ae6567df3bfb348de593ba4",
+      "upstreamSha256": "7de9d4832e73fb4902b9cd3e820e4f6c2e543cc0c1c12398be75f8fc5416b9bc",
+      "behaviorEvidence": [
+        "tests/integration/reports.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Membership/order follow pinned PostgreSQL reference; only period prose uses DSH LLM."
+    },
+    {
+      "destination": "packages/core/src/sources/config-keys.ts",
+      "upstream": [
+        "packages/backend/src/sources/config-keys.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "4050c14ccbc5606776d7747f61d5e1f20bfd149138b30fd914e67d05e29642e9",
+      "upstreamSha256": "9e48b2c3671ad8fffb641828e232d5eef5da609fd310028f818643e22d7f1488",
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/core/src/sources/shards.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "ccb41a054946cff73ddc871d7f9e0b5889489f4cf90cd9698874342c98bf839a",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/core/src/sources/types.ts",
+      "upstream": [
+        "packages/backend/src/sources/types.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "0d1aed284681aafd5466a05de52d69cb28797abdbd28f9ef16fe0e0fafcb9237",
+      "upstreamSha256": "0d1aed284681aafd5466a05de52d69cb28797abdbd28f9ef16fe0e0fafcb9237",
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/core/src/sources/x.ts",
+      "upstream": [
+        "packages/backend/src/sources/x.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "969dbee50b65b42a1f5ed91d0458fd6b446a44a28b0183aec96da37d632b7a67",
+      "upstreamSha256": "c7c550612f595bedb9575f7a2dd5c14049be1b4947df267c17552f890ab4c055",
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/host/src/audit.ts",
+      "upstream": [
+        "packages/backend/src/audit.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "0fd5aeef25c53e466d7ddf71ad42315db673ddefdcce6e9db4d3ca027ce67685",
+      "upstreamSha256": "32f1f8a5514e30c7837a558d98b8c13e9a13df2100332a11a51c4470757ae10e",
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/host/src/business-api.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "4f45d89fc25fabe93781a4a93b0366be5a19ad8bb6e8faab178339d6919e8b26",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/public-news-network.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "tests/integration/providers.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Alpha.4 save, health or bounded integration contract recorded in ADR 014. Public news proxy is anonymous-read-only, task-owned, and separate from paid provider routes; failed RSS resumes in a new frozen task (ADR 016)."
+    },
+    {
+      "destination": "packages/host/src/calls.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "9f9f4f3fa3e1f55c7bc3ab36c24d2cad74dff5f6ea0a1b159f4f2f693c14d193",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/host/src/embedding.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c84e1d6af1ee07bf157694dcc8b9f230061fd1ada41505fa641fcaf75381ad69",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/host/src/evaluation.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "6820db8d15c7744dff2a33400d5e517b1f48829fbbb6a56d0e8c9af25026cc96",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/host/src/external.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "a4f3920840d62972844cf9bf48917c51aed982ed5eb509eb5176b27a792b1ec8",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/host/src/index.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "38d12d22a3cc3de71239d761b21e87f3dc6b3769bef61f53b1d28de3432e1416",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/public-news-network.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "tests/integration/providers.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011. Alpha.4 save, health or bounded integration contract recorded in ADR 014. Public news proxy is anonymous-read-only, task-owned, and separate from paid provider routes; failed RSS resumes in a new frozen task (ADR 016)."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/compute-worker.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "df41693d03ad99dbee43f69374efd6d6a75ec86816a977f9f569c4084accb27b",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/compute.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "2c80a9e67976c69718265a27054921c70767b93831e837911fd3ea7a0c8bd330",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/environment.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "e56e7e9f2df95a2206953ad369380c90a56c386adf80ed3e20d9bead48ca2b60",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/admission.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/admission.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "38c051fc1db1f504662ba9a7bb7c1078aa6bac5600478fe854e9455c9ee88678",
+      "upstreamSha256": "d8dc722e7bf10b1f54a031ee5fd2bd0ddb405e17d3fe4fa2cb5dfdbc49d87ae1",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/configuration.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/configuration.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "2e8e00da164fa5858d87cea953b351413a60445977b209b774bdeabb4fb3f1b1",
+      "upstreamSha256": "2e8e00da164fa5858d87cea953b351413a60445977b209b774bdeabb4fb3f1b1",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/csv.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/csv.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "50e0cff960aeec40ea7be3066a3144ddc1126356f6f4873b12f99480a47f6a73",
+      "upstreamSha256": "50e0cff960aeec40ea7be3066a3144ddc1126356f6f4873b12f99480a47f6a73",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/github.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/github.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "d2ec1f701b202693cfededbf4292d3016146db4ac5641e13e6ff6e7f99044334",
+      "upstreamSha256": "b9e49db492217b5a6e032f537b99313e03e4b96d07539f0a64b17bb07b537ea0",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/hf.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/hf.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "3fa6bfa08f4fd9bb169869df6827be227c8087ff219e5dc5c16ebfe9093cf3d4",
+      "upstreamSha256": "5a07894dd03734619cab79336a3b76ecb278cf6e93fea2d569527f1aa5754bba",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/rank.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/rank.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "4b8a913395d4691de50c96f601f5fd9345e067774552c8ac3205feab709e4ad5",
+      "upstreamSha256": "4b8a913395d4691de50c96f601f5fd9345e067774552c8ac3205feab709e4ad5",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/representatives.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "cff940d1f8a79a1ac1357b293eda65d68cc2bcebc84e7f7891e0d1df0a1f5ff4",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/arena.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/arena.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "3d02cc1de56bfe40616f55e9caa42d3bc33de61b7c832a4c90f03160bfba1474",
+      "upstreamSha256": "3d02cc1de56bfe40616f55e9caa42d3bc33de61b7c832a4c90f03160bfba1474",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/artificial-analysis.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/artificial-analysis.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "f5a515e90c663dc720faadca133dc0382eb6d3ef0576e5075fc17b53a87672f8",
+      "upstreamSha256": "6f7a60960ae71f054cb3e2f401a22626331ff59e6df88ef199fa733981a3ee99",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/deepswe.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/deepswe.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "709bccbb2c827551695c371232f8b25b5533d54485e6e29eee41948e012444fd",
+      "upstreamSha256": "b68efee295619019e17f9e0c1b4bc6b8cc88309095c66bdc043c7e8dce368163",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/epoch.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/epoch.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "5a54dbc6ea3c65a3163fd380b98cd8954f8e384554488d36f6788b937a3e80c5",
+      "upstreamSha256": "823e72f7c876b8a131416400dcffd14cdc2bce85d6dd8120171a2c5df27b384e",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/eqbench.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/eqbench.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "27b133a6660224d0eff491ae682718b2aa2ebca95dc32bb9439a5825841ee83a",
+      "upstreamSha256": "f9c85ceb3b42dea94b9fd4260b009c35e3d0602b2b61ff2da6ac5bdc19b7670a",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/livebench.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/livebench.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "9ddf8b28df55955141f8e63821349a8a9962947a763924b3fdce4f321f69cd67",
+      "upstreamSha256": "5136510a70cc9b549932c05defa9f629dc79c05250b1c4d6d12ee528be8e515e",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/mercor.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/mercor.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "094458cd89bd1e7bd84f1bc83c3d3b78bc3ef21388aef273f01e33afa48013bf",
+      "upstreamSha256": "c9d30c96a52e824ffeb244b526c741ed7ccaafa8c4d375e881c6c1df7ce6be98",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/taptap.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/taptap.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "15b3be093cd1143034b99b7d74dd563ae6a7df928a31e194d67567fcfde7c233",
+      "upstreamSha256": "4fba3ef607f24fdebcee2afdbbe6ca2b70e4f654511ba32ce14cf3056a08c737",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/terminal-bench.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/terminal-bench.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "6754211ed8993a65c4d63d2a20cc9e82dcd300c31f61dd041bd9863229d44c68",
+      "upstreamSha256": "ca7df9e23b1dd2db5a40846559871c004a861e821a796de7f8321850691dbc29",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/sources/vals.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/vals.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "17d1a10a0f1815ffdbaece38615e52ce61ecb47bc542aa69ac35b65577454c61",
+      "upstreamSha256": "b2af3237c9d56238134e0ff39c38b4bbf2647495d42dc11b862a06c82ee00665",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/types.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/types.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "eb7c9e69db50264ae088a5c183172d9106c3828e1fc8641b549f5dc187af3f8e",
+      "upstreamSha256": "867e07f6e8299315e85abd9278507882ad5f6aa17b99146cabf68bbeabf75377",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch/unzip.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/unzip.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "61d8395ad3012b2703f7ab488d2718ecd67785fab96736fb2603f47f2c2a7589",
+      "upstreamSha256": "61d8395ad3012b2703f7ab488d2718ecd67785fab96736fb2603f47f2c2a7589",
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/fetch-run.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "628809362076c536351222bc35e982faae68011d3f144f884deefb14870eff11",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/inputs.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "ded7b0bd3f7a3784ecb390722f08de5d37994482cfaa05994303132465a0fff3",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/manager.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "e4b271499d10879c7ebc679f32d5adc3b069f365f55dab549c5dffc184b27df9",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "artifacts/leaderboard-diagnostics/2026-10-05-arena-full-read.json"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure. Alpha.4 save, health or bounded integration contract recorded in ADR 014. Arena uses an explicit task-owned HTTP proxy; other routes and the host proxy environment are unchanged. ADR 015."
+    },
+    {
+      "destination": "packages/host/src/leaderboard/seeds.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "3aec60a741d1a84cf6a24e2698a1b359322567217041d8d10651ec16a4606470",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/golden/optional-rules.test.mjs",
+        "tests/integration/optional.test.mjs",
+        "tests/integration/leaderboard-fetch.test.mjs"
+      ],
+      "difference": "Original reader/method retained; owned I/O, SQLite identities, frozen source settings and bounded Worker replace upstream infrastructure."
+    },
+    {
+      "destination": "packages/host/src/mock-provider.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "0dc2de176098a77c9e4bdb691b3d0a1f9b96919182741801da1f02c6481e1191",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/host/src/monitor/module.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "71bdaedf91ae431ce85701b5b7b6c5d1f8e2e2a8a4bc3c167e37ed8dd2a04c85",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "artifacts/reference/optional-compare.json",
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Public context/state rules retained; paid receipts, generations and manual command history are native extensions. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/host/src/network.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "815ff73458de0e74c27000755bb39ac64c661c2a5d3ff744834f99912e203c53",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "artifacts/leaderboard-diagnostics/2026-10-05-arena-full-read.json",
+        "tests/integration/public-news-network.test.mjs",
+        "tests/integration/providers.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Alpha.4 save, health or bounded integration contract recorded in ADR 014. Arena uses an explicit task-owned HTTP proxy; other routes and the host proxy environment are unchanged. ADR 015. Public news proxy is anonymous-read-only, task-owned, and separate from paid provider routes; failed RSS resumes in a new frozen task (ADR 016)."
+    },
+    {
+      "destination": "packages/host/src/paid-http.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "2f660d3e10f9c2141f75b8d8ca6776e3716d46b3df9dda255efabdc3a492da1f",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/host/src/pipeline.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "7973a1e3fec645a7a90b2c0f9c460c4919836650a9409176a56fe5f86361936e",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/host/src/public-dns.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "66c104019f712881d482aeff76d72d51e380157a3f7c2e19c40374b7fe08da34",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/host/src/reports.ts",
+      "upstream": [
+        "packages/backend/src/reports/edition.ts",
+        "packages/backend/src/reports/compose.ts",
+        "packages/backend/src/publication/reports.ts",
+        "DSH public LLM and SessionPersistence exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "474216119aa652702d8d5bd8c7f3ebf292ef165b87b93c86c2fd815736cd0848",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/reports.test.mjs",
+        "tests/golden/reading-rules.test.mjs",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md"
+      ],
+      "difference": "Membership/order follow pinned PostgreSQL reference; only period prose uses DSH LLM. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011."
+    },
+    {
+      "destination": "packages/host/src/runtime.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "39bd782e3f312dd89ce0f4602826254870f09f5626bd91a9abd1661922751934",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/public-news-network.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "tests/integration/providers.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011. Alpha.4 save, health or bounded integration contract recorded in ADR 014. Public news proxy is anonymous-read-only, task-owned, and separate from paid provider routes; failed RSS resumes in a new frozen task (ADR 016)."
+    },
+    {
+      "destination": "packages/host/src/seeds.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "d9cc47e1a67c056c5671e9028766b19622ec67791dcdd586cca2ceb434f26205",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "artifacts/official-live/real-data-upgrade-alpha10.json"
+      ],
+      "difference": "Pinned 18 RSS sources and intervals retained; user explicitly requested local full-text display enabled by default on 2026-10-04. Redistribution remains disabled. See ADR 013."
+    },
+    {
+      "destination": "packages/host/src/sources/collect.ts",
+      "upstream": [
+        "packages/backend/src/sources/collect.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "dd5d446008195edf0aab44c78a110925896191e5b6f63015fbbdbb514e6c17ff",
+      "upstreamSha256": "15dad88811ec122039546749b93461c64d3ed05ef38f4dcdca3c2ab453c448e3",
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/public-news-network.test.mjs",
+        "tests/integration/arena-network.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters. Alpha.4 save, health or bounded integration contract recorded in ADR 014. Public news proxy is anonymous-read-only, task-owned, and separate from paid provider routes; failed RSS resumes in a new frozen task (ADR 016)."
+    },
+    {
+      "destination": "packages/host/src/sources/io.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "b15caa9976ace8b7c808c4c50d8457021d4c3c0a5e22b59301b87bf594219002",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/host/src/sources/json-list.ts",
+      "upstream": [
+        "packages/backend/src/sources/json-list.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "1ff87c54970a201a53f736871ff7662b4d7a91942a960771abdd074256e9523a",
+      "upstreamSha256": "7e3a01160c04575c2921c1a00592a799e4312bc60a212a35e8d056c9f3a2c474",
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/host/src/sources/rss.ts",
+      "upstream": [
+        "packages/backend/src/sources/rss.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "e8d7ca8143bc71dfb012ec26d6d81c252220c3e734799e582e43b5c34aaaf871",
+      "upstreamSha256": "0de7267578bba679aa0e388ca3d704c7723a6584f04b0882006d0a0b9736707e",
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/host/src/sources/socialdata.ts",
+      "upstream": [
+        "DSH public LLM, Credentials, SessionPersistence and Remote contracts",
+        "AIHOT packages/backend/src/jobs and content"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "cd03996ea39adce5ae76618ef0f7538fd32cc1487b1adf219fda87332eb046f8",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/host/src/sources/web-list.ts",
+      "upstream": [
+        "packages/backend/src/sources/web-list.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "b0abd09d566673d53702c1f87c67fa8b083b6eb23af1e90160e0069546ce078f",
+      "upstreamSha256": "36458280b766ed7085f5b478e628bedf045e64cad6b6913a477fc4c45238df35",
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/host/src/sources/x.ts",
+      "upstream": [
+        "packages/backend/src/sources/x.ts"
+      ],
+      "exactFileCorrespondence": true,
+      "destinationSha256": "0b81ac2c0720d6e028c8d91699f5f1a2c919f5d5a1e6794235888d3dab9bd7ce",
+      "upstreamSha256": "c7c550612f595bedb9575f7a2dd5c14049be1b4947df267c17552f890ab4c055",
+      "behaviorEvidence": [
+        "tests/integration/parsers.test.mjs",
+        "tests/integration/providers.test.mjs",
+        "tests/integration/runtime.test.mjs"
+      ],
+      "difference": "I/O injected through guarded Host network; credentials and atomic cursor commit use native adapters."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/admission.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c187609f86c008296f529e07c7f42ded8d1d39d1f422743510a13705e33242c5",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/leaderboard-prices.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/business.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts",
+        "packages/backend/src/publication/publish.ts",
+        "packages/backend/src/publication/topics.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "3799587a37d39691f4c821d74e70a88102fc3b37c0a446ab135043ba84bcbe72",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/business-commands.test.mjs",
+        "tests/golden/reading-rules.test.mjs",
+        "tests/integration/story-copy.test.mjs",
+        "artifacts/official-live/real-data-upgrade.json",
+        "artifacts/official-live/real-business-evidence.json",
+        "artifacts/official-live/real-data-upgrade-alpha10.json",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md",
+        "tests/integration/public-news-network.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "tests/integration/providers.test.mjs"
+      ],
+      "difference": "Plugin-owned SQL transactions add epoch/lease/revision fences and manual protection; firstParty remains T1-derived on pinned reading paths. Restores derived entity tags and exact company-topic membership after real-news validation. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011. Public news proxy is anonymous-read-only, task-owned, and separate from paid provider routes; failed RSS resumes in a new frozen task (ADR 016)."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/database.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c4c623263f2a348bf7e5ba9f7601815a8c499d0e97c0606bca20017103f47951",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "artifacts/official-live/real-data-upgrade.json",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/public-news-network.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "tests/integration/providers.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. First reservations bind receipt/job identities atomically; migration 014 restores exact historical model bindings. Alpha.4 save, health or bounded integration contract recorded in ADR 014. Public news proxy is anonymous-read-only, task-owned, and separate from paid provider routes; failed RSS resumes in a new frozen task (ADR 016)."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/heat.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "7caa0d61ba801f1bcc2b653966178568ab1925917dec03680d7c10388e9885a1",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/business-commands.test.mjs",
+        "tests/golden/reading-rules.test.mjs",
+        "tests/integration/story-copy.test.mjs"
+      ],
+      "difference": "Plugin-owned SQL transactions add epoch/lease/revision fences and manual protection; firstParty remains T1-derived on pinned reading paths."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/index.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "8b19861fb43a723be143faaf4344eb0b5c1183992999b05fe2c50a5c13164272",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/001.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c0bcd24baa05dc2078c2fcd22d595345e30ef542e7a17f3003369cef14f2ee15",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/002.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c4b7cb686566a97592d943c8ed5e397a03df4d20e285c2aed71ff63e979c604f",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/003.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "0f060b23d898aa78936d3e2bcfbf5f0e987d295850c4e402d6594b6321082f04",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/004.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "6bff3ae1bacb221ea9d0f32cd6cbb7a1ee186ed4fd9c188275d693137484b8c3",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/005.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "3643e037e2831b9f0cdac331004d4750ca95229cc8d1d0a8eb640d69af5f329b",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/006.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "cbaf414dc5fe62fa8d1f04586fd65846813aee6b90f71f975b851f74ddc7f615",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/007.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c3d44b036cdf455743aeab0bdaf2254f618354c29c4a39838e311adef8c375d5",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/008.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "689795390a09c57bcf5c73affeb3b5f241d6d4021139b4b26b40bc7850205bf1",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/009.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "e9e4ddbe4bf456db95816d6194e5c883aa20f1d596d2a4cff63ef7a52ea3df27",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/010.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "33f8cba4b2184a01105ef25ce3267b436906f024ff6ad6f681115d1648351e9e",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/011.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "dc21aa3155404f9b1aaf118c46ea3218bd0c326bf255e1b371e0faeabfb40464",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/012.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "1ac00d42d2e94a5750ae9a65ed17388cee8b984cf8d7de7b98cce80f80c60beb",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/optional.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c58e7844c1943a6e523eec11daea0bc6eb68657838aed7e862054c67046ea949",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/report-data.ts",
+      "upstream": [
+        "packages/backend/src/reports/edition.ts",
+        "packages/backend/src/reports/compose.ts",
+        "packages/backend/src/publication/reports.ts",
+        "DSH public LLM and SessionPersistence exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "fe5acc7effd898d71478c8ae1fafa927ec820bc61753250c387d7d8cf85b57be",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/business-commands.test.mjs",
+        "tests/golden/reading-rules.test.mjs",
+        "tests/integration/story-copy.test.mjs",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md"
+      ],
+      "difference": "Plugin-owned SQL transactions add epoch/lease/revision fences and manual protection; firstParty remains T1-derived on pinned reading paths. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/story-copy.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "d8704d6979e70fef8492544da49ffbe0e716956d809fd63dd76a75660de76245",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/business-commands.test.mjs",
+        "tests/golden/reading-rules.test.mjs",
+        "tests/integration/story-copy.test.mjs"
+      ],
+      "difference": "Plugin-owned SQL transactions add epoch/lease/revision fences and manual protection; firstParty remains T1-derived on pinned reading paths."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/worker.ts",
+      "upstream": [
+        "database/migrations/0001_core.sql",
+        "packages/backend/src/db.ts",
+        "packages/backend/src/providers/receipts.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "f99768c7b348a3f1042d0e9e802a1b211f5314a72e5aa0373c03b72b0111c6c0",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/client/src/client/NewsPanel.module.css",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "3fa93a8dbec10e4fa65cd2c23657bad3d6e1bd60177323d26c45fff8c7317b44",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing."
+    },
+    {
+      "destination": "packages/client/src/client/NewsPanel.tsx",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "75e46f6fabf4100909bdacacedf5896a5950497ba4c43b431f4b3c8e903e4f1c",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full",
+        "artifacts/official-live/real-discussion-alpha9.jpg",
+        "artifacts/official-live/ui-reactivation-alpha10.json",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing. Fresh effect-owned Client activation; canonical company topics use the upstream selected/public/seat set and omit the raw candidate inbox. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/client/src/client/Panel.module.css",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "2f5e4dc81bc41046fb1a0315c904010be6da92719a7f6485530a91f13c6e0db4",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing."
+    },
+    {
+      "destination": "packages/client/src/client/Panel.tsx",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "9ee024a204f3e08502ad0fee5769e8a2b9aadfef9a37219da295bb976a4ac402",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing."
+    },
+    {
+      "destination": "packages/client/src/client/controller.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "81b3e876f383a06ea280f062b1b13d2f940167a96a76e55479e10d87efbe8b3d",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full",
+        "artifacts/official-live/real-discussion-alpha9.jpg",
+        "artifacts/official-live/ui-reactivation-alpha13.json"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing. Read-only diagnostics do not hold the single discussion/handoff busy guard across reconnect."
+    },
+    {
+      "destination": "packages/client/src/client/css-modules.d.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "6d575a16ad158b7a319b7907284cd097726ecc5f2855d0fa4c24e90fcad0b9f9",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing."
+    },
+    {
+      "destination": "packages/client/src/client/index.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "486273664f3ca7daab7ff89e6980b97e5fc5d3a8b11b37d998d3064edaa7b4cc",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full",
+        "artifacts/official-live/real-discussion-alpha9.jpg",
+        "artifacts/official-live/ui-reactivation-alpha10.json"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing. Fresh effect-owned Client activation; canonical company topics use the upstream selected/public/seat set and omit the raw candidate inbox. One explicit Client disposer closes injection waits and actual Slot registrations and fences late registrations."
+    },
+    {
+      "destination": "packages/client/src/client/locales.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "bac1b0d38a8b072b9914f504af569dc5b7f20c64d8c6ff0eb970682d1bd8efd6",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/client/src/client/news-controller.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "baed28acf21de5c9ee3e9ec716d1ffacb089605a45c98ce7a50266d4737c4ead",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full",
+        "artifacts/official-live/real-discussion-alpha9.jpg",
+        "artifacts/official-live/ui-reactivation-alpha10.json",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing. Fresh effect-owned Client activation; canonical company topics use the upstream selected/public/seat set and omit the raw candidate inbox. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/client/src/client/rich-body.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c1ae2d2857634660a33299ae009231c521eb1e6508dc13952d2b5ede20fe0e24",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing."
+    },
+    {
+      "destination": "packages/client/src/index.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "ed455ad59a05d7d66a2c84b6c15d1d69ee78d41f4e588fe38c811ffdc7800283",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/client-refresh.test.mjs",
+        "tests/integration/reading-media.test.mjs",
+        "artifacts/mac-full"
+      ],
+      "difference": "Official Slots/shared React/primitives, locale and generated Remote replace upstream web routing."
+    },
+    {
+      "destination": "packages/contracts/src/api.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "07c5194c3055b134b5ac7851f484029e3a3512899b0ff81fb46028da5975cdba",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md",
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/contracts/src/index.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c537aee354a7d4aec83603509c2a4cfc36f3a06291ec8c54f65d0602b723fc7d",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Alpha.4 save, health or bounded integration contract recorded in ADR 014."
+    },
+    {
+      "destination": "packages/contracts/src/runtime.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "004e0b5432fc9d6cf68529fd50c3d662c2537276532d3cfc281998f33e45c7b6",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs",
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md",
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "artifacts/leaderboard-diagnostics/2026-10-05-arena-full-read.json",
+        "tests/integration/public-news-network.test.mjs",
+        "tests/integration/providers.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports. Explicit historical report compilation retains original membership and Publication gates, labels partial source coverage, serializes daily issue memory, and preserves live backfill/heat exclusions; ADR 011. Alpha.4 save, health or bounded integration contract recorded in ADR 014. Arena uses an explicit task-owned HTTP proxy; other routes and the host proxy environment are unchanged. ADR 015. Public news proxy is anonymous-read-only, task-owned, and separate from paid provider routes; failed RSS resumes in a new frozen task (ADR 016)."
+    },
+    {
+      "destination": "packages/contracts/src/storage-protocol.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "f2f753f74b151285572df0673d321b54dac56edd921ea70fb1e9440ae1dbe880",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "packages/bundle/src/index.ts",
+      "upstream": [
+        "DSH docs/user/develop/framework/index.md",
+        "DSH docs/cookbook",
+        "DSH public package exports"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "2b512936d13d1c328b97795ad0125689568acf3fc5e7471359ae39993184eb9e",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/m0.test.mjs",
+        "tests/integration/recovery.test.mjs",
+        "tests/integration/storage-faults.test.mjs"
+      ],
+      "difference": "Native public DSH/Cordis adapter or durable SQLite conversion; no upstream private runtime imports."
+    },
+    {
+      "destination": "industry/ai/leaderboard-model-weights.json",
+      "upstream": [
+        "packages/backend/src/leaderboard model directory, aliases, prices and weights seeds"
+      ],
+      "destinationSha256": "529115e9655a81e3a4a5d94919545662a4cb91857eb14ef705a38af2f8aaa9d7",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/leaderboard-models.json",
+      "upstream": [
+        "packages/backend/src/leaderboard model directory, aliases, prices and weights seeds"
+      ],
+      "destinationSha256": "b9f3bca02734766a0c0cb3c9871dbe4f0b20986d46f6db14b15bed03190b3bad",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/leaderboard-prices.json",
+      "upstream": [
+        "packages/backend/src/leaderboard model directory, aliases, prices and weights seeds"
+      ],
+      "destinationSha256": "70c0d474cbe9ea1202112501c49559fdb797f1267aaa37bbfd5bf7be4aca7b28",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/content-understanding.md",
+      "upstream": [
+        "industry/prompts/content-understanding.md"
+      ],
+      "destinationSha256": "1258869a380794e925e024c4b9595a18fdfc49c551927fdd106b8040b820c8ef",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/group-batch.md",
+      "upstream": [
+        "industry/prompts/group-batch.md"
+      ],
+      "destinationSha256": "79a09702b385785fa7c06ce55acdf199abbd4e5fe5e95adecd144ad2a53b1ffb",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/group-definitions.md",
+      "upstream": [
+        "industry/prompts/group-definitions.md"
+      ],
+      "destinationSha256": "135dfd2ab167a2643463d9c7e614a0ba3319871b6e27247e179836dba1169669",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/group-method.md",
+      "upstream": [
+        "industry/prompts/group-method.md"
+      ],
+      "destinationSha256": "0bde8c68b2bc8954931a35246c0975b0f38459f11ac2ca354a1d9491660674fa",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/group-pair.md",
+      "upstream": [
+        "industry/prompts/group-pair.md"
+      ],
+      "destinationSha256": "a711a1b7c9e5c85b42ff54efe922e5f13f78221262d14339a50b7a793bb49053",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/group-signal.md",
+      "upstream": [
+        "industry/prompts/group-signal.md"
+      ],
+      "destinationSha256": "e5f3746474e6d18bc292254109b9b3f9fbb42c51384843879f2a6899a67f79c5",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/identity-context.md",
+      "upstream": [
+        "industry/prompts/identity-context.md"
+      ],
+      "destinationSha256": "6ac2adecce61231fa8ce50685eacf2871e386983dadb58977f522674f0b0ddc7",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/prefilter.md",
+      "upstream": [
+        "industry/prompts/prefilter.md"
+      ],
+      "destinationSha256": "bc27aaf562982f23e1b6fd93a45506073ea10f1552b68e3ea85a1697277ccce0",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/report-period-sections.md",
+      "upstream": [
+        "industry/prompts/report-period-sections.md"
+      ],
+      "destinationSha256": "8ad73d08323f202e29a2a0e02c29476bb7bab1122aeae94899c3c984f32830c9",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/report-period.md",
+      "upstream": [
+        "industry/prompts/report-period.md"
+      ],
+      "destinationSha256": "085f5d6626eb3648282b38b3d86f5ea6f0101f0c12ff33ad4f8650eba9a480c8",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/rules-answer-first-summary.md",
+      "upstream": [
+        "industry/prompts/rules-answer-first-summary.md"
+      ],
+      "destinationSha256": "b8a517e60351e5adc453159e9d4e49a08d765c657a9b726044f04601d7f5a923",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/rules-anti-hallucination.md",
+      "upstream": [
+        "industry/prompts/rules-anti-hallucination.md"
+      ],
+      "destinationSha256": "37026fd742a233cb932166e173c19588fdbba086709d3ef4a8fd532f2be1cccf",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/rules-domain.md",
+      "upstream": [
+        "industry/prompts/rules-domain.md"
+      ],
+      "destinationSha256": "d2ae6066259bac3144eb2bea32f0239e15dd23f7e19d1acf281727853277a864",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/rules-self-contained-title.md",
+      "upstream": [
+        "industry/prompts/rules-self-contained-title.md"
+      ],
+      "destinationSha256": "4f1652d77ef64ee6756b6872a4b4405fcb46edc8356c4de3cb577e21208f4f6b",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/safety.md",
+      "upstream": [
+        "industry/prompts/safety.md"
+      ],
+      "destinationSha256": "3963b20e601f9bdde876ea9a9f2e68b58d6e618e59109791773ff6e1d4e7badd",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/selection-score.md",
+      "upstream": [
+        "industry/prompts/selection-score.md"
+      ],
+      "destinationSha256": "11700da358cfa0a07b73deaf872ac7fcf43cf665e47e8a6b40e594fa82447ace",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/story-digest.md",
+      "upstream": [
+        "industry/prompts/story-digest.md"
+      ],
+      "destinationSha256": "9198a3acf2fe8f0970aaec9cdc1467702cbe7a312c8dbaf888582cbd914338af",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/structure.md",
+      "upstream": [
+        "industry/prompts/structure.md"
+      ],
+      "destinationSha256": "3961e093bb0bc4985d2a19e795d984a656962b12da90591717978ebd0dc3f3a6",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/summarize-article-empty.md",
+      "upstream": [
+        "industry/prompts/summarize-article-empty.md"
+      ],
+      "destinationSha256": "776095e536b4c8d6305bef073b6c421d4da876b974a2395baf1befb2e7fdd71a",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/summarize-article.md",
+      "upstream": [
+        "industry/prompts/summarize-article.md"
+      ],
+      "destinationSha256": "da153a6788fb88fe176642857720b629bb6345500c418b4d1222061442dad989",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/summarize-long-post-quoted.md",
+      "upstream": [
+        "industry/prompts/summarize-long-post-quoted.md"
+      ],
+      "destinationSha256": "4b9d46e6f676d9ac021f29a669144d178398ba8490a07ada2764a5c2b9f46fd0",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/summarize-long-post.md",
+      "upstream": [
+        "industry/prompts/summarize-long-post.md"
+      ],
+      "destinationSha256": "4ff01e94427e6437991559364ccac22ad6889a87c8d2991d3e7dc696c8261826",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/summarize-short-post-quoted.md",
+      "upstream": [
+        "industry/prompts/summarize-short-post-quoted.md"
+      ],
+      "destinationSha256": "13932cd0485af8e8d249ce901d4eced7f61bb1844ba0abaf7976076879d8b992",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/summarize-short-post.md",
+      "upstream": [
+        "industry/prompts/summarize-short-post.md"
+      ],
+      "destinationSha256": "b0555ac7545d3053549665ddcf3fd9115b4d359a487f6f44cf089203bce859e2",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/translate-body.md",
+      "upstream": [
+        "industry/prompts/translate-body.md"
+      ],
+      "destinationSha256": "36485f1e8373fc5d4e42d3178362eb628ac0427a64907c2f53908c31c582c090",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/translate-post.md",
+      "upstream": [
+        "industry/prompts/translate-post.md"
+      ],
+      "destinationSha256": "ebb220eeabad45b548c05b0e94337701af010d0b011434d4ea6ac3e03ffec993",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/prompts/understand.md",
+      "upstream": [
+        "industry/prompts/understand.md"
+      ],
+      "destinationSha256": "39bbbd78478b7b4f9fcd236a31acad74f51e423f4bd91ab5946a9e09430abe50",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "industry/ai/sources.snapshot.json",
+      "upstream": [
+        "packages/backend/src/leaderboard model directory, aliases, prices and weights seeds"
+      ],
+      "destinationSha256": "f064d7ce28bc40a3d74e831a30f95da096f5fe61d6d4eff98e98a96b654ef21d",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Pinned 18 RSS sources and intervals retained; user explicitly requested local full-text display enabled by default on 2026-10-04. Redistribution remains disabled. See ADR 013."
+    },
+    {
+      "destination": "industry/ai/topics.json",
+      "upstream": [
+        "industry/topics.json"
+      ],
+      "destinationSha256": "b3fa5b5cc582ef55f87ad10d765a1777e654b939d55979330cc9dea76b929199",
+      "behaviorEvidence": [
+        "tests/integration/optional.test.mjs",
+        "tests/golden/reading-rules.test.mjs"
+      ],
+      "difference": "Locked resource copy; application naming is adapted. Price/weight verification date remains explicit."
+    },
+    {
+      "destination": "packages/core/src/publication/topics.ts",
+      "upstream": [
+        "packages/backend/src/publication/topics.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "cd3599753eeb258d16105d9493080769a147052a4a5563e4b221eb40bfbeb182",
+      "upstreamSha256": "38ef3f5bcd412d6aae8bc16132082cd6c431ea3820d895d89172623c3059d4fe",
+      "behaviorEvidence": [
+        "artifacts/official-live/real-data-upgrade.json",
+        "artifacts/official-live/real-business-evidence.json",
+        "artifacts/official-live/real-data-upgrade-alpha10.json"
+      ],
+      "difference": "Company membership preserves subject tags, Latin name boundaries, Chinese/original title checks and the sole-subject rule."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/013.ts",
+      "upstream": [
+        "packages/backend/src/publication/publish.ts",
+        "packages/backend/src/publication/topics.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c906cf6f42dc716a930df4da252bda872e69beb0c10d6667cc2763a047cc4184",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "artifacts/official-live/real-data-upgrade.json",
+        "artifacts/official-live/real-business-evidence.json"
+      ],
+      "difference": "Additive repair of derived publication subject tags; explicit manual tags and prior analyses, settings, audits and migration checksums are retained."
+    },
+    {
+      "destination": "packages/storage-sqlite/src/migrations/014.ts",
+      "upstream": [
+        "DSH public LLM and SessionPersistence contracts; plugin-owned atomic durable jobs"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c4e2a8daaff172c5fde0f5b18e466049779b0be4998b458101f1b2f8e45ba290",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "artifacts/official-live/real-data-upgrade.json",
+        "artifacts/official-live/real-business-evidence.json"
+      ],
+      "difference": "Additive repair of exact model receipt/job links using the existing epoch, stage and dedupe identities; no model dispatch or response rewrite."
+    },
+    {
+      "destination": "scripts/emit-remotes.mjs",
+      "upstream": [
+        "DSH packages/typert/generator/README.zh.md",
+        "DSH docs/api-gateway.zh.md",
+        "DSH packages/typert/protocol/README.zh.md"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "60cdb72d39d7d8a63bfa6192bd52dacd653edff753846abc1d7bda693940a9bc",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md"
+      ],
+      "difference": "Public type/decorator generator adapter enforces strict closed DTO objects; actual Desktop Gateway compilation and audit evidence. No private runtime imports."
+    },
+    {
+      "destination": "scripts/diagnostics/official-report-compilation.mjs",
+      "upstream": [
+        "DSH packages/typert/generator/README.zh.md",
+        "DSH docs/api-gateway.zh.md",
+        "DSH packages/typert/protocol/README.zh.md"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "3acf9caa7dfb3c4a5ebd13738df5c4f8887960ae305bf2402b714bbb36be3fec",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md"
+      ],
+      "difference": "User-authorized real report acceptance. Own database read-only evidence; mutations only through the official Gateway. Rule-copy checks never dispatch models."
+    },
+    {
+      "destination": "scripts/diagnostics/real-history-rule-check.mjs",
+      "upstream": [
+        "packages/backend/src/reports/edition.ts",
+        "packages/backend/src/reports/compose.ts",
+        "packages/backend/src/publication/reports.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c8cded44293538403bda3c169f94b7a6823f850a2fafe12f9922a200405847b3",
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "scripts/diagnostics/official-report-compilation.mjs",
+        "artifacts/reports-live/official-compilation.json",
+        "docs/11_真实报告验收.md"
+      ],
+      "difference": "User-authorized real report acceptance. Own database read-only evidence; mutations only through the official Gateway. Rule-copy checks never dispatch models."
+    },
+    {
+      "destination": "packages/client/src/client/admin/Admin.module.css",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "42292c7d53e91d0d304899564ad846c3dc209620a4286c39b283b84f0228abed"
+    },
+    {
+      "destination": "packages/client/src/client/admin/Controls.tsx",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "3d2269f63d3b1a1dae8766cbb467d907937f905e3d77394c7168b48c05248766"
+    },
+    {
+      "destination": "packages/client/src/client/admin/Integrations.tsx",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "ac979021362e3b7b3f37f510c654577ec6f59b4e5805fda3c8841650a4179f8c"
+    },
+    {
+      "destination": "packages/client/src/client/admin/SettingsPage.tsx",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md",
+        "tests/integration/public-news-network.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "tests/integration/providers.test.mjs"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks. Public news proxy is anonymous-read-only, task-owned, and separate from paid provider routes; failed RSS resumes in a new frozen task (ADR 016).",
+      "destinationSha256": "3bfeb20f895c050ca08cf41873a553128cbce91619ba4f4adba308cc37c4353b"
+    },
+    {
+      "destination": "packages/client/src/client/admin/SourcesPage.tsx",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "0db67f598a541641b2d6a4b1f9c0f76bf63a1c4aeb6c32b193a507c0bc2e771d"
+    },
+    {
+      "destination": "packages/client/src/client/admin/types.ts",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "8861e264d4ee7dea6283e06318236468a2139756349e92c5bde48adc1defa046"
+    },
+    {
+      "destination": "packages/client/src/client/aihot/native/LeaderboardPage.tsx",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "dcc68e3f47abfc66c36bcb001873572ff380e6b731f208a7e0705752ff0d65a2"
+    },
+    {
+      "destination": "packages/client/src/client/aihot/native/MonitorPage.tsx",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "eb93a2edd0b299408dafca6960ebff09700ddf7867989e6f6279bce9578d55a8"
+    },
+    {
+      "destination": "packages/client/src/client/aihot/native/SourcePanel.tsx",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "2673b697a2df3473bca3b92e1379956014ce2abf363d957c22a8bb17b4728956"
+    },
+    {
+      "destination": "packages/client/src/client/settings-draft.ts",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs",
+        "tests/integration/settings-save.test.mjs",
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "608a523e5bab9531d714d16588d0f36ca68e537fa0c31bda16bc95c447d8cc64"
+    },
+    {
+      "destination": "packages/contracts/src/integrations.ts",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "bf0b13f9fcef2005c031058d1c724627d381156851ac9ffdf8c7cfc1810f88d3"
+    },
+    {
+      "destination": "packages/host/src/credentials.ts",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "390a93a0486990c6ca283462042a21d447d85910839fa9fb6df0a414e79cd001"
+    },
+    {
+      "destination": "packages/storage-sqlite/src/integrations.ts",
+      "upstream": [
+        "DSH public Credentials, Remote and client UI primitives",
+        "AIHOT apps/web/app/routes/admin and packages/backend/src/monitor"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/admin-integrations.test.mjs"
+      ],
+      "difference": "Native explicit-save admin and bounded integration adaptation under ADR 014; no private host hooks.",
+      "destinationSha256": "b23172d818fb829d201df7ad137c4ec6a66f473e4bf8766e9dff62afbee0aef5"
+    },
+    {
+      "destination": "packages/client/src/client/aihot/features/leaderboard/BoardTable.module.css",
+      "upstream": [
+        "AIHOT apps/web/app/features/leaderboard/BoardTable.tsx"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "docs/13_后台与接入验收.md"
+      ],
+      "difference": "Use native content container width, with compact rows and non-overlapping dates.",
+      "destinationSha256": "22928f9cb3ae29c3178f4a00fde3afeac8541f264b47e704cb0b2eeaed1225b6"
+    },
+    {
+      "destination": "packages/host/src/leaderboard/pricing.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/refresh.ts",
+        "packages/backend/src/leaderboard/method/run.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/leaderboard-prices.test.mjs",
+        "docs/14_模型价格修复验收.md"
+      ],
+      "difference": "ADR 017: merge all dated prices, preserve observed dates, backfill existing libraries and freeze ECB FX through owned public transport.",
+      "destinationSha256": "a596f4c5fa9bbbe0282369ea714128e512afa400419e53b6b004c9c35b288000"
+    },
+    {
+      "destination": "scripts/generate-leaderboard-prices.mjs",
+      "upstream": [
+        "packages/backend/src/leaderboard/prices.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/leaderboard-prices.test.mjs",
+        "docs/14_模型价格修复验收.md"
+      ],
+      "difference": "ADR 017: merge all dated prices, preserve observed dates, backfill existing libraries and freeze ECB FX through owned public transport.",
+      "destinationSha256": "9d21a7a80998fdc8bd3d2d9d90054c76d5472453f67c4feddc9aa5880f9c4adb"
+    },
+    {
+      "destination": "packages/client/src/client/leaderboard-prices.ts",
+      "upstream": [
+        "apps/web/app/features/leaderboard/format.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "upstreamSha256": null,
+      "behaviorEvidence": [
+        "tests/integration/leaderboard-prices.test.mjs",
+        "docs/14_模型价格修复验收.md"
+      ],
+      "difference": "ADR 017: merge all dated prices, preserve observed dates, backfill existing libraries and freeze ECB FX through owned public transport.",
+      "destinationSha256": "390a74c49c313644a79f638d02a08ff1f77dc7f2e647387604f4bf14823c05fc"
+    },
+    {
+      "destination": "industry/ai/price-seeds/lb-official-prices-2026-09-26.json",
+      "upstream": [
+        "database/seeds/lb-official-prices-2026-09-26.json"
+      ],
+      "exactFileCorrespondence": true,
+      "upstreamSha256": "0dd60cb43423ac33a088b415fc66ba359bc237dbf176cf5abb1b8026a43a3802",
+      "behaviorEvidence": [
+        "tests/integration/leaderboard-prices.test.mjs",
+        "docs/14_模型价格修复验收.md"
+      ],
+      "difference": "ADR 017: merge all dated prices, preserve observed dates, backfill existing libraries and freeze ECB FX through owned public transport.",
+      "destinationSha256": "0dd60cb43423ac33a088b415fc66ba359bc237dbf176cf5abb1b8026a43a3802"
+    },
+    {
+      "destination": "industry/ai/price-seeds/lb-official-prices-2026-09-30.json",
+      "upstream": [
+        "database/seeds/lb-official-prices-2026-09-30.json"
+      ],
+      "exactFileCorrespondence": true,
+      "upstreamSha256": "5ed02b57e5bb993c80b01c87fac3db3488a62674ae5153d5ab4703c2e0b66f23",
+      "behaviorEvidence": [
+        "tests/integration/leaderboard-prices.test.mjs",
+        "docs/14_模型价格修复验收.md"
+      ],
+      "difference": "ADR 017: merge all dated prices, preserve observed dates, backfill existing libraries and freeze ECB FX through owned public transport.",
+      "destinationSha256": "5ed02b57e5bb993c80b01c87fac3db3488a62674ae5153d5ab4703c2e0b66f23"
+    },
+    {
+      "destination": "packages/host/src/leaderboard/network.ts",
+      "upstream": [
+        "packages/backend/src/leaderboard/fetch/sources/terminal-bench.ts"
+      ],
+      "exactFileCorrespondence": false,
+      "destinationSha256": "c6e954af5493d0c06a09e0f9b4a798d5772b9f249a44b8230f149348eeb80129",
+      "behaviorEvidence": [
+        "tests/integration/terminal-bench-network.test.mjs",
+        "tests/integration/arena-network.test.mjs",
+        "docs/15_TerminalBench修复验收.md"
+      ],
+      "difference": "ADR 018: native transport adapter for anonymous official Terminal Bench repository reads; reuses the owned public proxy, preserving source data and reference-only scoring."
+    },
+    {
+      "destination": "packages/client/src/client/leaderboard-records.ts",
+      "upstream": [],
+      "exactFileCorrespondence": false,
+      "behaviorEvidence": [
+        "tests/integration/leaderboard-records.test.mjs",
+        "tests/integration/client-refresh.test.mjs"
+      ],
+      "difference": "Native cross-module row boundary; reject unidentifiable and duplicate model records before keyed rendering.",
+      "destinationSha256": "f3317ce3b91dcd7d55a72c5a6d305f67a0db925ea3d00464a9905cf43707bca7"
+    }
+  ]
+}

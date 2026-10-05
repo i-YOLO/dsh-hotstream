@@ -1,0 +1,24 @@
+{
+  "kind": "design-bundle-validation-only",
+  "passed": 15,
+  "checks": [
+    "18 unique public sample sources",
+    "all sample sources RSS with cap 8",
+    "preserved source intervals",
+    "no default full text permission",
+    "uninitialized design and no source auto-sync",
+    "no manual collection, autosend, or draft clearing",
+    "no backup restore cloud",
+    "positive default cost limits",
+    "snapshot checksum",
+    "acceptance ids unique and not falsely passed",
+    "reference schema parses",
+    "FTS5 trigram Chinese match",
+    "active job duplicate rejected",
+    "two score slots remain separate",
+    "article and queue rollback together"
+  ],
+  "pythonSqliteVersion": "3.46.1",
+  "dshRuntimeTested": false,
+  "productionAcceptanceStatus": "not-run"
+}

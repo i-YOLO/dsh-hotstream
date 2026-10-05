@@ -1,0 +1,19 @@
+Hotstream for DeepSeek Harness
+https://github.com/i-YOLO/dsh-hotstream
+
+This project adapts code, interface components, industry resources and processing
+rules from AIHOT by 数字生命卡兹克, licensed under MIT:
+https://github.com/KKKKhazix/AIHOT
+Pinned revision: cc66cceb1dc7a0bc147e942e49ff94c9cee418c6
+
+The original copyright and permission notice is preserved in
+upstream/licenses/AIHOT-MIT.txt. File-level source mappings and modifications
+are recorded in upstream/SOURCE_MAP.md, SOURCE_MAP.json and UI_SOURCE_MAP.json.
+
+DeepSeek Harness is the host application and is distributed separately:
+https://github.com/deepseek-ai/deepseek-harness
+
+Third-party dependencies retain their respective licenses. Product names,
+provider logos, article images, linked content and evaluation datasets belong
+to their respective owners; the software license does not relicense them.
+Screenshots illustrate development builds with data from their capture dates.
