@@ -406,15 +406,25 @@ for (let i = 0; i < N; i++) {
 }
 const norm = 0.89 / peak;
 
-const buf = Buffer.alloc(44 + N * 4);
-buf.write("RIFF", 0); buf.writeUInt32LE(36 + N * 4, 4); buf.write("WAVE", 8);
+// Cut 5.5–7.5 s (the brand hold) with a 10 ms crossfade: 36 s → 34 s.
+const C0 = Math.round(5.5 * SR), CUT = Math.round(2 * SR), XF = Math.round(0.01 * SR);
+for (let i = C0 - XF; i < C0; i++) {
+  const a = (i - (C0 - XF)) / XF;
+  L[i] = L[i] * (1 - a) + L[i + CUT] * a;
+  R[i] = R[i] * (1 - a) + R[i + CUT] * a;
+}
+L.copyWithin(C0, C0 + CUT);
+R.copyWithin(C0, C0 + CUT);
+const M = N - CUT;
+const buf = Buffer.alloc(44 + M * 4);
+buf.write("RIFF", 0); buf.writeUInt32LE(36 + M * 4, 4); buf.write("WAVE", 8);
 buf.write("fmt ", 12); buf.writeUInt32LE(16, 16); buf.writeUInt16LE(1, 20); buf.writeUInt16LE(2, 22);
 buf.writeUInt32LE(SR, 24); buf.writeUInt32LE(SR * 4, 28); buf.writeUInt16LE(4, 32); buf.writeUInt16LE(16, 34);
-buf.write("data", 36); buf.writeUInt32LE(N * 4, 40);
-for (let i = 0; i < N; i++) {
+buf.write("data", 36); buf.writeUInt32LE(M * 4, 40);
+for (let i = 0; i < M; i++) {
   buf.writeInt16LE(Math.max(-32767, Math.min(32767, Math.round(L[i] * norm * 32767))), 44 + i * 4);
   buf.writeInt16LE(Math.max(-32767, Math.min(32767, Math.round(R[i] * norm * 32767))), 46 + i * 4);
 }
 const out = process.argv[2] ?? "assets/audio/bgm.wav";
 writeFileSync(out, buf);
-console.log(`wrote ${out} — ${DUR}s @ ${BPM} BPM, peak normalised from ${peak.toFixed(3)}`);
+console.log(`wrote ${out} — ${M / SR}s @ ${BPM} BPM, peak normalised from ${peak.toFixed(3)}`);
